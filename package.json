@@ -1,0 +1,22 @@
+{
+  "name": "frontend-assets",
+  "version": "1.0.0",
+  "description": "frontend assets for cloud.redhat.com",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncp src/ dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RedHatInsights/frontend-assets.git"
+  },
+  "author": "rlong@rehdat.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RedHatInsights/frontend-assets/issues"
+  },
+  "homepage": "https://github.com/RedHatInsights/frontend-assets#readme",
+  "dependencies": {
+    "ncp": "^2.0.0"
+  }
+}
