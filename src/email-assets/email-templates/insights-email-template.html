@@ -1,0 +1,584 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Red Hat Insights Weekly Email</title>
+  <style>
+    /* Remove space around email design */
+    html, body {
+      margin: 0 auto !important;
+      padding: 0 !important;
+      height: 100% !important;
+      width: 100% !important;
+      background-color: #f5f5f5;
+    }
+    /* Stop Outlook resizing small text */
+    * {
+      -ms-text-size-adjust: 100%;
+    }
+    /* Stop Outlook from adding extra spacing to tables */
+    table, td {
+      mso-table-lspace: 0pt !important;
+      mso-table-rspace: 0pt !important;
+    }
+    /* Better rendering method when resizing impages in Outlook IE */
+    img {
+      -ms-interpolation-mode:bicubic;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .rh-page {
+      padding: 0 0 30px 0;
+    }
+
+    .rh-head,
+    .rh-body,
+    .rh-footer {
+      margin: 0;
+      background-color: #f5f5f5;
+      mso-line-height-rule: exactly;
+      font-family: arial;
+      font-size: 16px;
+      box-sizing: border-box;
+      background: #ededed;
+    }
+
+    .rh-body {
+    	width: 560px;
+      padding: 0 20px 20px 20px;
+    }
+
+    .rh-head {
+    	width: 600px;
+      padding: 0 0 20px 0;
+    }
+
+    .rh-footer {
+      padding: 10px 20px 0 20px;
+    }
+
+    .rh-masthead__subhead {
+      background-color: #282828;
+      padding: 20px; color: #ffffff;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .rh-masthead__brand {
+      padding: 20px 20px 20px 20px;
+      background-color: #000000;
+      text-align: center;
+    }
+
+    .rh-masthead__brand-link {
+      display: block;
+      text-align: center;
+    }
+
+    .rh-masthead__content {
+      background-color: #151515;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    .rh-masthead__content-title {
+      padding: 20px 20px 20px 20px;
+      margin: 0 0 10px 0;
+      color: #ffffff;
+      font-size: 18px;
+      position: relative;
+    }
+
+    .rh-masthead__metric-block-count {
+      display: block;
+      padding-bottom: 10px;
+      text-align: center;
+      font-size: 28px;
+      word-break:break-all;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .rh-masthead__metric-block-text {
+      display: block;
+      padding: 0 20px 40px 20px;
+      word-break: break-all;
+      color: #ffffff;
+      line-height: 1;
+    }
+
+    .rh-masthead__metric-block-icon {
+      padding: 0 0 20px;
+      display: block;
+    }
+
+    .rh-content + .rh-content {
+      padding: 0 0 20px 0;
+    }
+
+    .rh-content a {
+      color: #0066cc;
+    }
+
+    .rh-content tr {
+      background-color: #fff;
+    }
+
+    /* Content block */
+    .rh-content__block {
+      padding: 0 20px 20px 20px;
+    }
+
+    .rh-content tr:first-child .rh-content__block {
+      padding-top: 20px;
+    }
+
+    .rh-content .rh-content__block {
+      background-color: #fff;
+    }
+
+    .rh-content__block-title {
+      font-weight: bold;
+    }
+
+    .rh-footer__text {
+      font-size: 14px;
+    }
+
+    .rh-footer__text a {
+      color: #0066cc;
+    }
+
+    .rh-content__spacer {
+      font-size: 0;
+      line-height: 0;
+      height: 20px;
+      background: #ededed;
+    }
+
+    .rh-cta-link {
+/*       width: 100%;
+      height: 100%; */
+      display:block;
+      padding: 10px 20px;
+      background-color: #0066cc;
+      border-radius: 3px;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    .rh-cta-link a {
+      color:#ffffff;
+      text-decoration: none;
+    }
+
+    .rh-m-block {
+      display: block;
+    }
+
+    .rh-data-table {
+      width: 100%;
+    }
+
+    .rh-data-table thead th {
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .rh-data-table tbody th {
+      font-weight: 500;
+      text-align: left;
+      width: 200px;
+    }
+
+    .rh-data-table.rh-m-bordered th {
+      padding: 10px;
+      text-align: left;
+      font-size: 14px;
+      font-weight: 500;
+      text-transform: uppercase;
+      background-color: #bee1f4;
+    }
+
+    .rh-data-table.rh-m-bordered td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    .rh-data-table.rh-m-bordered {
+      border-collapse: collapse;
+    }
+
+    .rh-data-table caption {
+      text-align: left;
+      padding-bottom: 10px;
+    }
+
+    .rh-m-bordered th,
+    .rh-m-bordered td {
+      border-width: 1px;
+      border-color: #8A8D90;
+      border-style: solid;
+    }
+
+    .rh-color__red {
+      color: #a30000;
+    }
+
+    .rh-color__orange {
+      color: #795600;
+    }
+
+    .rh-color__green {
+      color: #486b00;
+    }
+
+  </style>
+
+  </head>
+
+  <!-- text-size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -->
+  <body width="100%" class="rh-body">
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tbody>
+        <tr>
+          <td class="rh-page">
+            <!--Table within the larger table; contains email content (600px)-->
+            <table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+              <tbody>
+               <tr>
+                  <td class="rh-head">
+                    <table class="rh-masthead" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+                      <tbody>
+                        <tr>
+                          <!--Red Hat logo-->
+                          <td align="center" class="rh-masthead__brand">
+                            <a href="#" target="_blank" class="rh-masthead__brand-link">
+                              <img src="https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/logo_insights.png" alt="Red Hat logo" width="152" height="60" class="rh-masthead__brand-img" />
+                            </a>
+                          </td>
+                        </tr>
+
+                        <!--Weekly stats-->
+                        <tr>
+                          <td background="https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/img_masthead-bg.png" bgcolor="#151515" width="600" valign="top" class="rh-masthead__content">
+                            <!--[if gte mso 9]>
+                            <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:600px;">
+                              <v:fill type="tile" src="https://github.com/beccaglass/email/blob/master/Email-assets/Email-Background.png?raw=true" color="#151515" />
+                              <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+                            <![endif]-->
+                            <div>
+
+                              <!--Table for 3 graphics-->
+                              <table role="presentation" table-layout="fixed" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                  <td class="rh-masthead__content-title" width="100%" align="center">
+                                    Weekly report
+                                  </td>
+                                </tr>
+                              </table>
+                              <table role="presentation" table-layout="fixed" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                  <!--Graphic 1-->
+                                  <td width="33.3333%" valign="top">
+                                    <table class="rh-masthead__metric-block" role="presentation" table-layout="fixed" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                      <tr>
+                                        <td align="center">
+                                          <a class="rh-masthead__metric-block-icon" href="https://cloud.redhat.com/insights/rules?total_risk=4&reports_shown=true&impacting=true" target="_blank">
+                                              <img src="https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/img_critical-hits.png" alt="critical hits" width="90" height="90" />
+                                          </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td align="center">
+                                          <a class="rh-masthead__metric-block-count" href="https://cloud.redhat.com/insights/rules?total_risk=4&reports_shown=true&impacting=true" target="_blank">
+                                            <!-- <div id="critical-hits">{{rules.total_risk.4}}</div> -->
+                                            <div id="critical-hits">12</div>
+                                          </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td align="center" style="">
+                                          <!-- <a class="rh-masthead__metric-block-text" href="https://cloud.redhat.com/insights/rules?total_risk=4&reports_shown=true&impacting=true" target="_blank">Critical hit{{rules.total_risk.4|pluralize}}</a> -->
+                                          <a class="rh-masthead__metric-block-text" href="https://cloud.redhat.com/insights/rules?total_risk=4&reports_shown=true&impacting=true" target="_blank">Critical hits</a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+
+                                  <!--Graphic 2-->
+                                  <td width="33.3333%" valign="top">
+                                    <table class="rh-masthead__metric-block" role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                      <tr>
+                                        <td align="center">
+                                          <a class="rh-masthead__metric-block-icon" href="https://cloud.redhat.com/insights/inventory" target="_blank">
+                                              <img src="https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/img_system.png" alt="total systems" width="90" height="90" />
+                                          </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td align="center">
+                                          <a class="rh-masthead__metric-block-count" href="https://cloud.redhat.com/insights/inventory" target="_blank">
+                                            <!-- <div id="systems">{{systems.total}}</div> -->
+                                            <div id="systems">18</div>
+                                          </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td align="center">
+                                          <!-- <a href="https://cloud.redhat.com/insights/inventory" target="_blank">System{{systems.total|pluralize}}</a> -->
+                                          <a class="rh-masthead__metric-block-text" href="https://cloud.redhat.com/insights/inventory" target="_blank">Systems</a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+
+                                  <!--Graphic 3-->
+                                  <td width="33.3333%" valign="top">
+                                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                      <tr>
+                                        <td align="center">
+                                          <a class="rh-masthead__metric-block-icon" href="https://cloud.redhat.com/insights/rules?impacting=true&reports_shown=true" target="_blank"><img src="https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/img_total-hits.png" alt="total hits" width="90" height="90" />
+                                          </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td align="center">
+                                          <a class="rh-masthead__metric-block-count" href="https://cloud.redhat.com/insights/rules?impacting=true&reports_shown=true" target="_blank">
+                                            <!-- <div id="total-hits" style="color:#ffffff;">{{rules.total}}</div> -->
+                                            <div id="total-hits">120</div>
+                                          </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td class="rh-masthead__metric-block-text" align="center">
+            <!--                               <a href="https://cloud.redhat.com/insights/rules?impacting=true&reports_shown=true" target="_blank" style="color:#ffffff;">Total hit{{rules.total|pluralize}}</a> -->
+                                          <a href="https://cloud.redhat.com/insights/rules?impacting=true&reports_shown=true" target="_blank">Total hits</a>
+                                        </td>
+                                      </tr>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </table>
+                            </div>
+                            <!--[if gte mso 9]>
+                              </v:textbox>
+                            </v:rect>
+                            <![endif]-->
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="rh-head">
+                    <table class="rh-masthead" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+                      <tbody>
+                        <tr>
+                          <!--Red Hat logo-->
+                          <td align="center" class="rh-masthead__brand">
+                            <a href="#" target="_blank" class="rh-masthead__brand-link">
+                              <img src="https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/logo_insights.png" alt="Red Hat logo" width="152" height="60" class="rh-masthead__brand-img" />
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="rh-masthead__subhead">
+                            Sentence case email title
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="rh-body">
+                    <table class="rh-content" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="560">
+                      <tbody>
+                        <tr>
+                          <td class="rh-content__block">
+                            Hi {{user.first_name}},
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="rh-content__block">
+                            Here are your Insights statistics for the week of {{date|date:"F jS Y"}}.
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="rh-content__block">
+                            <table class="rh-data-table">
+                              <thead>
+                                <tr>
+                                  <th>Summary</th>
+                                  <td></td>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th role="rowheader" scope="row">Ordered by:</th>
+                                  <td>[Orderer]</td>
+                                </tr>
+                                <tr>
+                                  <th role="rowheader" scope="row">Ordered #:</th>
+                                  <td>[Order ID]</td>
+                                </tr>
+                                <tr>
+                                  <th role="rowheader" scope="row">Ordered date:</th>
+                                  <td>[Order date]</td>
+                                </tr>
+                                <tr>
+                                  <th role="rowheader" scope="row">Ordered time:</th>
+                                  <td>[Order time]</td>
+                                </tr>
+                                <tr>
+                                  <th role="rowheader" scope="row">Product:</th>
+                                  <td>[Product item name]</td>
+                                </tr>
+                                <tr>
+                                  <th role="rowheader" scope="row">Portfolio:</th>
+                                  <td>[Portfolio name]</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="rh-content__block">
+                            <a href="https://cloud.redhat.com/" target="_blank">View more order details</a> (requires authentication)
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="rh-content__block">
+                            <table align="center">
+                              <tr>
+                                <td class="rh-cta-link" align="center">
+                                  <a target="_blank" href="https://cloud.redhat.com/">
+                                    <span>
+                                      Go to Insights
+                                    </span>
+                                  </a>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="rh-body">
+                    <table class="rh-content" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="560">
+                      <tbody>
+                        <tr>
+                          <td class="rh-content__block">
+                            <p>
+                              Hi {{user.first_name}},
+                              <br>
+                              <br>
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis auctor elit sed vulputate mi sit. Aliquet eget sit amet tellus. Sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium.
+                            </p>
+                            <p>
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis auctor elit sed vulputate mi sit. Aliquet eget sit amet tellus. Sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium.
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="rh-content__block">
+                            <b><a href="#">ocp311con.lab.msp.redhat.com</a></b>
+                            <div>
+                              <img src="https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/icon_tag.png" alt="total systems" width="16" height="16" />
+                              <span style="margin-left: 5px;">ne-datacenter</span>
+                            </div>
+                          </td>
+                        <tr>
+                          <td class="rh-content__block">
+                            <table class="rh-data-table rh-m-bordered">
+                              <thead>
+                                <tr>
+                                  <th>Policy Name</th>
+                                  <th>SEVERTIY</th>
+                                  <th>SYSTEMS</th>
+                                  <th></th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>Policy name</td>
+                                  <td class="rh-color__red">High</td>
+                                  <td>22</td>
+                                  <td>
+                                     <a href="https://cloud.redhat.com/" target="_blank">View</a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Policy name</td>
+                                  <td class="rh-color__orange">Medium</td>
+                                  <td>22</td>
+                                  <td>
+                                     <a href="https://cloud.redhat.com/" target="_blank">View</a>
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td>Policy name</td>
+                                  <td class="rh-color__green">Low</td>
+                                  <td>22</td>
+                                  <td>
+                                     <a href="https://cloud.redhat.com/" target="_blank">View</a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="rh-body">
+                    <table class="rh-content" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="560">
+                      <tbody>
+                        <tr>
+                          <td class="rh-content__block rh-content__block-title">
+                            New in insights
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="rh-content__block">
+                            {{news.content|safe}}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="rh-footer">
+                    <table role="presentation" border="0" align="center" cellpadding="0" cellspacing="0" width="560">
+                      <tbody>
+                        <tr>
+                          <td class="rh-footer__text">
+                            This email was sent by Red Hat [team] |<a href="#" target="_blank">&nbsp;Manage email preferences</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
