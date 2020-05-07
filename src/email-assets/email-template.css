@@ -1,4 +1,4 @@
-
+/* Remove space around email design */
 html, body {
   margin: 0 auto !important;
   padding: 0 !important;
@@ -6,18 +6,15 @@ html, body {
   width: 100% !important;
   background-color: #f5f5f5;
 }
-
 /* Stop Outlook resizing small text */
 * {
   -ms-text-size-adjust: 100%;
 }
-
 /* Stop Outlook from adding extra spacing to tables */
 table, td {
   mso-table-lspace: 0pt !important;
   mso-table-rspace: 0pt !important;
 }
-
 /* Better rendering method when resizing impages in Outlook IE */
 img {
   -ms-interpolation-mode:bicubic;
@@ -83,7 +80,7 @@ a {
 }
 
 .rh-masthead__content-title {
-  padding: 20px 20px 30px 20px;
+  padding: 20px 20px 20px 20px;
   margin: 0 0 10px 0;
   color: #ffffff;
   font-size: 18px;
@@ -92,18 +89,21 @@ a {
 
 .rh-masthead__metric-block-count {
   display: block;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   text-align: center;
   font-size: 28px;
   word-break:break-all;
   color: #fff;
+  line-height: 1;
 }
 
 .rh-masthead__metric-block-text {
   display: block;
-  padding: 0 20px 20px 20px;
+  padding: 0 20px 40px 20px;
   word-break: break-all;
   color: #ffffff;
+  line-height: 1;
+  font-size: 14px;
 }
 
 .rh-masthead__metric-block-icon {
@@ -169,10 +169,6 @@ a {
   text-decoration: none;
 }
 
-.rh-m-block {
-  display: block;
-}
-
 .rh-data-table {
   width: 100%;
 }
@@ -206,16 +202,20 @@ a {
   border-collapse: collapse;
 }
 
-.rh-data-table caption {
+.rh-table-header {
   text-align: left;
-  padding-bottom: 10px;
+  padding-bottom: 0;
 }
 
 .rh-m-bordered th,
 .rh-m-bordered td {
   border-width: 1px;
-  border-color: #8A8D90;
+  border-color: #b8bbbe;
   border-style: solid;
+}
+
+.rh-m-bordered tr:nth-child(even) {
+  background-color: #fafafa;
 }
 
 .rh-color__red {
@@ -223,9 +223,13 @@ a {
 }
 
 .rh-color__orange {
-  color: #795600;
+  color: #ec7a08;
 }
 
 .rh-color__green {
   color: #486b00;
+}
+
+.rh-m-block {
+  display: block;
 }

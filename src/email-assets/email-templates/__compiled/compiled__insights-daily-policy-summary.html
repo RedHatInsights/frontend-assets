@@ -35,7 +35,7 @@
                         </tr>
                         <tr style="-ms-text-size-adjust:100%;">
                           <td class="rh-masthead__subhead" style="-ms-text-size-adjust:100%;background-color:#282828;padding:20px;color:#ffffff;font-size:18px;text-align:center;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-                            Policies triggered - 15 Mar 20 15:32 UTC
+                            Policies policy summary - 15 Mar 20 15:32 UTC
                           </td>
                         </tr>
                       </tbody>
@@ -48,15 +48,86 @@
                       <tbody style="-ms-text-size-adjust:100%;">
                         <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
                           <td class="rh-content__block" style="-ms-text-size-adjust:100%;padding:0 20px 20px 20px;background-color:#fff;padding-top:20px;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-                            Policy trigger notification for <b style="-ms-text-size-adjust:100%;">ocp311con.lab.msp.redhat.com</b>. System checked in at 15 Mar 20 15:32 UTC and triggered {foo} policies.
+                            Daily policy summary for <b style="-ms-text-size-adjust:100%;">15 Mar 20</b> from Red Hat Insights. <b style="-ms-text-size-adjust:100%;">{x} policies</b> triggered on <b style="-ms-text-size-adjust:100%;">{y} systems</b>.
                           </td>
+                        </tr>
+                        <tr class="rh-content__spacer" style="-ms-text-size-adjust:100%;font-size:0;line-height:0;height:20px;background:#ededed;background-color:#fff;">
+                          <td style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;"></td>
                         </tr>
                         <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
                           <td class="rh-content__block rh-table-header" style="-ms-text-size-adjust:100%;padding:0 20px 20px 20px;text-align:left;padding-bottom:0;background-color:#fff;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
                             <table style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
                               <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
                                 <td colspan="2" style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-                                  <b style="-ms-text-size-adjust:100%;"><a href="https://cloud.redhat.com/" style="-ms-text-size-adjust:100%;text-decoration:none;color:#fff;color:#0066cc;">ocp311con.lab.msp.redhat.com</a></b>
+                                  <b style="-ms-text-size-adjust:100%;"><a href="https://cloud.redhat.com/insights/inventory/82e59280-dae3-4b62-bcb3-45fea89730c9/" style="-ms-text-size-adjust:100%;text-decoration:none;color:#fff;color:#0066cc;">ocp311con.lab.msp.redhat.com</a></b>
+                                </td>
+                              </tr>
+                              <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
+                                <td style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                                  <table cellpadding="2" style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                                    <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
+                                      <td valign="center" style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                                        <img src="https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/icon_tag.png" alt="total systems" width="16" height="16" style="-ms-text-size-adjust:100%;-ms-interpolation-mode:bicubic;"/>
+                                      </td>
+                                      <td style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                                        ne-datacenter
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
+                          <td class="rh-content__block" style="-ms-text-size-adjust:100%;padding:0 20px 20px 20px;background-color:#fff;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                            <table width: class="rh-data-table rh-m-bordered" style="-ms-text-size-adjust:100%;width:100%;border-collapse:collapse;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                              <thead style="-ms-text-size-adjust:100%;">
+                                <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
+                                  <th style="-ms-text-size-adjust:100%;border-width:1px;border-color:#b8bbbe;border-style:solid;font-weight:700;padding:10px;text-align:left;font-size:14px;font-weight:500;text-transform:uppercase;background-color:#bee1f4;">Policy name</th>
+                                  <th style="-ms-text-size-adjust:100%;border-width:1px;border-color:#b8bbbe;border-style:solid;font-weight:700;padding:10px;text-align:left;font-size:14px;font-weight:500;text-transform:uppercase;background-color:#bee1f4;">Severity</th>
+                                  <th style="-ms-text-size-adjust:100%;border-width:1px;border-color:#b8bbbe;border-style:solid;font-weight:700;padding:10px;text-align:left;font-size:14px;font-weight:500;text-transform:uppercase;background-color:#bee1f4;">Systems</th>
+                                  <th style="-ms-text-size-adjust:100%;border-width:1px;border-color:#b8bbbe;border-style:solid;font-weight:700;padding:10px;text-align:left;font-size:14px;font-weight:500;text-transform:uppercase;background-color:#bee1f4;"></th>
+                                </tr>
+                              </thead>
+                              <tbody style="-ms-text-size-adjust:100%;">
+                                <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
+                                  <td style="-ms-text-size-adjust:100%;border-width:1px;border-color:#b8bbbe;border-style:solid;padding:10px;text-align:left;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">Policy name</td>
+                                  <td class="rh-color__red" style="-ms-text-size-adjust:100%;color:#a30000;border-width:1px;border-color:#b8bbbe;border-style:solid;padding:10px;text-align:left;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">High</td>
+                                  <td style="-ms-text-size-adjust:100%;border-width:1px;border-color:#b8bbbe;border-style:solid;padding:10px;text-align:left;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">22</td>
+                                  <td style="-ms-text-size-adjust:100%;border-width:1px;border-color:#b8bbbe;border-style:solid;padding:10px;text-align:left;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                                    <a href="https://cloud.redhat.com/insights/policies" target="_blank" style="-ms-text-size-adjust:100%;text-decoration:none;color:#fff;color:#0066cc;">View</a>
+                                  </td>
+                                </tr>
+                                <tr style="-ms-text-size-adjust:100%;background-color:#fff;background-color:#fafafa;">
+                                  <td style="-ms-text-size-adjust:100%;border-width:1px;border-color:#b8bbbe;border-style:solid;padding:10px;text-align:left;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">Policy name</td>
+                                  <td class="rh-color__orange" style="-ms-text-size-adjust:100%;color:#ec7a08;border-width:1px;border-color:#b8bbbe;border-style:solid;padding:10px;text-align:left;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">Medium</td>
+                                  <td style="-ms-text-size-adjust:100%;border-width:1px;border-color:#b8bbbe;border-style:solid;padding:10px;text-align:left;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">22</td>
+                                  <td style="-ms-text-size-adjust:100%;border-width:1px;border-color:#b8bbbe;border-style:solid;padding:10px;text-align:left;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                                    <a href="https://cloud.redhat.com/insights/policies" target="_blank" style="-ms-text-size-adjust:100%;text-decoration:none;color:#fff;color:#0066cc;">View</a>
+                                  </td>
+                                </tr>
+                                <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
+                                  <td style="-ms-text-size-adjust:100%;border-width:1px;border-color:#b8bbbe;border-style:solid;padding:10px;text-align:left;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">Policy name</td>
+                                  <td class="rh-color__green" style="-ms-text-size-adjust:100%;color:#486b00;border-width:1px;border-color:#b8bbbe;border-style:solid;padding:10px;text-align:left;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">Low</td>
+                                  <td style="-ms-text-size-adjust:100%;border-width:1px;border-color:#b8bbbe;border-style:solid;padding:10px;text-align:left;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">22</td>
+                                  <td style="-ms-text-size-adjust:100%;border-width:1px;border-color:#b8bbbe;border-style:solid;padding:10px;text-align:left;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                                    <a href="https://cloud.redhat.com/insights/policies" target="_blank" style="-ms-text-size-adjust:100%;text-decoration:none;color:#fff;color:#0066cc;">View</a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr class="rh-content__spacer" style="-ms-text-size-adjust:100%;font-size:0;line-height:0;height:20px;background:#ededed;background-color:#fff;">
+                          <td style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;"></td>
+                        </tr>
+                        <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
+                          <td class="rh-content__block rh-table-header" style="-ms-text-size-adjust:100%;padding:0 20px 20px 20px;text-align:left;padding-bottom:0;background-color:#fff;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                            <table style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                              <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
+                                <td colspan="2" style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                                  <b style="-ms-text-size-adjust:100%;"><a href="https://cloud.redhat.com/insights/inventory/82e59280-dae3-4b62-bcb3-45fea89730c9/" style="-ms-text-size-adjust:100%;text-decoration:none;color:#fff;color:#0066cc;">ocp312con.lab.msp.redhat.com</a></b>
                                 </td>
                               </tr>
                               <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
