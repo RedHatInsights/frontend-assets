@@ -1,0 +1,235 @@
+/* Remove space around email design */
+html, body {
+  margin: 0 auto !important;
+  padding: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  background-color: #f5f5f5;
+}
+/* Stop Outlook resizing small text */
+* {
+  -ms-text-size-adjust: 100%;
+}
+/* Stop Outlook from adding extra spacing to tables */
+table, td {
+  mso-table-lspace: 0pt !important;
+  mso-table-rspace: 0pt !important;
+}
+/* Better rendering method when resizing impages in Outlook IE */
+img {
+  -ms-interpolation-mode:bicubic;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.rh-page {
+  padding: 0 0 30px 0;
+}
+
+.rh-head,
+.rh-body,
+.rh-footer {
+  margin: 0;
+  background-color: #f5f5f5;
+  mso-line-height-rule: exactly;
+  font-family: arial;
+  font-size: 16px;
+  box-sizing: border-box;
+  background: #ededed;
+}
+
+.rh-body {
+  width: 560px;
+  padding: 0 20px 20px 20px;
+}
+
+.rh-head {
+  width: 600px;
+  padding: 0 0 20px 0;
+}
+
+.rh-footer {
+  padding: 10px 20px 0 20px;
+}
+
+.rh-masthead__subhead {
+  background-color: #282828;
+  padding: 20px; color: #ffffff;
+  font-size: 18px;
+  text-align: center;
+}
+
+.rh-masthead__brand {
+  padding: 20px 20px 20px 20px;
+  background-color: #000000;
+  text-align: center;
+}
+
+.rh-masthead__brand-link {
+  display: block;
+  text-align: center;
+}
+
+.rh-masthead__content {
+  background-color: #151515;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.rh-masthead__content-title {
+  padding: 20px 20px 20px 20px;
+  margin: 0 0 10px 0;
+  color: #ffffff;
+  font-size: 18px;
+  position: relative;
+}
+
+.rh-masthead__metric-block-count {
+  display: block;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 28px;
+  word-break:break-all;
+  color: #fff;
+  line-height: 1;
+}
+
+.rh-masthead__metric-block-text {
+  display: block;
+  padding: 0 20px 40px 20px;
+  word-break: break-all;
+  color: #ffffff;
+  line-height: 1;
+  font-size: 14px;
+}
+
+.rh-masthead__metric-block-icon {
+  padding: 0 0 20px;
+  display: block;
+}
+
+.rh-content + .rh-content {
+  padding: 0 0 20px 0;
+}
+
+.rh-content a {
+  color: #0066cc;
+}
+
+.rh-content tr {
+  background-color: #fff;
+}
+
+/* Content block */
+.rh-content__block {
+  padding: 0 20px 20px 20px;
+}
+
+.rh-content tr:first-child .rh-content__block {
+  padding-top: 20px;
+}
+
+.rh-content .rh-content__block {
+  background-color: #fff;
+}
+
+.rh-content__block-title {
+  font-weight: bold;
+}
+
+.rh-footer__text {
+  font-size: 14px;
+}
+
+.rh-footer__text a {
+  color: #0066cc;
+}
+
+.rh-content__spacer {
+  font-size: 0;
+  line-height: 0;
+  height: 20px;
+  background: #ededed;
+}
+
+.rh-cta-link {
+  display:block;
+  padding: 10px 20px;
+  background-color: #0066cc;
+  border-radius: 3px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+.rh-cta-link a {
+  color:#ffffff;
+  text-decoration: none;
+}
+
+.rh-data-table {
+  width: 100%;
+}
+
+.rh-data-table thead th {
+  font-weight: 700;
+  text-align: left;
+}
+
+.rh-data-table tbody th {
+  font-weight: 500;
+  text-align: left;
+  width: 200px;
+}
+
+.rh-data-table.rh-m-bordered th {
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: #bee1f4;
+}
+
+.rh-data-table.rh-m-bordered td {
+  padding: 10px;
+  text-align: left;
+}
+
+.rh-data-table.rh-m-bordered {
+  border-collapse: collapse;
+}
+
+.rh-table-header {
+  text-align: left;
+  padding-bottom: 0;
+}
+
+.rh-m-bordered th,
+.rh-m-bordered td {
+  border-width: 1px;
+  border-color: #b8bbbe;
+  border-style: solid;
+}
+
+.rh-m-bordered tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.rh-color__red {
+  color: #a30000;
+}
+
+.rh-color__orange {
+  color: #ec7a08;
+}
+
+.rh-color__green {
+  color: #486b00;
+}
+
+.rh-m-block {
+  display: block;
+}
