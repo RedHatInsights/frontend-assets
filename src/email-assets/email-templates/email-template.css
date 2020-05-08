@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 /* Remove space around email design */
-=======
-
->>>>>>> feat(images): added email templates
-=======
-/* Remove space around email design */
->>>>>>> feat(email-templates): updated links and styling
 html, body {
   margin: 0 auto !important;
   padding: 0 !important;
@@ -14,36 +6,15 @@ html, body {
   width: 100% !important;
   background-color: #f5f5f5;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> feat(images): added email templates
-=======
->>>>>>> feat(email-templates): updated links and styling
 /* Stop Outlook resizing small text */
 * {
   -ms-text-size-adjust: 100%;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> feat(images): added email templates
-=======
->>>>>>> feat(email-templates): updated links and styling
 /* Stop Outlook from adding extra spacing to tables */
 table, td {
   mso-table-lspace: 0pt !important;
   mso-table-rspace: 0pt !important;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> feat(images): added email templates
-=======
->>>>>>> feat(email-templates): updated links and styling
 /* Better rendering method when resizing impages in Outlook IE */
 img {
   -ms-interpolation-mode:bicubic;
@@ -109,15 +80,7 @@ a {
 }
 
 .rh-masthead__content-title {
-<<<<<<< HEAD
-<<<<<<< HEAD
   padding: 20px 20px 20px 20px;
-=======
-  padding: 20px 20px 30px 20px;
->>>>>>> feat(images): added email templates
-=======
-  padding: 20px 20px 20px 20px;
->>>>>>> feat(email-templates): updated links and styling
   margin: 0 0 10px 0;
   color: #ffffff;
   font-size: 18px;
@@ -126,50 +89,21 @@ a {
 
 .rh-masthead__metric-block-count {
   display: block;
-<<<<<<< HEAD
-<<<<<<< HEAD
   padding-bottom: 10px;
-=======
-  padding-bottom: 20px;
->>>>>>> feat(images): added email templates
-=======
-  padding-bottom: 10px;
->>>>>>> feat(email-templates): updated links and styling
   text-align: center;
   font-size: 28px;
   word-break:break-all;
   color: #fff;
-<<<<<<< HEAD
-<<<<<<< HEAD
   line-height: 1;
-=======
->>>>>>> feat(images): added email templates
-=======
-  line-height: 1;
->>>>>>> feat(email-templates): updated links and styling
 }
 
 .rh-masthead__metric-block-text {
   display: block;
-<<<<<<< HEAD
-<<<<<<< HEAD
   padding: 0 20px 40px 20px;
   word-break: break-all;
   color: #ffffff;
   line-height: 1;
   font-size: 14px;
-=======
-  padding: 0 20px 20px 20px;
-  word-break: break-all;
-  color: #ffffff;
->>>>>>> feat(images): added email templates
-=======
-  padding: 0 20px 40px 20px;
-  word-break: break-all;
-  color: #ffffff;
-  line-height: 1;
-  font-size: 14px;
->>>>>>> feat(email-templates): updated links and styling
 }
 
 .rh-masthead__metric-block-icon {
@@ -235,16 +169,6 @@ a {
   text-decoration: none;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-.rh-m-block {
-  display: block;
-}
-
->>>>>>> feat(images): added email templates
-=======
->>>>>>> feat(email-templates): updated links and styling
 .rh-data-table {
   width: 100%;
 }
@@ -278,28 +202,14 @@ a {
   border-collapse: collapse;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 .rh-table-header {
   text-align: left;
   padding-bottom: 0;
-=======
-.rh-data-table caption {
-  text-align: left;
-  padding-bottom: 10px;
->>>>>>> feat(images): added email templates
-=======
-.rh-table-header {
-  text-align: left;
-  padding-bottom: 0;
->>>>>>> feat(email-templates): updated links and styling
 }
 
 .rh-m-bordered th,
 .rh-m-bordered td {
   border-width: 1px;
-<<<<<<< HEAD
-<<<<<<< HEAD
   border-color: #b8bbbe;
   border-style: solid;
 }
@@ -308,52 +218,18 @@ a {
   background-color: #fafafa;
 }
 
-=======
-  border-color: #8A8D90;
-  border-style: solid;
-}
-
->>>>>>> feat(images): added email templates
-=======
-  border-color: #b8bbbe;
-  border-style: solid;
-}
-
-.rh-m-bordered tr:nth-child(even) {
-  background-color: #fafafa;
-}
-
->>>>>>> feat(email-templates): updated links and styling
 .rh-color__red {
   color: #a30000;
 }
 
 .rh-color__orange {
-<<<<<<< HEAD
-<<<<<<< HEAD
   color: #ec7a08;
-=======
-  color: #795600;
->>>>>>> feat(images): added email templates
-=======
-  color: #ec7a08;
->>>>>>> feat(email-templates): updated links and styling
 }
 
 .rh-color__green {
   color: #486b00;
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> feat(email-templates): updated links and styling
 }
 
 .rh-m-block {
   display: block;
 }
-<<<<<<< HEAD
-=======
-}
->>>>>>> feat(images): added email templates
-=======
->>>>>>> feat(email-templates): updated links and styling
