@@ -1,11 +1,22 @@
+#outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
+body, table, td, p, a, li, blockquote{-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+img{-ms-interpolation-mode:bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+
+/* /\/\/\/\/\/\/\/\/ RESET STYLES /\/\/\/\/\/\/\/\/ */
+img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
+table{border-collapse:collapse !important;}
+
 /* Remove space around email design */
-html, body {
+html,
+body {
   margin: 0 auto !important;
   padding: 0 !important;
   height: 100% !important;
   width: 100% !important;
-  background-color: #f5f5f5;
+  background-color: #fff;
 }
+
 /* Stop Outlook resizing small text */
 * {
   -ms-text-size-adjust: 100%;
@@ -25,46 +36,88 @@ a {
   color: #fff;
 }
 
+.rh-body-table,
+.rh-body-cell {
+  height:100% !important;
+  margin:0;
+  padding:0;
+  width:100% !important;
+}
+
+.rh-body-table {
+  background-color: #f5f5f5;
+  background-color: #fff;
+}
+
 .rh-page {
   padding: 0 0 30px 0;
+  background: #efefef;
+}
+
+.rh-template-container {
+  padding: 0 0 30px 0;
+  width: 600px;
+}
+
+.rh-template-container,
+.rh-template-container > tbody {
+  background: #ededed;
 }
 
 .rh-head,
 .rh-body,
 .rh-footer {
   margin: 0;
-  background-color: #f5f5f5;
   mso-line-height-rule: exactly;
   font-family: arial;
   font-size: 16px;
   box-sizing: border-box;
-  background: #ededed;
 }
 
 .rh-body {
-  width: 560px;
   padding: 0 20px 20px 20px;
 }
 
+.rh-body,
+.rh-masthead,
+.rh-content,
+.rh-data-table,
+.rh-head,
+.rh-masthead {
+  width: 100% !important;
+}
+
 .rh-head {
-  width: 600px;
   padding: 0 0 20px 0;
 }
 
 .rh-footer {
-  padding: 10px 20px 0 20px;
+  padding: 10px 20px 30px 20px;
+}
+
+.rh-masthead__content {
+  background-color: #090a0a !important;
+  background-image: url(https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/bg_masthead-hat.png);
+  background-size: cover;
 }
 
 .rh-masthead__subhead {
-  background-color: #282828;
-  padding: 20px; color: #ffffff;
+  background-color: #282828 !important;
+  padding: 20px;
+  color: #ffffff !important;
   font-size: 18px;
   text-align: center;
 }
 
+.rh-masthead__block {
+  width: 200px;
+}
+
 .rh-masthead__brand {
   padding: 20px 20px 20px 20px;
-  background-color: #000000;
+  background-color: #151515 !important;
+  background-repeat: repeat;
+  background-image: url(https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/bg_151515.jpg);
   text-align: center;
 }
 
@@ -93,7 +146,7 @@ a {
   text-align: center;
   font-size: 28px;
   word-break:break-all;
-  color: #fff;
+  color: #ffffff !important;
   line-height: 1;
 }
 
@@ -101,7 +154,7 @@ a {
   display: block;
   padding: 0 20px 40px 20px;
   word-break: break-all;
-  color: #ffffff;
+  color: #ffffff !important;
   line-height: 1;
   font-size: 14px;
 }
@@ -119,13 +172,23 @@ a {
   color: #0066cc;
 }
 
+.rh-content {
+  background: #efefef;
+}
+
+.rh-content table {
+  background: #fff;
+}
+
 .rh-content tr {
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
 /* Content block */
 .rh-content__block {
+  max-width: 100%;
   padding: 0 20px 20px 20px;
+  overflow: hidden;
 }
 
 .rh-content tr:first-child .rh-content__block {
@@ -152,7 +215,7 @@ a {
   font-size: 0;
   line-height: 0;
   height: 20px;
-  background: #ededed;
+  background-color: #ffffff;
 }
 
 .rh-cta-link {
@@ -167,10 +230,6 @@ a {
 .rh-cta-link a {
   color:#ffffff;
   text-decoration: none;
-}
-
-.rh-data-table {
-  width: 100%;
 }
 
 .rh-data-table thead th {
@@ -232,4 +291,73 @@ a {
 
 .rh-m-block {
   display: block;
+}
+
+.rh-url {
+  word-break: break-word;
+}
+
+.rh-stack > * + * {
+  margin-top: 10px;
+}
+
+.rh-inline > * + * {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+/* dark mode hacks */
+[data-ogsc] .rh-masthead__brand,
+[data-ogsb] .rh-masthead__brand {
+  background-color: #151515 !important;
+}
+
+@media only screen and (max-width: 320px) {
+  .rh-masthead__block {
+    width: 100% !important;
+    display: block !important;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .rh-template-container {
+    max-width: 480px !important;
+    /*@editable*/ width:100% !important;
+  }
+
+  .rh-data-table tbody th {
+    width: auto !important;
+  }
+
+  .rh-data-table th,
+  .rh-data-table td {
+    font-size: 14px;
+  }
+
+  .rh-data-table.rh-m-bordered th,
+  .rh-data-table.rh-m-bordered td {
+    padding: 5px;
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+/*       .rh-masthead__content {
+    background-color: #151515 !important;
+  } */
+
+  body{
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+
+  .rh-template-container {
+    max-width: 600px !important;
+    /*@editable*/ width:100% !important;
+  }
+
+  .rh-masthead__block {
+    width: 33%;
+    max-width: 200px;
+  }
 }
