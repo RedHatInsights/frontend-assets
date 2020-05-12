@@ -3,16 +3,27 @@
   <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Red Hat Insights Custom Policies</title>
+  <title>Red Hat Insights</title>
   <style>
+    #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
+    body, table, td, p, a, li, blockquote{-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+    table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+    img{-ms-interpolation-mode:bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+
+    /* /\/\/\/\/\/\/\/\/ RESET STYLES /\/\/\/\/\/\/\/\/ */
+    img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
+    table{border-collapse:collapse !important;}
+
     /* Remove space around email design */
-    html, body {
+    html,
+    body {
       margin: 0 auto !important;
       padding: 0 !important;
       height: 100% !important;
       width: 100% !important;
-      background-color: #f5f5f5;
+      background-color: #fff;
     }
+
     /* Stop Outlook resizing small text */
     * {
       -ms-text-size-adjust: 100%;
@@ -32,46 +43,93 @@
       color: #fff;
     }
 
+    /* #rh-body-table td {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    } */
+
+    .rh-body-table,
+    .rh-body-cell {
+    	height:100% !important;
+      margin:0;
+      padding:0;
+      width:100% !important;
+    }
+
+    .rh-body-table {
+    	background-color: #f5f5f5;
+    	background-color: #fff;
+    }
+
     .rh-page {
       padding: 0 0 30px 0;
+      background: #efefef;
+    }
+
+    .rh-template-container {
+      padding: 0 0 30px 0;
+      width: 600px;
+    }
+
+    .rh-template-container,
+    .rh-template-container > tbody {
+    	background: #ededed;
     }
 
     .rh-head,
     .rh-body,
     .rh-footer {
       margin: 0;
-      background-color: #f5f5f5;
       mso-line-height-rule: exactly;
       font-family: arial;
       font-size: 16px;
       box-sizing: border-box;
-      background: #ededed;
     }
 
     .rh-body {
-      width: 560px;
       padding: 0 20px 20px 20px;
     }
 
+    .rh-body,
+    .rh-masthead,
+    .rh-content,
+    .rh-data-table,
+    .rh-head,
+    .rh-masthead {
+    	width: 100% !important;
+    }
+
     .rh-head {
-      width: 600px;
       padding: 0 0 20px 0;
     }
 
     .rh-footer {
-      padding: 10px 20px 0 20px;
+      padding: 10px 20px 30px 20px;
+    }
+
+    .rh-masthead__content {
+    	background-color: #090a0a !important;
+      background-image: url(https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/bg_masthead-hat.png);
+      background-size: cover;
     }
 
     .rh-masthead__subhead {
-      background-color: #282828;
-      padding: 20px; color: #ffffff;
+      background-color: #282828 !important;
+      padding: 20px;
+      color: #ffffff !important;
       font-size: 18px;
       text-align: center;
     }
 
+    .rh-masthead__block {
+    	width: 200px;
+    }
+
     .rh-masthead__brand {
-      padding: 20px 20px 20px 20px;
-      background-color: #000000;
+    	padding: 20px 20px 20px 20px;
+    	background-color: #151515 !important;
+      background-repeat: repeat;
+    	background-image: url(https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/bg_151515.jpg);
       text-align: center;
     }
 
@@ -100,7 +158,7 @@
       text-align: center;
       font-size: 28px;
       word-break:break-all;
-      color: #fff;
+      color: #ffffff !important;
       line-height: 1;
     }
 
@@ -108,7 +166,7 @@
       display: block;
       padding: 0 20px 40px 20px;
       word-break: break-all;
-      color: #ffffff;
+      color: #ffffff !important;
       line-height: 1;
       font-size: 14px;
     }
@@ -126,13 +184,23 @@
       color: #0066cc;
     }
 
+    .rh-content {
+    	background: #efefef;
+    }
+
+    .rh-content table {
+    	background: #fff;
+    }
+
     .rh-content tr {
-      background-color: #fff;
+      /* background-color: #fff; */
     }
 
     /* Content block */
     .rh-content__block {
+    	max-width: 100%;
       padding: 0 20px 20px 20px;
+      overflow: hidden;
     }
 
     .rh-content tr:first-child .rh-content__block {
@@ -159,7 +227,7 @@
       font-size: 0;
       line-height: 0;
       height: 20px;
-      background: #ededed;
+      background-color: #ffffff;
     }
 
     .rh-cta-link {
@@ -174,10 +242,6 @@
     .rh-cta-link a {
       color:#ffffff;
       text-decoration: none;
-    }
-
-    .rh-data-table {
-      width: 100%;
     }
 
     .rh-data-table thead th {
@@ -241,222 +305,244 @@
       display: block;
     }
 
+    .rh-url {
+    	word-break: break-word;
+    }
+
+    .rh-stack > * + * {
+    	margin-top: 10px;
+    }
+
+    .rh-inline > * + * {
+    	display: inline-block;
+    	margin-right: 5px;
+    }
+
+    /* dark mode hacks */
+    [data-ogsc] .rh-masthead__brand,
+    [data-ogsb] .rh-masthead__brand {
+      background-color: #151515 !important;
+    }
+
+    @media only screen and (max-width: 320px) {
+      .rh-masthead__block {
+        width: 100% !important;
+        display: block !important;
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      .rh-template-container {
+        max-width: 480px !important;
+        /*@editable*/ width:100% !important;
+      }
+
+      .rh-data-table tbody th {
+        width: auto !important;
+      }
+
+      .rh-data-table th,
+      .rh-data-table td {
+      	font-size: 14px;
+      }
+
+      .rh-data-table.rh-m-bordered th,
+      .rh-data-table.rh-m-bordered td {
+        padding: 5px;
+        text-align: left;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+/*       .rh-masthead__content {
+        background-color: #151515 !important;
+      } */
+
+      body{
+      	width: 100% !important;
+        min-width: 100% !important;
+      }
+
+      .rh-template-container {
+        max-width: 600px !important;
+        /*@editable*/ width:100% !important;
+      }
+
+      .rh-masthead__block {
+      	width: 33%;
+        max-width: 200px;
+      }
+    }
+
   </style>
 
   </head>
 
-  <!-- text-size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -->
-  <body width="100%" class="rh-body">
-    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
-      <tbody>
+  <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" class="rh-body">
+    <center>
+      <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" class="rh-body-table">
         <tr>
-          <td class="rh-page">
-            <!--Table within the larger table; contains email content (600px)-->
-            <table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="600">
-              <tbody>
-                <tr>
-                  <td class="rh-head">
-                    <table class="rh-masthead" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="600">
-                      <tbody>
-                        <tr>
-                          <!--Red Hat logo-->
-                          <td align="center" class="rh-masthead__brand">
-                            <a href="https://cloud.redhat.com/" target="_blank" class="rh-masthead__brand-link">
-                              <img src="https://cloud.redhat.com/apps/frontend-assets/email-assets/logo_insights.png" alt="Red Hat logo" width="152" height="60" class="rh-masthead__brand-img" />
-                            </a>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="rh-masthead__subhead">
-                            Daily policy summary - 15 Mar 20 15:32 UTC
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="rh-body">
-                    <table class="rh-content" role="presentation" border="0" cellpadding="0" cellspacing="0" width="560">
-                      <tbody>
-                        <tr>
-                          <td class="rh-content__block">
-                            Daily policy summary for <b>15 Mar 20</b> from Red Hat Insights. <b>{x} policies</b> triggered on <b>{y} systems</b>.
-                          </td>
-                        </tr>
-                        <tr class="rh-content__spacer">
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td class="rh-content__block rh-table-header">
-                            <table>
-                              <tr>
-                                <td colspan="2">
-                                  <b><a href="https://cloud.redhat.com/insights/inventory/82e59280-dae3-4b62-bcb3-45fea89730c9/">ocp311con.lab.msp.redhat.com</a></b>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <table cellpadding="2">
-                                    <tr>
-                                      <td valign="center">
-                                        <img src="https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/icon_tag.png" alt="total systems" width="16" height="16" />
-                                      </td>
-                                      <td>
-                                        ne-datacenter
-                                      </td>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="rh-content__block">
-                            <table width: 100%; class="rh-data-table rh-m-bordered">
-                              <thead>
-                                <tr>
-                                  <th>Policy name</th>
-                                  <th>Severity</th>
-                                  <th>Systems</th>
-                                  <th></th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>Policy name</td>
-                                  <td class="rh-color__red">High</td>
-                                  <td>22</td>
-                                  <td>
-                                    <a href="https://cloud.redhat.com/insights/policies" target="_blank">View</a>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>Policy name</td>
-                                  <td class="rh-color__orange">Medium</td>
-                                  <td>22</td>
-                                  <td>
-                                    <a href="https://cloud.redhat.com/insights/policies" target="_blank">View</a>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>Policy name</td>
-                                  <td class="rh-color__green">Low</td>
-                                  <td>22</td>
-                                  <td>
-                                    <a href="https://cloud.redhat.com/insights/policies" target="_blank">View</a>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                        </tr>
-                        <tr class="rh-content__spacer">
-                          <td></td>
-                        </tr>
-                        <tr>
-                          <td class="rh-content__block rh-table-header">
-                            <table>
-                              <tr>
-                                <td colspan="2">
-                                  <b><a href="https://cloud.redhat.com/insights/inventory/82e59280-dae3-4b62-bcb3-45fea89730c9/">ocp312con.lab.msp.redhat.com</a></b>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <table cellpadding="2">
-                                    <tr>
-                                      <td valign="center">
-                                        <img src="https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/icon_tag.png" alt="total systems" width="16" height="16" />
-                                      </td>
-                                      <td>
-                                        ne-datacenter
-                                      </td>
-                                    </tr>
-                                  </table>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="rh-content__block">
-                            <table width: 100%; class="rh-data-table rh-m-bordered">
-                              <thead>
-                                <tr>
-                                  <th>Policy name</th>
-                                  <th>Severity</th>
-                                  <th>Systems</th>
-                                  <th></th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td>Policy name</td>
-                                  <td class="rh-color__red">High</td>
-                                  <td>22</td>
-                                  <td>
-                                    <a href="https://cloud.redhat.com/insights/policies" target="_blank">View</a>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>Policy name</td>
-                                  <td class="rh-color__orange">Medium</td>
-                                  <td>22</td>
-                                  <td>
-                                    <a href="https://cloud.redhat.com/insights/policies" target="_blank">View</a>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td>Policy name</td>
-                                  <td class="rh-color__green">Low</td>
-                                  <td>22</td>
-                                  <td>
-                                    <a href="https://cloud.redhat.com/insights/policies" target="_blank">View</a>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td class="rh-content__block">
-                            <table align="center">
-                              <tr>
-                                <td class="rh-cta-link" align="center">
-                                  <a target="_blank" href="https://cloud.redhat.com/insights/policies">
-                                    <span>
-                                      Open Policies in Insights
-                                    </span>
-                                  </a>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="rh-footer">
-                    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="560">
-                      <tbody>
-                        <tr>
-                          <td class="rh-footer__text">
-                            This email was sent by Red Hat Insights |<a href="https://cloud.redhat.com/user-preferences/email" target="_blank">&nbsp;Manage email preferences</a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-              </tbody>
+          <td align="center" valign="top" class="rh-body-cell">
+            <table border="0" cellpadding="0" cellspacing="0" class="rh-template-container">
+
+              <tr>
+                <td class="rh-head">
+                  <table class="rh-masthead" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                      <!--Red Hat logo-->
+                      <td align="center" class="rh-masthead__brand" bgcolor="#151515">
+                        <a href="https://cloud.redhat.com/" target="_blank" class="rh-masthead__brand-link">
+                          <img src="https://cloud.redhat.com/apps/frontend-assets/email-assets/logo_insights.png" alt="Red Hat logo" width="152" height="60" class="rh-masthead__brand-img" />
+                        </a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="rh-masthead__subhead">
+                        Daily policy summary - 15 Mar 20 15:32 UTC
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="rh-body">
+                  <table class="rh-content" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                      <td class="rh-content__block">
+                        Daily policy summary for <b>15 Mar 20</b> from Red Hat Insights. <b>{x} policies</b> triggered on <b>{y} systems</b>.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="rh-content__spacer">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="rh-content__block">
+                        <div class="rh-stack">
+                          <a class="rh-url" href="https://cloud.redhat.com/insights/inventory/82e59280-dae3-4b62-bcb3-45fea89730c9/"><b>ocp311con.lab.msp.redhat.comasdfadsf</b></a>
+                          <div class="rh-inline">
+                            <img src="https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/icon_tag.png" alt="total systems" width="16" height="16" />
+                            <span>ne-datacenter</span>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="rh-content__block">
+                        <table width: 100%; class="rh-data-table rh-m-bordered">
+                          <thead>
+                            <tr>
+                              <th>Policy name</th>
+                              <th>Severity</th>
+                              <th>Systems</th>
+                              <th></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Policy name</td>
+                              <td class="rh-color__red">High</td>
+                              <td>22</td>
+                              <td>
+                                <a href="https://cloud.redhat.com/insights/policies" target="_blank">View</a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Policy name</td>
+                              <td class="rh-color__orange">Medium</td>
+                              <td>22</td>
+                              <td>
+                                <a href="https://cloud.redhat.com/insights/policies" target="_blank">View</a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Policy name</td>
+                              <td class="rh-color__green">Low</td>
+                              <td>22</td>
+                              <td>
+                                <a href="https://cloud.redhat.com/insights/policies" target="_blank">View</a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="rh-content__spacer">
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="rh-content__block">
+                        <div class="rh-stack">
+                          <a class="rh-url" href="https://cloud.redhat.com/insights/inventory/82e59280-dae3-4b62-bcb3-45fea89730c9/"><b>ocp312.con.lab.msp.redhat.com</b></a>
+                          <div class="rh-inline">
+                            <img src="https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/icon_tag.png" alt="total systems" width="16" height="16" />
+                            <span>ne-datacenter</span>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="rh-content__block">
+                        <table width: 100%; class="rh-data-table rh-m-bordered">
+                          <thead>
+                            <tr>
+                              <th>Policy name</th>
+                              <th>Severity</th>
+                              <th>Systems</th>
+                              <th></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Policy name</td>
+                              <td class="rh-color__red">High</td>
+                              <td>22</td>
+                              <td>
+                                <a href="https://cloud.redhat.com/insights/policies" target="_blank">View</a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Policy name</td>
+                              <td class="rh-color__orange">Medium</td>
+                              <td>22</td>
+                              <td>
+                                <a href="https://cloud.redhat.com/insights/policies" target="_blank">View</a>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Policy name</td>
+                              <td class="rh-color__green">Low</td>
+                              <td>22</td>
+                              <td>
+                                <a href="https://cloud.redhat.com/insights/policies" target="_blank">View</a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="rh-footer">
+                  <table role="presentation" border="0" align="center" cellpadding="0" cellspacing="0" width="100%">
+                    <tr>
+                      <td class="rh-footer__text">
+                        This email was sent by Red Hat Insights |<a href="https://cloud.redhat.com/user-preferences/email" target="_blank">&nbsp;Manage email preferences</a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
             </table>
           </td>
         </tr>
-      </tbody>
-    </table>
+      </table>
+    </center>
   </body>
+
 </html>

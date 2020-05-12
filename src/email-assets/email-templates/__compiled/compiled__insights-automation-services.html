@@ -1,141 +1,183 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" style="background-color:#f5f5f5;margin:0 auto !important;padding:0 !important;height:100% !important;width:100% !important;">
+<html xmlns="http://www.w3.org/1999/xhtml" style="background-color:#fff;margin:0 auto !important;padding:0 !important;height:100% !important;width:100% !important;">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red Hat Insights Automation Services</title>
+    <title>Red Hat Insights</title>
     <style type="text/css">
-      /* Remove space around email design */
+      /* Force Outlook to provide a "view in browser" message */
+           /* Prevent WebKit and Windows mobile changing default text sizes */
+           /* Remove spacing between tables in Outlook 2007 and up */
+           /* Allow smoother rendering of resized image in Internet Explorer */
+          /* /\/\/\/\/\/\/\/\/ RESET STYLES /\/\/\/\/\/\/\/\/ */
+          /* Remove space around email design */
           /* Stop Outlook resizing small text */
           /* Stop Outlook from adding extra spacing to tables */
           /* Better rendering method when resizing impages in Outlook IE */
+          /* #rh-body-table td {
+            overflow: hidden;
+            text-overflow: ellipsis;
+          } */
           /* Content block */
+          /* dark mode hacks */
+          @media only screen and (max-width: 320px) {
+            .rh-masthead__block {
+              width: 100% !important;
+              display: block !important;
+            }
+          }
+          @media only screen and (max-width: 480px) {
+            .rh-template-container {
+              max-width: 480px !important;
+              /*@editable*/ width:100% !important;
+            }
+            .rh-data-table tbody th {
+              width: auto !important;
+            }
+            .rh-data-table th,
+            .rh-data-table td {
+            	font-size: 14px;
+            }
+            .rh-data-table.rh-m-bordered th,
+            .rh-data-table.rh-m-bordered td {
+              padding: 5px;
+              text-align: left;
+            }
+          }
+          @media only screen and (max-width: 600px) {
+      /*       .rh-masthead__content {
+              background-color: #151515 !important;
+            } */
+            body{
+            	width: 100% !important;
+              min-width: 100% !important;
+            }
+            .rh-template-container {
+              max-width: 600px !important;
+              /*@editable*/ width:100% !important;
+            }
+            .rh-masthead__block {
+            	width: 33%;
+              max-width: 200px;
+            }
+          }
     </style>
   </head>
   <!-- text-size-adjust: none; -webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none; -->
-  <body width="100%" class="rh-body" style="-ms-text-size-adjust:100%;margin:0;background-color:#f5f5f5;mso-line-height-rule:exactly;font-family:arial;font-size:16px;box-sizing:border-box;background:#ededed;width:560px;padding:0 20px 20px 20px;margin:0 auto !important;padding:0 !important;height:100% !important;width:100% !important;">
-    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-      <tbody style="-ms-text-size-adjust:100%;">
+  <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" class="rh-body" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;background-color:#fff;margin:0;mso-line-height-rule:exactly;font-family:arial;font-size:16px;box-sizing:border-box;padding:0 20px 20px 20px;margin:0 auto !important;padding:0 !important;height:100% !important;width:100% !important;">
+    <center style="-ms-text-size-adjust:100%;">
+      <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" class="rh-body-table" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;margin:0;padding:0;background-color:#f5f5f5;background-color:#fff;border-collapse:collapse !important;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;height:100% !important;width:100% !important;">
         <tr style="-ms-text-size-adjust:100%;">
-          <td class="rh-page" style="-ms-text-size-adjust:100%;padding:0 0 30px 0;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-            <!--Table within the larger table; contains email content (600px)-->
-            <table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-              <tbody style="-ms-text-size-adjust:100%;">
-                <tr style="-ms-text-size-adjust:100%;">
-                  <td class="rh-head" style="-ms-text-size-adjust:100%;margin:0;background-color:#f5f5f5;mso-line-height-rule:exactly;font-family:arial;font-size:16px;box-sizing:border-box;background:#ededed;width:600px;padding:0 0 20px 0;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-                    <table class="rh-masthead" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-                      <tbody style="-ms-text-size-adjust:100%;">
-                        <tr style="-ms-text-size-adjust:100%;">
-                          <!--Red Hat logo-->
-                          <td align="center" class="rh-masthead__brand" style="-ms-text-size-adjust:100%;padding:20px 20px 20px 20px;background-color:#000000;text-align:center;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-                            <a href="https://cloud.redhat.com/" target="_blank" class="rh-masthead__brand-link" style="-ms-text-size-adjust:100%;text-decoration:none;color:#fff;display:block;text-align:center;">
-                              <img src="https://cloud.redhat.com/apps/frontend-assets/email-assets/logo_insights.png" alt="Red Hat logo" width="152" height="60" class="rh-masthead__brand-img" style="-ms-text-size-adjust:100%;-ms-interpolation-mode:bicubic;"/>
-                            </a>
-                          </td>
-                        </tr>
-                        <tr style="-ms-text-size-adjust:100%;">
-                          <td class="rh-masthead__subhead" style="-ms-text-size-adjust:100%;background-color:#282828;padding:20px;color:#ffffff;font-size:18px;text-align:center;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-                            Approval request #[Request ID]
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr style="-ms-text-size-adjust:100%;">
-                  <td class="rh-body" style="-ms-text-size-adjust:100%;margin:0;background-color:#f5f5f5;mso-line-height-rule:exactly;font-family:arial;font-size:16px;box-sizing:border-box;background:#ededed;width:560px;padding:0 20px 20px 20px;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-                    <table class="rh-content" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="560" style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-                      <tbody style="-ms-text-size-adjust:100%;">
-                        <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
-                          <td class="rh-content__block" style="-ms-text-size-adjust:100%;padding:0 20px 20px 20px;background-color:#fff;padding-top:20px;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-                            Hi {{user.first_name}},
-                          </td>
-                        </tr>
-                        <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
-                          <td class="rh-content__block" style="-ms-text-size-adjust:100%;padding:0 20px 20px 20px;background-color:#fff;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-                            The following Automation Services Catalog order requires your approval:
-                          </td>
-                        </tr>
-                        <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
-                          <td class="rh-content__block" style="-ms-text-size-adjust:100%;padding:0 20px 20px 20px;background-color:#fff;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-                            <table class="rh-data-table" style="-ms-text-size-adjust:100%;width:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-                              <thead style="-ms-text-size-adjust:100%;">
-                                <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
-                                  <th style="-ms-text-size-adjust:100%;font-weight:700;text-align:left;">Summary</th>
-                                  <td style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;"></td>
-                                </tr>
-                              </thead>
-                              <tbody style="-ms-text-size-adjust:100%;">
-                                <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
-                                  <th role="rowheader" scope="row" style="-ms-text-size-adjust:100%;font-weight:500;text-align:left;width:200px;">Ordered by:</th>
-                                  <td style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">[Orderer]</td>
-                                </tr>
-                                <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
-                                  <th role="rowheader" scope="row" style="-ms-text-size-adjust:100%;font-weight:500;text-align:left;width:200px;">Ordered #:</th>
-                                  <td style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">[Order ID]</td>
-                                </tr>
-                                <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
-                                  <th role="rowheader" scope="row" style="-ms-text-size-adjust:100%;font-weight:500;text-align:left;width:200px;">Ordered date:</th>
-                                  <td style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">[Order date]</td>
-                                </tr>
-                                <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
-                                  <th role="rowheader" scope="row" style="-ms-text-size-adjust:100%;font-weight:500;text-align:left;width:200px;">Ordered time:</th>
-                                  <td style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">[Order time]</td>
-                                </tr>
-                                <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
-                                  <th role="rowheader" scope="row" style="-ms-text-size-adjust:100%;font-weight:500;text-align:left;width:200px;">Product:</th>
-                                  <td style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">[Product item name]</td>
-                                </tr>
-                                <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
-                                  <th role="rowheader" scope="row" style="-ms-text-size-adjust:100%;font-weight:500;text-align:left;width:200px;">Portfolio:</th>
-                                  <td style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">[Portfolio name]</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                        </tr>
-                        <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
-                          <td class="rh-content__block" style="-ms-text-size-adjust:100%;padding:0 20px 20px 20px;background-color:#fff;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-                            <a href="https://cloud.redhat.com/" target="_blank" style="-ms-text-size-adjust:100%;text-decoration:none;color:#fff;color:#0066cc;">View more order details</a> (requires authentication)
-                          </td>
-                        </tr>
-                        <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
-                          <td class="rh-content__block" style="-ms-text-size-adjust:100%;padding:0 20px 20px 20px;background-color:#fff;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-                            <table align="center" style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-                              <tr style="-ms-text-size-adjust:100%;background-color:#fff;">
-                                <td class="rh-cta-link" align="center" style="-ms-text-size-adjust:100%;display:block;padding:10px 20px;background-color:#0066cc;border-radius:3px;text-decoration:none;font-weight:bold;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-                                  <a target="_blank" href="https://cloud.redhat.com/" style="-ms-text-size-adjust:100%;color:#fff;color:#0066cc;color:#ffffff;text-decoration:none;">
-                                    <span style="-ms-text-size-adjust:100%;">
-                                      Go to Insights
-                                    </span>
-                                  </a>
-                                </td>
-                              </tr>
-                            </table>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr style="-ms-text-size-adjust:100%;">
-                  <td class="rh-footer" style="-ms-text-size-adjust:100%;margin:0;background-color:#f5f5f5;mso-line-height-rule:exactly;font-family:arial;font-size:16px;box-sizing:border-box;background:#ededed;padding:10px 20px 0 20px;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-                    <table role="presentation" border="0" align="center" cellpadding="0" cellspacing="0" width="560" style="-ms-text-size-adjust:100%;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-                      <tbody style="-ms-text-size-adjust:100%;">
-                        <tr style="-ms-text-size-adjust:100%;">
-                          <td class="rh-footer__text" style="-ms-text-size-adjust:100%;font-size:14px;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
-                            This email was sent by Red Hat Insights |<a href="https://cloud.redhat.com/user-preferences/email" target="_blank" style="-ms-text-size-adjust:100%;text-decoration:none;color:#fff;color:#0066cc;">&nbsp;Manage email preferences</a>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-              </tbody>
+          <td align="center" valign="top" class="rh-body-cell" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;margin:0;padding:0;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;height:100% !important;width:100% !important;">
+            <table border="0" cellpadding="0" cellspacing="0" class="rh-template-container" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding:0 0 30px 0;width:600px;background:#ededed;border-collapse:collapse !important;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+              <tr style="-ms-text-size-adjust:100%;">
+                <td class="rh-head" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;margin:0;mso-line-height-rule:exactly;font-family:arial;font-size:16px;box-sizing:border-box;padding:0 0 20px 0;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;width:100% !important;">
+                  <table class="rh-masthead" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;width:100% !important;">
+                    <tr style="-ms-text-size-adjust:100%;">
+                      <!--Red Hat logo-->
+                      <td align="center" class="rh-masthead__brand" bgcolor="#151515" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding:20px 20px 20px 20px;background-repeat:repeat;background-image:url(https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/bg_151515.jpg);text-align:center;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;background-color:#151515 !important;">
+                        <a href="https://cloud.redhat.com/" target="_blank" class="rh-masthead__brand-link" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;text-decoration:none;color:#fff;display:block;text-align:center;">
+                          <img src="https://cloud.redhat.com/apps/frontend-assets/email-assets/logo_insights.png" alt="Red Hat logo" width="152" height="60" class="rh-masthead__brand-img" style="-ms-text-size-adjust:100%;border:0;height:auto;line-height:100%;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;"/>
+                        </a>
+                      </td>
+                    </tr>
+                    <tr style="-ms-text-size-adjust:100%;">
+                      <td class="rh-masthead__subhead" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;padding:20px;font-size:18px;text-align:center;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;background-color:#282828 !important;color:#ffffff !important;">
+                        Approval request #[Request ID]
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr style="-ms-text-size-adjust:100%;">
+                <td class="rh-body" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;margin:0;mso-line-height-rule:exactly;font-family:arial;font-size:16px;box-sizing:border-box;padding:0 20px 20px 20px;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;width:100% !important;">
+                  <table class="rh-content" role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;background:#efefef;border-collapse:collapse !important;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;width:100% !important;">
+                    <tr style="-ms-text-size-adjust:100%;">
+                      <td class="rh-content__block" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;max-width:100%;padding:0 20px 20px 20px;overflow:hidden;background-color:#fff;padding-top:20px;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                        Hi {{user.first_name}},
+                      </td>
+                    </tr>
+                    <tr style="-ms-text-size-adjust:100%;">
+                      <td class="rh-content__block" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;max-width:100%;padding:0 20px 20px 20px;overflow:hidden;background-color:#fff;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                        Here are your Insights statistics for the week of {{date|date:"F jS Y"}}.
+                      </td>
+                    </tr>
+                    <tr style="-ms-text-size-adjust:100%;">
+                      <td class="rh-content__block" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;max-width:100%;padding:0 20px 20px 20px;overflow:hidden;background-color:#fff;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                        <table class="rh-data-table" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;background:#fff;border-collapse:collapse !important;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;width:100% !important;">
+                          <thead style="-ms-text-size-adjust:100%;">
+                            <tr style="-ms-text-size-adjust:100%;">
+                              <th style="-ms-text-size-adjust:100%;font-weight:700;text-align:left;">Summary</th>
+                              <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;"></td>
+                            </tr>
+                          </thead>
+                          <tbody style="-ms-text-size-adjust:100%;">
+                            <tr style="-ms-text-size-adjust:100%;">
+                              <th role="rowheader" scope="row" style="-ms-text-size-adjust:100%;font-weight:500;text-align:left;width:200px;">Ordered by:</th>
+                              <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">[Orderer]</td>
+                            </tr>
+                            <tr style="-ms-text-size-adjust:100%;">
+                              <th role="rowheader" scope="row" style="-ms-text-size-adjust:100%;font-weight:500;text-align:left;width:200px;">Ordered #:</th>
+                              <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">[Order ID]</td>
+                            </tr>
+                            <tr style="-ms-text-size-adjust:100%;">
+                              <th role="rowheader" scope="row" style="-ms-text-size-adjust:100%;font-weight:500;text-align:left;width:200px;">Ordered date:</th>
+                              <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">[Order date]</td>
+                            </tr>
+                            <tr style="-ms-text-size-adjust:100%;">
+                              <th role="rowheader" scope="row" style="-ms-text-size-adjust:100%;font-weight:500;text-align:left;width:200px;">Ordered time:</th>
+                              <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">[Order time]</td>
+                            </tr>
+                            <tr style="-ms-text-size-adjust:100%;">
+                              <th role="rowheader" scope="row" style="-ms-text-size-adjust:100%;font-weight:500;text-align:left;width:200px;">Product:</th>
+                              <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">[Product item name]</td>
+                            </tr>
+                            <tr style="-ms-text-size-adjust:100%;">
+                              <th role="rowheader" scope="row" style="-ms-text-size-adjust:100%;font-weight:500;text-align:left;width:200px;">Portfolio:</th>
+                              <td style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">[Portfolio name]</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr style="-ms-text-size-adjust:100%;">
+                      <td class="rh-content__block" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;max-width:100%;padding:0 20px 20px 20px;overflow:hidden;background-color:#fff;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                        <a href="https://cloud.redhat.com/" target="_blank" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;text-decoration:none;color:#fff;color:#0066cc;">View more order details</a> (requires authentication)
+                      </td>
+                    </tr>
+                    <tr style="-ms-text-size-adjust:100%;">
+                      <td class="rh-content__block" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;max-width:100%;padding:0 20px 20px 20px;overflow:hidden;background-color:#fff;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                        <table align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;background:#fff;border-collapse:collapse !important;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                          <tr style="-ms-text-size-adjust:100%;">
+                            <td class="rh-cta-link" align="center" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;display:block;padding:10px 20px;background-color:#0066cc;border-radius:3px;text-decoration:none;font-weight:bold;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                              <a target="_blank" href="https://cloud.redhat.com/" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;color:#fff;color:#0066cc;color:#ffffff;text-decoration:none;">
+                                <span style="-ms-text-size-adjust:100%;">
+                                  Go to Insights
+                                </span>
+                              </a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr style="-ms-text-size-adjust:100%;">
+                <td class="rh-footer" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;margin:0;mso-line-height-rule:exactly;font-family:arial;font-size:16px;box-sizing:border-box;padding:10px 20px 30px 20px;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                  <table role="presentation" border="0" align="center" cellpadding="0" cellspacing="0" width="100%" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;border-collapse:collapse !important;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                    <tr style="-ms-text-size-adjust:100%;">
+                      <td class="rh-footer__text" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;mso-table-lspace:0pt;mso-table-rspace:0pt;font-size:14px;mso-table-lspace:0pt !important;mso-table-rspace:0pt !important;">
+                        This email was sent by Red Hat Insights |<a href="https://cloud.redhat.com/user-preferences/email" target="_blank" style="-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;text-decoration:none;color:#fff;color:#0066cc;">&nbsp;Manage email preferences</a>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
             </table>
           </td>
         </tr>
-      </tbody>
-    </table>
+      </table>
+    </center>
   </body>
 </html>
