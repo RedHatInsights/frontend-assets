@@ -1,3 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text&display=swap');
+
+/*     .rh-content__block {
+  font-family: 'Red Hat Text', sans-serif;
+} */
+
+.rh-content__block {
+  font-family: Helvetica, sans-serif;
+}
+
+.rh-masthead__content-title,
+.rh-masthead__metric-block-count,
+.rh-masthead__metric-block-text {
+  font-family: 'Red Hat Display', sans-serif;
+}
+
+body,
+.rh-data-table,
+.rh-masthead__subhead {
+  font-family: Helvetica, sans-serif;
+}
+
 #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
 body, table, td, p, a, li, blockquote{-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
 table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up */

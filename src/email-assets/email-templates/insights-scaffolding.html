@@ -5,374 +5,392 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Red Hat Insights</title>
   <style>
-    #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
-    body, table, td, p, a, li, blockquote{-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
-    table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up */
-    img{-ms-interpolation-mode:bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text&display=swap');
 
-    /* /\/\/\/\/\/\/\/\/ RESET STYLES /\/\/\/\/\/\/\/\/ */
-    img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
-    table{border-collapse:collapse !important;}
+/*     .rh-content__block {
+  font-family: 'Red Hat Text', sans-serif;
+} */
 
-    /* Remove space around email design */
-    html,
-    body {
-      margin: 0 auto !important;
-      padding: 0 !important;
-      height: 100% !important;
-      width: 100% !important;
-      background-color: #fff;
-    }
+.rh-content__block {
+  font-family: Helvetica, sans-serif;
+}
 
-    /* Stop Outlook resizing small text */
-    * {
-      -ms-text-size-adjust: 100%;
-    }
-    /* Stop Outlook from adding extra spacing to tables */
-    table, td {
-      mso-table-lspace: 0pt !important;
-      mso-table-rspace: 0pt !important;
-    }
-    /* Better rendering method when resizing impages in Outlook IE */
-    img {
-      -ms-interpolation-mode:bicubic;
-    }
+.rh-masthead__content-title,
+.rh-masthead__metric-block-count,
+.rh-masthead__metric-block-text {
+  font-family: 'Red Hat Display', sans-serif;
+}
 
-    a {
-      text-decoration: none;
-      color: #fff;
-    }
+body,
+.rh-data-table,
+.rh-masthead__subhead {
+  font-family: Helvetica, sans-serif;
+}
 
-    /* #rh-body-table td {
-      overflow: hidden;
-      text-overflow: ellipsis;
-    } */
+#outlook a{padding:0;} /* Force Outlook to provide a "view in browser" message */
+body, table, td, p, a, li, blockquote{-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+img{-ms-interpolation-mode:bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
 
-    .rh-body-table,
-    .rh-body-cell {
-    	height:100% !important;
-      margin:0;
-      padding:0;
-      width:100% !important;
-    }
+/* /\/\/\/\/\/\/\/\/ RESET STYLES /\/\/\/\/\/\/\/\/ */
+img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
+table{border-collapse:collapse !important;}
 
-    .rh-body-table {
-    	background-color: #f5f5f5;
-    	background-color: #fff;
-    }
+/* Remove space around email design */
+html,
+body {
+  margin: 0 auto !important;
+  padding: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+  background-color: #fff;
+}
 
-    .rh-page {
-      padding: 0 0 30px 0;
-      background: #efefef;
-    }
+/* Stop Outlook resizing small text */
+* {
+  -ms-text-size-adjust: 100%;
+}
+/* Stop Outlook from adding extra spacing to tables */
+table, td {
+  mso-table-lspace: 0pt !important;
+  mso-table-rspace: 0pt !important;
+}
+/* Better rendering method when resizing impages in Outlook IE */
+img {
+  -ms-interpolation-mode:bicubic;
+}
 
-    .rh-template-container {
-      padding: 0 0 30px 0;
-      width: 600px;
-    }
+a {
+  text-decoration: none;
+  color: #fff;
+}
 
-    .rh-template-container,
-    .rh-template-container > tbody {
-    	background: #ededed;
-    }
+.rh-body-table,
+.rh-body-cell {
+  height:100% !important;
+  margin:0;
+  padding:0;
+  width:100% !important;
+}
 
-    .rh-head,
-    .rh-body,
-    .rh-footer {
-      margin: 0;
-      mso-line-height-rule: exactly;
-      font-family: arial;
-      font-size: 16px;
-      box-sizing: border-box;
-    }
+.rh-body-table {
+  background-color: #f5f5f5;
+  background-color: #fff;
+}
 
-    .rh-body {
-      padding: 0 20px 20px 20px;
-    }
+.rh-page {
+  padding: 0 0 30px 0;
+  background: #efefef;
+}
 
-    .rh-body,
-    .rh-masthead,
-    .rh-content,
-    .rh-data-table,
-    .rh-head,
-    .rh-masthead {
-    	width: 100% !important;
-    }
+.rh-template-container {
+  padding: 0 0 30px 0;
+  width: 600px;
+}
 
-    .rh-head {
-      padding: 0 0 20px 0;
-    }
+.rh-template-container,
+.rh-template-container > tbody {
+  background: #ededed;
+}
 
-    .rh-footer {
-      padding: 10px 20px 30px 20px;
-    }
+.rh-head,
+.rh-body,
+.rh-footer {
+  margin: 0;
+  mso-line-height-rule: exactly;
+  font-family: arial;
+  font-size: 16px;
+  box-sizing: border-box;
+}
 
-    .rh-masthead__content {
-    	background-color: #090a0a !important;
-      background-image: url(https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/bg_masthead-hat.png);
-      background-size: cover;
-    }
+.rh-body {
+  padding: 0 20px 20px 20px;
+}
 
-    .rh-masthead__subhead {
-      background-color: #282828 !important;
-      padding: 20px;
-      color: #ffffff !important;
-      font-size: 18px;
-      text-align: center;
-    }
+.rh-body,
+.rh-masthead,
+.rh-content,
+.rh-data-table,
+.rh-head,
+.rh-masthead {
+  width: 100% !important;
+}
 
-    .rh-masthead__block {
-    	width: 200px;
-    }
+.rh-head {
+  padding: 0 0 20px 0;
+}
 
-    .rh-masthead__brand {
-    	padding: 20px 20px 20px 20px;
-    	background-color: #151515 !important;
-      background-repeat: repeat;
-    	background-image: url(https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/bg_151515.jpg);
-      text-align: center;
-    }
+.rh-footer {
+  padding: 10px 20px 30px 20px;
+}
 
-    .rh-masthead__brand-link {
-      display: block;
-      text-align: center;
-    }
+.rh-masthead__content {
+  background-color: #090a0a !important;
+  background-image: url(https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/bg_masthead-hat.png);
+  background-size: cover;
+}
 
-    .rh-masthead__content {
-      background-color: #151515;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
+.rh-masthead__subhead {
+  background-color: #282828 !important;
+  padding: 20px;
+  color: #ffffff !important;
+  font-size: 18px;
+  text-align: center;
+}
 
-    .rh-masthead__content-title {
-      padding: 20px 20px 20px 20px;
-      margin: 0 0 10px 0;
-      color: #ffffff;
-      font-size: 18px;
-      position: relative;
-    }
+.rh-masthead__block {
+  width: 200px;
+}
 
-    .rh-masthead__metric-block-count {
-      display: block;
-      padding-bottom: 10px;
-      text-align: center;
-      font-size: 28px;
-      word-break:break-all;
-      color: #ffffff !important;
-      line-height: 1;
-    }
+.rh-masthead__brand {
+  padding: 20px 20px 20px 20px;
+  background-color: #151515 !important;
+  background-repeat: repeat;
+  background-image: url(https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/bg_151515.jpg);
+  text-align: center;
+}
 
-    .rh-masthead__metric-block-text {
-      display: block;
-      padding: 0 20px 40px 20px;
-      word-break: break-all;
-      color: #ffffff !important;
-      line-height: 1;
-      font-size: 14px;
-    }
+.rh-masthead__brand-link {
+  display: block;
+  text-align: center;
+}
 
-    .rh-masthead__metric-block-icon {
-      padding: 0 0 20px;
-      display: block;
-    }
+.rh-masthead__content {
+  background-color: #151515;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
-    .rh-content + .rh-content {
-      padding: 0 0 20px 0;
-    }
+.rh-masthead__content-title {
+  padding: 20px 20px 20px 20px;
+  margin: 0 0 10px 0;
+  color: #ffffff;
+  font-size: 18px;
+  position: relative;
+}
 
-    .rh-content a {
-      color: #0066cc;
-    }
+.rh-masthead__metric-block-count {
+  display: block;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 28px;
+  word-break:break-all;
+  color: #ffffff !important;
+  line-height: 1;
+}
 
-    .rh-content {
-    	background: #efefef;
-    }
+.rh-masthead__metric-block-text {
+  display: block;
+  padding: 0 20px 40px 20px;
+  word-break: break-all;
+  color: #ffffff !important;
+  line-height: 1;
+  font-size: 14px;
+}
 
-    .rh-content table {
-    	background: #fff;
-    }
+.rh-masthead__metric-block-icon {
+  padding: 0 0 20px;
+  display: block;
+}
 
-    .rh-content tr {
-      /* background-color: #fff; */
-    }
+.rh-content + .rh-content {
+  padding: 0 0 20px 0;
+}
 
-    /* Content block */
-    .rh-content__block {
-    	max-width: 100%;
-      padding: 0 20px 20px 20px;
-      overflow: hidden;
-    }
+.rh-content a {
+  color: #0066cc;
+}
 
-    .rh-content tr:first-child .rh-content__block {
-      padding-top: 20px;
-    }
+.rh-content {
+  background: #efefef;
+}
 
-    .rh-content .rh-content__block {
-      background-color: #fff;
-    }
+.rh-content table {
+  background: #fff;
+}
 
-    .rh-content__block-title {
-      font-weight: bold;
-    }
+.rh-content tr {
+  /* background-color: #fff; */
+}
 
-    .rh-footer__text {
-      font-size: 14px;
-    }
+/* Content block */
+.rh-content__block {
+  max-width: 100%;
+  padding: 0 20px 20px 20px;
+  overflow: hidden;
+}
 
-    .rh-footer__text a {
-      color: #0066cc;
-    }
+.rh-content tr:first-child .rh-content__block {
+  padding-top: 20px;
+}
 
-    .rh-content__spacer {
-      font-size: 0;
-      line-height: 0;
-      height: 20px;
-      background-color: #ffffff;
-    }
+.rh-content .rh-content__block {
+  background-color: #fff;
+}
 
-    .rh-cta-link {
-      display:block;
-      padding: 10px 20px;
-      background-color: #0066cc;
-      border-radius: 3px;
-      text-decoration:none;
-      font-weight:bold;
-    }
+.rh-content__block-title {
+  font-weight: bold;
+}
 
-    .rh-cta-link a {
-      color:#ffffff;
-      text-decoration: none;
-    }
+.rh-footer__text {
+  font-size: 14px;
+}
 
-    .rh-data-table thead th {
-      font-weight: 700;
-      text-align: left;
-    }
+.rh-footer__text a {
+  color: #0066cc;
+}
 
-    .rh-data-table tbody th {
-      font-weight: 500;
-      text-align: left;
-      width: 200px;
-    }
+.rh-content__spacer {
+  font-size: 0;
+  line-height: 0;
+  height: 20px;
+  background-color: #ffffff;
+}
 
-    .rh-data-table.rh-m-bordered th {
-      padding: 10px;
-      text-align: left;
-      font-size: 14px;
-      font-weight: 500;
-      text-transform: uppercase;
-      background-color: #bee1f4;
-    }
+.rh-cta-link {
+  display:block;
+  padding: 10px 20px;
+  background-color: #0066cc;
+  border-radius: 3px;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-    .rh-data-table.rh-m-bordered td {
-      padding: 10px;
-      text-align: left;
-    }
+.rh-cta-link a {
+  color:#ffffff;
+  text-decoration: none;
+}
 
-    .rh-data-table.rh-m-bordered {
-      border-collapse: collapse;
-    }
+.rh-data-table thead th {
+  font-weight: 700;
+  text-align: left;
+}
 
-    .rh-table-header {
-      text-align: left;
-      padding-bottom: 0;
-    }
+.rh-data-table tbody th {
+  font-weight: 500;
+  text-align: left;
+  width: 200px;
+}
 
-    .rh-m-bordered th,
-    .rh-m-bordered td {
-      border-width: 1px;
-      border-color: #b8bbbe;
-      border-style: solid;
-    }
+.rh-data-table.rh-m-bordered th {
+  padding: 10px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: #bee1f4;
+}
 
-    .rh-m-bordered tr:nth-child(even) {
-      background-color: #fafafa;
-    }
+.rh-data-table.rh-m-bordered td {
+  padding: 10px;
+  text-align: left;
+}
 
-    .rh-color__red {
-      color: #a30000;
-    }
+.rh-data-table.rh-m-bordered {
+  border-collapse: collapse;
+}
 
-    .rh-color__orange {
-      color: #ec7a08;
-    }
+.rh-table-header {
+  text-align: left;
+  padding-bottom: 0;
+}
 
-    .rh-color__green {
-      color: #486b00;
-    }
+.rh-m-bordered th,
+.rh-m-bordered td {
+  border-width: 1px;
+  border-color: #b8bbbe;
+  border-style: solid;
+}
 
-    .rh-m-block {
-      display: block;
-    }
+.rh-m-bordered tr:nth-child(even) {
+  background-color: #fafafa;
+}
 
-    .rh-url {
-    	word-break: break-word;
-    }
+.rh-color__red {
+  color: #a30000;
+}
 
-    .rh-stack > * + * {
-    	margin-top: 10px;
-    }
+.rh-color__orange {
+  color: #ec7a08;
+}
 
-    .rh-inline > * + * {
-    	display: inline-block;
-    	margin-right: 5px;
-    }
+.rh-color__green {
+  color: #486b00;
+}
 
-    /* dark mode hacks */
-    [data-ogsc] .rh-masthead__brand,
-    [data-ogsb] .rh-masthead__brand {
-      background-color: #151515 !important;
-    }
+.rh-m-block {
+  display: block;
+}
 
-    @media only screen and (max-width: 320px) {
-      .rh-masthead__block {
-        width: 100% !important;
-        display: block !important;
-      }
-    }
+.rh-url {
+  word-break: break-word;
+}
 
-    @media only screen and (max-width: 480px) {
-      .rh-template-container {
-        max-width: 480px !important;
-        /*@editable*/ width:100% !important;
-      }
+.rh-stack > * + * {
+  margin-top: 10px;
+}
 
-      .rh-data-table tbody th {
-        width: auto !important;
-      }
+.rh-inline > * + * {
+  display: inline-block;
+  margin-right: 5px;
+}
 
-      .rh-data-table th,
-      .rh-data-table td {
-      	font-size: 14px;
-      }
+/* dark mode hacks */
+[data-ogsc] .rh-masthead__brand,
+[data-ogsb] .rh-masthead__brand {
+  background-color: #151515 !important;
+}
 
-      .rh-data-table.rh-m-bordered th,
-      .rh-data-table.rh-m-bordered td {
-        padding: 5px;
-        text-align: left;
-      }
-    }
+@media only screen and (max-width: 320px) {
+  .rh-masthead__block {
+    width: 100% !important;
+    display: block !important;
+  }
+}
 
-    @media only screen and (max-width: 600px) {
+@media only screen and (max-width: 480px) {
+  .rh-template-container {
+    max-width: 480px !important;
+    /*@editable*/ width:100% !important;
+  }
+
+  .rh-data-table tbody th {
+    width: auto !important;
+  }
+
+  .rh-data-table th,
+  .rh-data-table td {
+    font-size: 14px;
+  }
+
+  .rh-data-table.rh-m-bordered th,
+  .rh-data-table.rh-m-bordered td {
+    padding: 5px;
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 600px) {
 /*       .rh-masthead__content {
-        background-color: #151515 !important;
-      } */
+    background-color: #151515 !important;
+  } */
 
-      body{
-      	width: 100% !important;
-        min-width: 100% !important;
-      }
+  body{
+    width: 100% !important;
+    min-width: 100% !important;
+  }
 
-      .rh-template-container {
-        max-width: 600px !important;
-        /*@editable*/ width:100% !important;
-      }
+  .rh-template-container {
+    max-width: 600px !important;
+    /*@editable*/ width:100% !important;
+  }
 
-      .rh-masthead__block {
-      	width: 33%;
-        max-width: 200px;
-      }
-    }
+  .rh-masthead__block {
+    width: 33%;
+    max-width: 200px;
+  }
+}
 
   </style>
 
