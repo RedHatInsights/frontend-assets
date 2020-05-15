@@ -27,7 +27,7 @@
     table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up */
     img{-ms-interpolation-mode:bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
 
-    /* /\/\/\/\/\/\/\/\/ RESET STYLES /\/\/\/\/\/\/\/\/ */
+    /* reset styles */
     img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
     table{border-collapse:collapse !important;}
 
@@ -99,7 +99,8 @@
     .rh-masthead__subhead h2,
     .rh-masthead__subhead h3,
     .rh-masthead__subhead h4 {
-    	font-weight: 400;
+      font-weight: 400;
+      line-height: 1;
     }
 
     .rh-body-table,
@@ -250,12 +251,12 @@
     /* Content block */
     .rh-content__block {
       max-width: 100%;
-      padding: 0 20px 20px 20px;
+      padding: 20px 20px 20px 20px;
       overflow: hidden;
     }
 
-    .rh-content tr:first-child .rh-content__block {
-      padding-top: 20px;
+    .rh-content tr + tr .rh-content__block {
+      padding-top: 0;
     }
 
     .rh-content .rh-content__block {
@@ -371,6 +372,9 @@
 
     .rh-icon {
       display: inline-block;
+      width: 16px;
+      height: 16px;
+      line-height: 1;
     }
 
     .rh-inline > * + * {
@@ -414,10 +418,6 @@
     }
 
     @media only screen and (max-width: 600px) {
-    /*       .rh-masthead__content {
-        background-color: #151515 !important;
-      } */
-
       body{
         width: 100% !important;
         min-width: 100% !important;
@@ -485,7 +485,7 @@
                         <div class="rh-stack">
                           <a class="rh-url" href="https://cloud.redhat.com/insights/inventory/82e59280-dae3-4b62-bcb3-45fea89730c9/"><b>ocp311con.lab.msp.redhat.com</b></a>
                           <div class="rh-inline">
-                            <img src="https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/icon_tag.png" alt="total systems" width="16" height="16" />
+                            <img class="rh-icon" src="https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/icon_tag.png" alt="total systems" width="16" height="16" />
                             <span>ne-datacenter</span>
                           </div>
                         </div>
@@ -546,7 +546,7 @@
                         <div class="rh-stack">
                           <a class="rh-url" href="https://cloud.redhat.com/insights/inventory/82e59280-dae3-4b62-bcb3-45fea89730c9/"><b>ocp311con.lab.msp.redhat.com</b></a>
                           <div class="rh-inline">
-                            <img src="https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/icon_tag.png" alt="total systems" width="16" height="16" />
+                            <img class="rh-icon" src="https://raw.githubusercontent.com/RedHatInsights/frontend-assets/master/src/email-assets/icon_tag.png" alt="total systems" width="16" height="16" />
                             <span>ne-datacenter</span>
                           </div>
                         </div>
