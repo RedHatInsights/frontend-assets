@@ -23,6 +23,7 @@ img{-ms-interpolation-mode:bicubic;} /* Allow smoother rendering of resized imag
 /* reset styles */
 img{border:0; height:auto; line-height:100%; outline:none; text-decoration:none;}
 table{border-collapse:collapse !important;}
+a{text-decoration: none !important;}
 
 /* Remove space around email design */
 html,
