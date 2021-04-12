@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024px" height="761px" viewBox="0 0 1024 761" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>kafkatour2step1</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="109" height="36"></rect>
+        <filter x="-0.5%" y="-1.4%" width="100.9%" height="102.8%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="-1" dy="0" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.941176471   0 0 0 0 0.941176471   0 0 0 0 0.941176471  0 0 0 1 0" type="matrix" in="shadowInnerInner1" result="shadowMatrixInner1"></feColorMatrix>
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner2"></feOffset>
+            <feComposite in="shadowOffsetInner2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner2"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.941176471   0 0 0 0 0.941176471   0 0 0 0 0.941176471  0 0 0 1 0" type="matrix" in="shadowInnerInner2" result="shadowMatrixInner2"></feColorMatrix>
+            <feOffset dx="1" dy="0" in="SourceAlpha" result="shadowOffsetInner3"></feOffset>
+            <feComposite in="shadowOffsetInner3" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner3"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.941176471   0 0 0 0 0.941176471   0 0 0 0 0.941176471  0 0 0 1 0" type="matrix" in="shadowInnerInner3" result="shadowMatrixInner3"></feColorMatrix>
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetInner4"></feOffset>
+            <feComposite in="shadowOffsetInner4" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner4"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.541176471   0 0 0 0 0.552941176   0 0 0 0 0.564705882  0 0 0 1 0" type="matrix" in="shadowInnerInner4" result="shadowMatrixInner4"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner2"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner3"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner4"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-3" x="0" y="0" width="170" height="36"></rect>
+        <filter x="-0.3%" y="-1.4%" width="100.6%" height="102.8%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="-1" dy="0" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.941176471   0 0 0 0 0.941176471   0 0 0 0 0.941176471  0 0 0 1 0" type="matrix" in="shadowInnerInner1" result="shadowMatrixInner1"></feColorMatrix>
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner2"></feOffset>
+            <feComposite in="shadowOffsetInner2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner2"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.941176471   0 0 0 0 0.941176471   0 0 0 0 0.941176471  0 0 0 1 0" type="matrix" in="shadowInnerInner2" result="shadowMatrixInner2"></feColorMatrix>
+            <feOffset dx="1" dy="0" in="SourceAlpha" result="shadowOffsetInner3"></feOffset>
+            <feComposite in="shadowOffsetInner3" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner3"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.941176471   0 0 0 0 0.941176471   0 0 0 0 0.941176471  0 0 0 1 0" type="matrix" in="shadowInnerInner3" result="shadowMatrixInner3"></feColorMatrix>
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetInner4"></feOffset>
+            <feComposite in="shadowOffsetInner4" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner4"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.541176471   0 0 0 0 0.552941176   0 0 0 0 0.564705882  0 0 0 1 0" type="matrix" in="shadowInnerInner4" result="shadowMatrixInner4"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner2"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner3"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner4"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-5" x="0" y="0" width="40" height="36"></rect>
+        <filter x="-1.2%" y="-1.4%" width="102.5%" height="102.8%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="-1" dy="0" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.941176471   0 0 0 0 0.941176471   0 0 0 0 0.941176471  0 0 0 1 0" type="matrix" in="shadowInnerInner1" result="shadowMatrixInner1"></feColorMatrix>
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner2"></feOffset>
+            <feComposite in="shadowOffsetInner2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner2"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.941176471   0 0 0 0 0.941176471   0 0 0 0 0.941176471  0 0 0 1 0" type="matrix" in="shadowInnerInner2" result="shadowMatrixInner2"></feColorMatrix>
+            <feOffset dx="1" dy="0" in="SourceAlpha" result="shadowOffsetInner3"></feOffset>
+            <feComposite in="shadowOffsetInner3" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner3"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.941176471   0 0 0 0 0.941176471   0 0 0 0 0.941176471  0 0 0 1 0" type="matrix" in="shadowInnerInner3" result="shadowMatrixInner3"></feColorMatrix>
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetInner4"></feOffset>
+            <feComposite in="shadowOffsetInner4" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner4"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.541176471   0 0 0 0 0.552941176   0 0 0 0 0.564705882  0 0 0 1 0" type="matrix" in="shadowInnerInner4" result="shadowMatrixInner4"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner2"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner3"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner4"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-7" x="0" y="0" width="1210" height="43.0243902"></rect>
+        <filter x="-0.0%" y="-1.2%" width="100.1%" height="102.3%" filterUnits="objectBoundingBox" id="filter-8">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.823529412   0 0 0 0 0.823529412   0 0 0 0 0.823529412  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <filter id="filter-9">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="0 0 0 0 0.823529 0 0 0 0 0.823529 0 0 0 0 0.823529 0 0 0 1.000000 0"></feColorMatrix>
+        </filter>
+        <filter x="-0.2%" y="-4.2%" width="100.4%" height="108.3%" filterUnits="objectBoundingBox" id="filter-10">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0.823529412   0 0 0 0 0.823529412   0 0 0 0 0.823529412  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-0.2%" y="-4.2%" width="100.4%" height="108.3%" filterUnits="objectBoundingBox" id="filter-11">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0.823529412   0 0 0 0 0.823529412   0 0 0 0 0.823529412  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-0.2%" y="-4.2%" width="100.4%" height="108.3%" filterUnits="objectBoundingBox" id="filter-12">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0.823529412   0 0 0 0 0.823529412   0 0 0 0 0.823529412  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-0.2%" y="-4.2%" width="100.4%" height="108.3%" filterUnits="objectBoundingBox" id="filter-13">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0.823529412   0 0 0 0 0.823529412   0 0 0 0 0.823529412  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-0.2%" y="-4.2%" width="100.4%" height="108.3%" filterUnits="objectBoundingBox" id="filter-14">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0.823529412   0 0 0 0 0.823529412   0 0 0 0 0.823529412  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-0.2%" y="-4.2%" width="100.4%" height="108.3%" filterUnits="objectBoundingBox" id="filter-15">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feColorMatrix values="0 0 0 0 0.823529412   0 0 0 0 0.823529412   0 0 0 0 0.823529412  0 0 0 1 0" type="matrix" in="shadowOffsetOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-16" x="0" y="0" width="1210" height="60"></rect>
+        <filter x="-0.5%" y="-12.5%" width="100.9%" height="118.3%" filterUnits="objectBoundingBox" id="filter-17">
+            <feMorphology radius="0.5" operator="erode" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="-2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-18" x="0" y="0" width="1210" height="60"></rect>
+        <filter x="-0.5%" y="-5.8%" width="100.9%" height="118.3%" filterUnits="objectBoundingBox" id="filter-19">
+            <feMorphology radius="0.5" operator="erode" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.16 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-20" x="0" y="0" width="24" height="948"></rect>
+        <filter x="-100.0%" y="-1.3%" width="233.3%" height="102.5%" filterUnits="objectBoundingBox" id="filter-21">
+            <feMorphology radius="4" operator="erode" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="-12" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.18 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <rect id="path-22" x="0" y="0" width="599" height="40"></rect>
+        <filter x="-0.1%" y="-1.2%" width="100.2%" height="102.5%" filterUnits="objectBoundingBox" id="filter-23">
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.823529412   0 0 0 0 0.823529412   0 0 0 0 0.823529412  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <rect id="path-24" x="0" y="0" width="40" height="36"></rect>
+        <filter x="-1.2%" y="-1.4%" width="102.5%" height="102.8%" filterUnits="objectBoundingBox" id="filter-25">
+            <feOffset dx="-1" dy="0" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.941176471   0 0 0 0 0.941176471   0 0 0 0 0.941176471  0 0 0 1 0" type="matrix" in="shadowInnerInner1" result="shadowMatrixInner1"></feColorMatrix>
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner2"></feOffset>
+            <feComposite in="shadowOffsetInner2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner2"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.941176471   0 0 0 0 0.941176471   0 0 0 0 0.941176471  0 0 0 1 0" type="matrix" in="shadowInnerInner2" result="shadowMatrixInner2"></feColorMatrix>
+            <feOffset dx="1" dy="0" in="SourceAlpha" result="shadowOffsetInner3"></feOffset>
+            <feComposite in="shadowOffsetInner3" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner3"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.941176471   0 0 0 0 0.941176471   0 0 0 0 0.941176471  0 0 0 1 0" type="matrix" in="shadowInnerInner3" result="shadowMatrixInner3"></feColorMatrix>
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetInner4"></feOffset>
+            <feComposite in="shadowOffsetInner4" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner4"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.541176471   0 0 0 0 0.552941176   0 0 0 0 0.564705882  0 0 0 1 0" type="matrix" in="shadowInnerInner4" result="shadowMatrixInner4"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner2"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner3"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner4"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-26" x="0" y="0" width="486" height="36"></rect>
+        <filter x="-0.1%" y="-1.4%" width="100.2%" height="102.8%" filterUnits="objectBoundingBox" id="filter-27">
+            <feOffset dx="-1" dy="0" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.941176471   0 0 0 0 0.941176471   0 0 0 0 0.941176471  0 0 0 1 0" type="matrix" in="shadowInnerInner1" result="shadowMatrixInner1"></feColorMatrix>
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner2"></feOffset>
+            <feComposite in="shadowOffsetInner2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner2"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.941176471   0 0 0 0 0.941176471   0 0 0 0 0.941176471  0 0 0 1 0" type="matrix" in="shadowInnerInner2" result="shadowMatrixInner2"></feColorMatrix>
+            <feOffset dx="1" dy="0" in="SourceAlpha" result="shadowOffsetInner3"></feOffset>
+            <feComposite in="shadowOffsetInner3" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner3"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.941176471   0 0 0 0 0.941176471   0 0 0 0 0.941176471  0 0 0 1 0" type="matrix" in="shadowInnerInner3" result="shadowMatrixInner3"></feColorMatrix>
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetInner4"></feOffset>
+            <feComposite in="shadowOffsetInner4" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner4"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.541176471   0 0 0 0 0.552941176   0 0 0 0 0.564705882  0 0 0 1 0" type="matrix" in="shadowInnerInner4" result="shadowMatrixInner4"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner2"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner3"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner4"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-28" x="0" y="0" width="40" height="36"></rect>
+        <filter x="-1.2%" y="-1.4%" width="102.5%" height="102.8%" filterUnits="objectBoundingBox" id="filter-29">
+            <feOffset dx="-1" dy="0" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.941176471   0 0 0 0 0.941176471   0 0 0 0 0.941176471  0 0 0 1 0" type="matrix" in="shadowInnerInner1" result="shadowMatrixInner1"></feColorMatrix>
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner2"></feOffset>
+            <feComposite in="shadowOffsetInner2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner2"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.941176471   0 0 0 0 0.941176471   0 0 0 0 0.941176471  0 0 0 1 0" type="matrix" in="shadowInnerInner2" result="shadowMatrixInner2"></feColorMatrix>
+            <feOffset dx="1" dy="0" in="SourceAlpha" result="shadowOffsetInner3"></feOffset>
+            <feComposite in="shadowOffsetInner3" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner3"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.941176471   0 0 0 0 0.941176471   0 0 0 0 0.941176471  0 0 0 1 0" type="matrix" in="shadowInnerInner3" result="shadowMatrixInner3"></feColorMatrix>
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetInner4"></feOffset>
+            <feComposite in="shadowOffsetInner4" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner4"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.541176471   0 0 0 0 0.552941176   0 0 0 0 0.564705882  0 0 0 1 0" type="matrix" in="shadowInnerInner4" result="shadowMatrixInner4"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner2"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner3"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner4"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-30" x="0" y="0" width="486" height="36"></rect>
+        <filter x="-0.1%" y="-1.4%" width="100.2%" height="102.8%" filterUnits="objectBoundingBox" id="filter-31">
+            <feOffset dx="-1" dy="0" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.941176471   0 0 0 0 0.941176471   0 0 0 0 0.941176471  0 0 0 1 0" type="matrix" in="shadowInnerInner1" result="shadowMatrixInner1"></feColorMatrix>
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetInner2"></feOffset>
+            <feComposite in="shadowOffsetInner2" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner2"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.941176471   0 0 0 0 0.941176471   0 0 0 0 0.941176471  0 0 0 1 0" type="matrix" in="shadowInnerInner2" result="shadowMatrixInner2"></feColorMatrix>
+            <feOffset dx="1" dy="0" in="SourceAlpha" result="shadowOffsetInner3"></feOffset>
+            <feComposite in="shadowOffsetInner3" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner3"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.941176471   0 0 0 0 0.941176471   0 0 0 0 0.941176471  0 0 0 1 0" type="matrix" in="shadowInnerInner3" result="shadowMatrixInner3"></feColorMatrix>
+            <feOffset dx="0" dy="-1" in="SourceAlpha" result="shadowOffsetInner4"></feOffset>
+            <feComposite in="shadowOffsetInner4" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner4"></feComposite>
+            <feColorMatrix values="0 0 0 0 0.541176471   0 0 0 0 0.552941176   0 0 0 0 0.564705882  0 0 0 1 0" type="matrix" in="shadowInnerInner4" result="shadowMatrixInner4"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixInner1"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner2"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner3"></feMergeNode>
+                <feMergeNode in="shadowMatrixInner4"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="kafkatour2step1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#FFFFFF" x="0" y="0" width="1024" height="761"></rect>
+        <g id="Group-7" transform="translate(0.000000, -82.000000)">
+            <g id="Group-65" transform="translate(0.000000, 160.000000)">
+                <g id="Group" transform="translate(0.000000, 0.000000)" fill="#FFFFFF">
+                    <g id="Toolbar-/-Top-background" transform="translate(0.000000, 0.000000)">
+                        <rect id="Rectangle" x="0" y="0" width="1210" height="68"></rect>
+                    </g>
+                </g>
+                <g id="Group-3" transform="translate(1006.000000, 16.000000)" fill="#151515" font-family="RedHatText-Bold, Red Hat Text" font-size="14" font-weight="bold" line-spacing="21">
+                    <g id="Group" transform="translate(0.000000, 6.000000)">
+                        <text id="✏️-Total-#">
+                            <tspan x="0" y="17">1 - 7 </tspan>
+                            <tspan x="29.652" y="17" font-family="RedHatText-Regular, Red Hat Text" font-weight="normal">of</tspan>
+                            <tspan x="42.966" y="17"> 50</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g id="Group-62" transform="translate(24.000000, 16.000000)">
+                    <g id="Button-/-1.-Primary-/-Default" transform="translate(340.500000, 0.000000)">
+                        <rect id="Background" fill="#0066CC" x="0" y="0" width="190" height="36" rx="3"></rect>
+                        <text id="✏️-Label" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="24" fill="#FFFFFF">
+                            <tspan x="16.344" y="22">Create Kafka instance</tspan>
+                        </text>
+                    </g>
+                    <g id="Dropdowns-/-1.-Toggle-/-With-icon-/-Default">
+                        <g id="Background">
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        </g>
+                        <g id="caret-down" transform="translate(79.000000, 6.000000)" fill="#151515">
+                            <path d="M12.0876296,14.0874818 L16.1063883,10.0656103 C16.5001252,9.6718734 16.2220191,9 15.6657461,9 L7.62514633,9 C7.06890376,9 6.79076721,9.6718734 7.18453458,10.0656103 L11.2032628,14.0874818 C11.4470061,14.3312251 11.8438863,14.3312251 12.0876296,14.0874818 Z"></path>
+                        </g>
+                        <text id="✏️-Label" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="24" fill="#151515">
+                            <tspan x="10" y="22">Name</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+            <g id="Toolbar-/-Bottom-/-Compact-(8px-spacers)" transform="translate(0.000000, 612.000000)" fill="#FFFFFF">
+                <rect id="Rectangle" x="0" y="0" width="1210" height="213"></rect>
+            </g>
+            <g id="Group" transform="translate(0.000000, 159.000000)" fill="#FFFFFF" stroke="#D2D2D2">
+                <g id="Divider-/-Horizontal" transform="translate(605.000000, 1.000000) scale(1, -1) translate(-605.000000, -1.000000) ">
+                    <rect id="Divider" x="0.5" y="0.5" width="1209" height="1"></rect>
+                </g>
+            </g>
+            <g id="Group-10" transform="translate(133.000000, 176.000000)">
+                <g id="Forms-/-2.-Text-Box-/-Active">
+                    <g id="Background">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    </g>
+                    <text id="✏️-Content" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="24" fill="#6A6E73">
+                        <tspan x="8" y="22">Filter by  name</tspan>
+                    </text>
+                </g>
+                <g id="Group" transform="translate(169.000000, 0.000000)">
+                    <g id="Background">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-5"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                    </g>
+                    <g transform="translate(8.000000, 6.000000)" fill="#6A6E73" id="search">
+                        <path d="M18.8937023,19.7812124 L19.7780996,18.8968456 C20.0718306,18.6030841 20.0718306,18.1280791 19.7812124,17.8343481 L16.6655887,14.7187244 C16.524964,14.5780998 16.3343517,14.499975 16.13434,14.499975 L15.6249723,14.499975 C16.487458,13.3968587 16.999969,12.0093498 16.999969,10.4999845 C16.999969,6.90935586 14.0906131,4 10.4999845,4 C6.90935586,4 4,6.90935586 4,10.4999845 C4,14.0906131 6.90935586,16.999969 10.4999845,16.999969 C12.0093498,16.999969 13.3968587,16.487458 14.499975,15.6249723 L14.499975,16.13434 C14.499975,16.3343517 14.5780998,16.524964 14.7187244,16.6655887 L17.8343481,19.7812124 C18.1280791,20.0749739 18.6030841,20.0749739 18.8937023,19.7812124 Z M10.499994,14.499975 C8.29060867,14.499975 6.49999404,12.7124731 6.49999404,10.499994 C6.49999404,8.29060867 8.28749588,6.49999404 10.499994,6.49999404 C12.7093603,6.49999404 14.499975,8.28749588 14.499975,10.499994 C14.499975,12.7093603 12.7124731,14.499975 10.499994,14.499975 Z"></path>
+                    </g>
+                </g>
+            </g>
+            <rect id="Rectangle" fill="#FFFFFF" transform="translate(605.000000, 79.500000) scale(1, -1) translate(-605.000000, -79.500000) " x="0" y="0" width="1210" height="159"></rect>
+            <g id="Group-8" transform="translate(24.000000, 106.000000)" fill="#151515" font-family="RedHatDisplay-Medium, Red Hat Display" font-size="24" font-weight="400" line-spacing="31.2">
+                <text id="Kafka-Instances">
+                    <tspan x="0" y="24">Kafka Instances</tspan>
+                </text>
+            </g>
+        </g>
+        <g id="Group-73" transform="translate(0.000000, 146.000000)">
+            <g id="Group" transform="translate(0.000000, -0.000000)">
+                <g id="Background" transform="translate(0.000000, -0.000000)">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-7"></use>
+                    <use fill="black" fill-opacity="1" filter="url(#filter-8)" xlink:href="#path-7"></use>
+                </g>
+            </g>
+            <g id="Data-list-+-table/2.-Table-header/Large-(16px-spacers)/4.-Sortable" transform="translate(24.000000, 0.000000)">
+                <text id="✏️-Category" font-family="RedHatText-Medium, Red Hat Text" font-size="14" font-weight="400" line-spacing="18.2000008" fill="#151515">
+                    <tspan x="0" y="25">Name</tspan>
+                </text>
+                <g id="🖼-Icon" transform="translate(68.000000, 13.000000)" fill="#D2D2D2">
+                    <path d="M3.97116247,15.7803121 L6.66051763,13.0909875 C7.13302017,12.6185154 6.79839572,11.810656 6.13018442,11.810656 L4.6908568,11.810656 L4.6908568,4.18933633 L6.13018442,4.18933633 C6.79839572,4.18933633 7.13302017,3.38150744 6.66054815,2.90900491 L3.97119299,0.219680262 C3.67828597,-0.0732267541 3.20346411,-0.0732267541 2.91055709,0.219680262 L0.221201929,2.90900491 C-0.251270089,3.38147692 0.0833543572,4.18933633 0.751565655,4.18933633 L2.19086276,4.18933633 L2.19086276,11.810656 L0.751535137,11.810656 C0.0833238396,11.810656 -0.251300607,12.6184849 0.221171411,13.0909875 L2.91052657,15.7803121 C3.20343359,16.0732191 3.67825545,16.0732191 3.97116247,15.7803121 Z" id="arrows-alt-v"></path>
+                </g>
+            </g>
+            <g id="Data-list-+-table/2.-Table-header/Large-(16px-spacers)/4.-Sortable-Copy-11" transform="translate(229.000000, 0.000000)">
+                <text id="✏️-Category" font-family="RedHatText-Medium, Red Hat Text" font-size="14" font-weight="400" line-spacing="18.2000008" fill="#151515">
+                    <tspan x="0" y="25">Cloud provid…</tspan>
+                </text>
+                <g id="🖼-Icon" transform="translate(115.000000, 9.000000)" filter="url(#filter-9)">
+                    <g>
+                        <path d="M12.9711625,19.7803121 L15.6605176,17.0909875 C16.1330202,16.6185154 15.7983957,15.810656 15.1301844,15.810656 L13.6908568,15.810656 L13.6908568,8.18933633 L15.1301844,8.18933633 C15.7983957,8.18933633 16.1330202,7.38150744 15.6605481,6.90900491 L12.971193,4.21968026 C12.678286,3.92677325 12.2034641,3.92677325 11.9105571,4.21968026 L9.22120193,6.90900491 C8.74872991,7.38147692 9.08335436,8.18933633 9.75156565,8.18933633 L11.1908628,8.18933633 L11.1908628,15.810656 L9.75153514,15.810656 C9.08332384,15.810656 8.74869939,16.6184849 9.22117141,17.0909875 L11.9105266,19.7803121 C12.2034336,20.0732191 12.6782555,20.0732191 12.9711625,19.7803121 Z" id="arrows-alt-v" fill="#151515"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g id="Data-list-+-table-/-1.-Row-/-1.-Row-background-/-With-line-/-1.-Default" transform="translate(0.000000, 188.000000)" fill="#FFFFFF" filter="url(#filter-10)">
+            <rect id="Rectangle" x="0" y="0" width="1210" height="60"></rect>
+        </g>
+        <text id="Amazon-Web-Services" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="21" fill="#151515">
+            <tspan x="229" y="213">Amazon Web </tspan>
+            <tspan x="229" y="234">Services</tspan>
+        </text>
+        <text id="cloud-wars" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="21" fill="#0066CC">
+            <tspan x="24" y="213">cloud-wars</tspan>
+        </text>
+        <g id="Data-list-+-table-/-1.-Row-/-1.-Row-background-/-With-line-/-1.-Default" transform="translate(0.000000, 368.000000)" fill="#FFFFFF">
+            <rect id="Rectangle" x="0" y="0" width="1210" height="60"></rect>
+        </g>
+        <g id="Data-list-+-table-/-1.-Row-/-1.-Row-background-/-With-line-/-1.-Default" filter="url(#filter-11)" transform="translate(0.000000, 309.000000)" fill="#FFFFFF">
+            <rect id="Rectangle" x="0" y="0" width="1210" height="60"></rect>
+        </g>
+        <g id="Data-list-+-table-/-1.-Row-/-1.-Row-background-/-With-line-/-1.-Default" filter="url(#filter-12)" transform="translate(0.000000, 369.000000)" fill="#FFFFFF">
+            <rect id="Rectangle" x="0" y="0" width="1210" height="60"></rect>
+        </g>
+        <g id="Data-list-+-table-/-1.-Row-/-1.-Row-background-/-With-line-/-1.-Default" filter="url(#filter-13)" transform="translate(0.000000, 428.000000)" fill="#FFFFFF">
+            <rect id="Rectangle" x="0" y="0" width="1210" height="60"></rect>
+        </g>
+        <g id="Data-list-+-table-/-1.-Row-/-1.-Row-background-/-With-line-/-1.-Default" filter="url(#filter-14)" transform="translate(0.000000, 550.000000)" fill="#FFFFFF">
+            <rect id="Rectangle" x="0" y="0" width="1210" height="60"></rect>
+        </g>
+        <g id="Data-list-+-table-/-1.-Row-/-1.-Row-background-/-With-line-/-1.-Default" filter="url(#filter-15)" transform="translate(0.000000, 489.000000)" fill="#FFFFFF">
+            <rect id="Rectangle" x="0" y="0" width="1210" height="60"></rect>
+        </g>
+        <text id="Amazon-Web-Services" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="21" fill="#151515">
+            <tspan x="229" y="393">Amazon Web </tspan>
+            <tspan x="229" y="414">Services</tspan>
+        </text>
+        <text id="plane-wars" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="21" fill="#0066CC">
+            <tspan x="24" y="393">plane-wars</tspan>
+        </text>
+        <text id="Amazon-Web-Services" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="21" fill="#151515">
+            <tspan x="229" y="333">Amazon Web </tspan>
+            <tspan x="229" y="354">Services</tspan>
+        </text>
+        <text id="cube-wars" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="21" fill="#0066CC">
+            <tspan x="24" y="333">cube-wars</tspan>
+        </text>
+        <g id="Data-list-+-table/2.-Table-header/Large-(16px-spacers)/4.-Sortable-Copy-11" transform="translate(384.000000, 146.000000)">
+            <text id="✏️-Category" font-family="RedHatText-Medium, Red Hat Text" font-size="14" font-weight="400" line-spacing="18.2000008" fill="#151515">
+                <tspan x="0" y="25">Region</tspan>
+            </text>
+            <g id="Icons-/-Framework-/-long-arrow-alt-up" transform="translate(67.000000, 9.000000)">
+                <g id="arrows-alt-v" fill="#151515">
+                    <path d="M12.9711625,19.7803121 L15.6605176,17.0909875 C16.1330202,16.6185154 15.7983957,15.810656 15.1301844,15.810656 L13.6908568,15.810656 L13.6908568,8.18933633 L15.1301844,8.18933633 C15.7983957,8.18933633 16.1330202,7.38150744 15.6605481,6.90900491 L12.971193,4.21968026 C12.678286,3.92677325 12.2034641,3.92677325 11.9105571,4.21968026 L9.22120193,6.90900491 C8.74872991,7.38147692 9.08335436,8.18933633 9.75156565,8.18933633 L11.1908628,8.18933633 L11.1908628,15.810656 L9.75153514,15.810656 C9.08332384,15.810656 8.74869939,16.6184849 9.22117141,17.0909875 L11.9105266,19.7803121 C12.2034336,20.0732191 12.6782555,20.0732191 12.9711625,19.7803121 Z"></path>
+                </g>
+                <rect id="🎨-Color" fill="#D2D2D2" x="0" y="0" width="24" height="24"></rect>
+            </g>
+        </g>
+        <text id="US-East,-N.-Virginia" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="21" fill="#151515">
+            <tspan x="384" y="213">US East, </tspan>
+            <tspan x="384" y="234">N. Virginia</tspan>
+        </text>
+        <text id="US-East,-N.-Virginia" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="21" fill="#151515">
+            <tspan x="384" y="393">US East, </tspan>
+            <tspan x="384" y="414">N. Virginia</tspan>
+        </text>
+        <text id="US-East,-N.-Virginia" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="21" fill="#151515">
+            <tspan x="384" y="333">US East, </tspan>
+            <tspan x="384" y="354">N. Virginia</tspan>
+        </text>
+        <text id="Amazon-Web-Services" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="21" fill="#151515">
+            <tspan x="229" y="515">Amazon Web </tspan>
+            <tspan x="229" y="536">Services</tspan>
+        </text>
+        <text id="tunnel-wars" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="21" fill="#0066CC">
+            <tspan x="24" y="515">tunnel-wars</tspan>
+        </text>
+        <text id="Amazon-Web-Services" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="21" fill="#151515">
+            <tspan x="229" y="455">Amazon Web </tspan>
+            <tspan x="229" y="476">Services</tspan>
+        </text>
+        <text id="storage-wars" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="21" fill="#0066CC">
+            <tspan x="24" y="455">storage-wars</tspan>
+        </text>
+        <text id="US-East,-N.-Virginia" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="21" fill="#151515">
+            <tspan x="384" y="515">US East, </tspan>
+            <tspan x="384" y="536">N. Virginia</tspan>
+        </text>
+        <text id="US-East,-N.-Virginia" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="21" fill="#151515">
+            <tspan x="384" y="455">US East, </tspan>
+            <tspan x="384" y="476">N. Virginia</tspan>
+        </text>
+        <g id="Group-6" transform="translate(0.000000, 248.000000)">
+            <g id="Group-71">
+                <g id="Group" transform="translate(0.000000, -0.000000)">
+                    <g id="Data-list-+-table-/-1.-Row-/-1.-Row-background-/-With-line-/-1.-Default" transform="translate(0.000000, -0.000000)">
+                        <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="1210" height="60"></rect>
+                        <g id="Rectangle">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-17)" xlink:href="#path-16"></use>
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-16"></use>
+                        </g>
+                        <g id="Rectangle">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-19)" xlink:href="#path-18"></use>
+                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-18"></use>
+                        </g>
+                        <rect id="Rectangle" fill="#0066CC" x="0" y="0" width="3" height="60"></rect>
+                    </g>
+                </g>
+                <g id="Group" transform="translate(0.000000, -0.000000)">
+                    <g id="Data-list-+-table/1.-Row/2.-Row-features/Compact-(8px-spacers)/Not-expandable" transform="translate(0.000000, -0.000000)">
+                        <g id="Kebab" transform="translate(1156.000000, 2.000000)">
+                            <rect id="Background" x="0" y="0" width="40" height="36" rx="3"></rect>
+                            <g id="🖼-Icon" transform="translate(8.000000, 6.000000)">
+                                <g id="ellipsis-v" fill="#151515">
+                                    <path d="M12.2499946,8.49998927 C13.4937356,8.49998927 14.4999893,7.49373557 14.4999893,6.24999464 C14.4999893,5.0062537 13.4937356,4 12.2499946,4 C11.0062537,4 10,5.0062537 10,6.24999464 C10,7.49373557 11.0062537,8.49998927 12.2499946,8.49998927 Z M12.2499946,13.9999762 C13.4937356,13.9999762 14.4999893,12.9937225 14.4999893,11.7499815 C14.4999893,10.5062406 13.4937356,9.49998689 12.2499946,9.49998689 C11.0062537,9.49998689 10,10.5062406 10,11.7499815 C10,12.9937225 11.0062537,13.9999762 12.2499946,13.9999762 Z M12.2499946,19.499963 C13.4937356,19.499963 14.4999893,18.4937093 14.4999893,17.2499684 C14.4999893,16.0062275 13.4937356,14.9999738 12.2499946,14.9999738 C11.0062537,14.9999738 10,16.0062275 10,17.2499684 C10,18.4937093 11.0062537,19.499963 12.2499946,19.499963 Z"></path>
+                                </g>
+                                <rect id="🎨-Color" fill="#6A6E73" x="0" y="0" width="24" height="24"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <text id="Amazon-Web-Services" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="21" fill="#151515">
+                <tspan x="229" y="25">Amazon Web </tspan>
+                <tspan x="229" y="46">Services</tspan>
+            </text>
+            <text id="US-East,-N.-Virginia" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="21" fill="#151515">
+                <tspan x="384" y="25">US East, </tspan>
+                <tspan x="384" y="46">N. Virginia</tspan>
+            </text>
+            <text id="container-wars" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="21" fill="#0066CC">
+                <tspan x="24" y="25">container-wars</tspan>
+            </text>
+        </g>
+        <g id="Instance-Connection" transform="translate(400.000000, -16.000000)">
+            <g id="navigation" fill="black" fill-opacity="1">
+                <g id="Background" transform="translate(12.000000, 474.000000) scale(-1, 1) translate(-12.000000, -474.000000) ">
+                    <use filter="url(#filter-21)" xlink:href="#path-20"></use>
+                </g>
+            </g>
+            <g id="Group-5" transform="translate(24.000000, 16.000000)">
+                <g id="Group-4">
+                    <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="600" height="768"></rect>
+                    <g id="Divider-/-Vertical" fill="#FFFFFF" stroke="#D2D2D2">
+                        <rect id="Divider" x="0.5" y="0.5" width="1" height="759"></rect>
+                    </g>
+                    <text id="container-wars" font-family="RedHatDisplay-Medium, Red Hat Display" font-size="20" font-weight="400" line-spacing="30" fill="#151515">
+                        <tspan x="24" y="64">container-wars</tspan>
+                    </text>
+                    <g id="times" transform="translate(560.000000, 24.000000)" fill="#6A6E73">
+                        <path d="M9.37280471,17.7121708 L12.5,14.584981 L15.6271843,17.7121708 C16.0109114,18.0959284 16.6334075,18.0959284 17.0171651,17.7121708 L17.7121708,17.0171651 C18.0959284,16.6334075 18.0959284,16.0112471 17.7121708,15.6271843 L14.584981,12.5 L17.7121708,9.37280471 C18.0959284,8.98907759 18.0959284,8.36688669 17.7121708,7.98282389 L17.0171651,7.28781822 C16.6334075,6.90406059 16.0112471,6.90406059 15.6271843,7.28781822 L12.5,10.415008 L9.37280471,7.28781822 C8.98907759,6.90406059 8.36688669,6.90406059 7.98282389,7.28781822 L7.28781822,7.98282389 C6.90406059,8.36658152 6.90406059,8.9887419 7.28781822,9.37280471 L10.415008,12.5 L7.28781822,15.6271843 C6.90406059,16.0109114 6.90406059,16.6331023 7.28781822,17.0171651 L7.98282389,17.7121708 C8.36658152,18.0959284 8.98907759,18.0959284 9.37280471,17.7121708 Z"></path>
+                    </g>
+                </g>
+                <g id="Group" transform="translate(24.000000, 24.000000)" fill="#151515" font-family="RedHatText-Regular, Red Hat Text" font-size="14" font-weight="normal" line-spacing="18.2">
+                    <g id="Breadcrumbs-/-Leaf">
+                        <text id="Leaf">
+                            <tspan x="0" y="14">Instance name</tspan>
+                        </text>
+                    </g>
+                </g>
+                <g id="Tabs/1.-Open/1.-Default" transform="translate(131.000000, 87.000000)">
+                    <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="130" height="37"></rect>
+                    <rect id="Active-color" fill="#0066CC" x="0" y="34" width="130" height="3"></rect>
+                    <text id="✏️-Label" font-family="RedHatText-Regular, Red Hat Text" font-size="14" font-weight="normal" line-spacing="21" fill="#151515">
+                        <tspan x="28.523" y="22">Connection</tspan>
+                    </text>
+                </g>
+                <g id="Tabs/1.-Open/1.-Default" transform="translate(1.000000, 87.000000)">
+                    <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="130" height="37"></rect>
+                    <text id="✏️-Label" font-family="RedHatText-Regular, Red Hat Text" font-size="14" font-weight="normal" line-spacing="21" fill="#6A6E73">
+                        <tspan x="43.391" y="22">Details</tspan>
+                    </text>
+                </g>
+                <g id="Group" transform="translate(1.000000, 84.000000)" fill="black" fill-opacity="1">
+                    <g id="Rectangle">
+                        <use filter="url(#filter-23)" xlink:href="#path-22"></use>
+                    </g>
+                </g>
+                <text id="Your-application-or" font-family="RedHatText-Regular, Red Hat Text" font-size="14" font-weight="normal" fill="#6A6E73">
+                    <tspan x="24" y="162">Your application or tool initially connects to the Kafka instance using the bootstrap </tspan>
+                    <tspan x="24" y="180">server and authenticates with your service account credentials.</tspan>
+                </text>
+                <g id="Group-19" transform="translate(24.000000, 219.000000)">
+                    <g id="Group-17" transform="translate(0.000000, 138.000000)">
+                        <g id="Group-15" transform="translate(0.000000, 167.000000)">
+                            <g id="Group-13" transform="translate(0.000000, 144.000000)">
+                                <g id="Group-3" fill="#151515" font-family="RedHatText-Medium, Red Hat Text" font-size="14" font-weight="400" line-spacing="18.2000008">
+                                    <g id="Field">
+                                        <text id="✏️-Label">
+                                            <tspan x="0" y="18">Token endpoint URL</tspan>
+                                        </text>
+                                    </g>
+                                </g>
+                                <g id="Group" transform="translate(0.000000, 27.000000)">
+                                    <g id="Forms-/-6.-Icon-Field-/-Default" transform="translate(486.000000, 0.000000)">
+                                        <g id="Background">
+                                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-24"></use>
+                                            <use fill="black" fill-opacity="1" filter="url(#filter-25)" xlink:href="#path-24"></use>
+                                        </g>
+                                        <g id="fa-copy-(1)" opacity="0.6" transform="translate(12.000000, 9.000000)" fill="#000000" fill-rule="nonzero">
+                                            <path d="M11.4285714,16 L11.4285714,17.4285714 C11.4285714,17.9019643 11.0448214,18.2857143 10.5714286,18.2857143 L0.857142857,18.2857143 C0.38375,18.2857143 0,17.9019643 0,17.4285714 L0,4.28571429 C0,3.81232143 0.38375,3.42857143 0.857142857,3.42857143 L3.42857143,3.42857143 L3.42857143,14 C3.42857143,15.1028214 4.32575,16 5.42857143,16 L11.4285714,16 Z M11.4285714,3.71428571 L11.4285714,0 L5.42857143,0 C4.95517857,0 4.57142857,0.38375 4.57142857,0.857142857 L4.57142857,14 C4.57142857,14.4733929 4.95517857,14.8571429 5.42857143,14.8571429 L15.1428571,14.8571429 C15.61625,14.8571429 16,14.4733929 16,14 L16,4.57142857 L12.2857143,4.57142857 C11.8142857,4.57142857 11.4285714,4.18571429 11.4285714,3.71428571 Z M15.7489643,2.60610714 L13.3938929,0.251035714 C13.2331498,0.0903008982 13.0151406,0 12.7878214,0 L12.5714286,0 L12.5714286,3.42857143 L16,3.42857143 L16,3.21217857 C16,2.98485936 15.9096991,2.76685024 15.7489643,2.60610714 L15.7489643,2.60610714 Z" id="Shape"></path>
+                                        </g>
+                                    </g>
+                                    <g id="Dropdowns-/-1.-Toggle-/-Default">
+                                        <g id="Background">
+                                            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-26"></use>
+                                            <use fill="black" fill-opacity="1" filter="url(#filter-27)" xlink:href="#path-26"></use>
+                                        </g>
+                                        <text id="✏️-Content" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="24" fill="#000000">
+                                            <tspan x="8" y="22">token_endpoint-xx-xxxx-xxx-xxxxxxxx</tspan>
+                                        </text>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="Group-12" transform="translate(0.000000, 51.000000)">
+                                <text id="SASL/OAUTHBEARER" font-family="RedHatDisplay-Medium, Red Hat Display" font-size="16" font-weight="400" line-spacing="24" fill="#000000">
+                                    <tspan x="0" y="16">SASL/OAUTHBEARER</tspan>
+                                </text>
+                                <text id="Use-your-service-acc" font-family="RedHatText-Regular, Red Hat Text" font-size="14" font-weight="normal" fill="#6A6E73">
+                                    <tspan x="0" y="47">Use your service account credentials and a token endpoint URL to authenticate your </tspan>
+                                    <tspan x="0" y="65">client with the Kafka instance.</tspan>
+                                </text>
+                                <path d="M288.749982,19.499963 C293.029879,19.499963 296.499963,16.0311298 296.499963,11.7499815 C296.499963,7.47133572 293.029879,4 288.749982,4 C284.470085,4 281,7.47133572 281,11.7499815 C281,16.0311298 284.470085,19.499963 288.749982,19.499963 Z M288.749982,17.9999666 C285.295858,17.9999666 282.499996,15.205265 282.499996,11.7499815 C282.499996,8.29701734 285.29598,5.49999642 288.749982,5.49999642 C292.202824,5.49999642 294.999967,8.29594923 294.999967,11.7499815 C294.999967,15.2040443 292.205265,17.9999666 288.749982,17.9999666 Z M289.463206,13.4999774 C289.670298,13.4999774 289.838205,13.33207 289.838205,13.1249782 L289.838205,12.9269502 C289.838205,12.152599 292.101353,12.120342 292.101353,10.0249795 C292.101353,8.44698036 290.464516,7.24999225 288.931042,7.24999225 C287.466873,7.24999225 286.526415,7.85909114 285.788075,8.94325604 C285.675373,9.1088135 285.711109,9.33360545 285.870716,9.45460736 L286.74019,10.1139381 C286.902879,10.2372593 287.134232,10.2075352 287.261002,10.0475625 C287.731277,9.45405804 288.06581,9.11101076 288.790448,9.11101076 C289.346233,9.11101076 290.0337,9.46873696 290.0337,10.0076761 C290.0337,10.4151153 289.697367,10.6243739 289.148571,10.9320208 C288.508619,11.2908151 287.661727,11.7373473 287.661727,12.8543795 L287.661727,13.1249782 C287.661727,13.33207 287.829635,13.4999774 288.036726,13.4999774 L289.463206,13.4999774 Z M288.749982,16.56247 C289.473704,16.56247 290.062478,15.9736958 290.062478,15.2499732 C290.062478,14.5262505 289.473704,13.9374763 288.749982,13.9374763 C288.026259,13.9374763 287.437485,14.5262505 287.437485,15.2499732 C287.437485,15.9736958 288.026259,16.56247 288.749982,16.56247 Z" id="question-circle" fill="#151515"></path>
+                                <g id="Labels-/-2.-Blue-/-Filled-/-With-icon-/-Default" transform="translate(175.000000, 1.000000)">
+                                    <rect id="Rectangle" stroke="#BDE5B8" fill="#F3FAF2" x="0" y="2" width="99" height="18" rx="9"></rect>
+                                    <text id="Label" font-family="RedHatText-Regular, Red Hat Text" font-size="12" font-weight="normal" line-spacing="18" fill="#0F280D">
+                                        <tspan x="9" y="14">Recommended</tspan>
+                                    </text>
+                                </g>
+                            </g>
+                            <text id="Authentication-metho" font-family="RedHatDisplay-Medium, Red Hat Display" font-size="18" font-weight="400" line-spacing="27" fill="#000000">
+                                <tspan x="0" y="18">Authentication method</tspan>
+                            </text>
+                        </g>
+                        <g id="Group-16">
+                            <g id="Button-/-2.-Secondary-/-Default" transform="translate(0.000000, 91.000000)">
+                                <rect id="Background" stroke="#0066CC" x="0.5" y="0.5" width="197" height="35" rx="3"></rect>
+                                <text id="✏️-Label" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="24" fill="#0066CC">
+                                    <tspan x="16" y="22">Create service account</tspan>
+                                </text>
+                            </g>
+                            <text id="Service-accounts" font-family="RedHatDisplay-Medium, Red Hat Display" font-size="18" font-weight="400" line-spacing="27" fill="#000000">
+                                <tspan x="0" y="18">Service accounts</tspan>
+                            </text>
+                            <text id="Create-a-service-acc" font-family="RedHatText-Regular, Red Hat Text" font-size="14" font-weight="normal">
+                                <tspan x="0" y="53" fill="#6A6E73">Create a service account to generate credentials. Manage the service accounts you </tspan>
+                                <tspan x="0" y="71" fill="#6A6E73">create on the</tspan>
+                                <tspan x="83.51" y="71" fill="#000000"> </tspan>
+                                <tspan x="86.772" y="71" fill="#0066CC">Service Accounts</tspan>
+                                <tspan x="195.244" y="71" fill="#000000"> </tspan>
+                                <tspan x="198.506" y="71" fill="#6A6E73">page</tspan>
+                                <tspan x="229.978" y="71" fill="#000000">.</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="Group-18">
+                        <g id="Group" transform="translate(0.000000, 62.000000)">
+                            <g id="Forms-/-6.-Icon-Field-/-Default" transform="translate(486.000000, 0.000000)">
+                                <g id="Background">
+                                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-28"></use>
+                                    <use fill="black" fill-opacity="1" filter="url(#filter-29)" xlink:href="#path-28"></use>
+                                </g>
+                                <g id="fa-copy-(1)" opacity="0.6" transform="translate(12.000000, 9.000000)" fill="#000000" fill-rule="nonzero">
+                                    <path d="M11.4285714,16 L11.4285714,17.4285714 C11.4285714,17.9019643 11.0448214,18.2857143 10.5714286,18.2857143 L0.857142857,18.2857143 C0.38375,18.2857143 0,17.9019643 0,17.4285714 L0,4.28571429 C0,3.81232143 0.38375,3.42857143 0.857142857,3.42857143 L3.42857143,3.42857143 L3.42857143,14 C3.42857143,15.1028214 4.32575,16 5.42857143,16 L11.4285714,16 Z M11.4285714,3.71428571 L11.4285714,0 L5.42857143,0 C4.95517857,0 4.57142857,0.38375 4.57142857,0.857142857 L4.57142857,14 C4.57142857,14.4733929 4.95517857,14.8571429 5.42857143,14.8571429 L15.1428571,14.8571429 C15.61625,14.8571429 16,14.4733929 16,14 L16,4.57142857 L12.2857143,4.57142857 C11.8142857,4.57142857 11.4285714,4.18571429 11.4285714,3.71428571 Z M15.7489643,2.60610714 L13.3938929,0.251035714 C13.2331498,0.0903008982 13.0151406,0 12.7878214,0 L12.5714286,0 L12.5714286,3.42857143 L16,3.42857143 L16,3.21217857 C16,2.98485936 15.9096991,2.76685024 15.7489643,2.60610714 L15.7489643,2.60610714 Z" id="Shape"></path>
+                                </g>
+                            </g>
+                            <g id="Dropdowns-/-1.-Toggle-/-Default">
+                                <g id="Background">
+                                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-30"></use>
+                                    <use fill="black" fill-opacity="1" filter="url(#filter-31)" xlink:href="#path-30"></use>
+                                </g>
+                                <text id="✏️-Content" font-family="RedHatText-Regular, Red Hat Text" font-size="16" font-weight="normal" line-spacing="24" fill="#000000">
+                                    <tspan x="8" y="22">bootstrap_server-xx-xxxx-xxx-xxxxxxxx</tspan>
+                                </text>
+                            </g>
+                        </g>
+                        <text id="Bootstrap-server" font-family="RedHatDisplay-Medium, Red Hat Display" font-size="18" font-weight="400" line-spacing="27" fill="#000000">
+                            <tspan x="0" y="18">Bootstrap server</tspan>
+                        </text>
+                        <text id="Establish-the-initia" font-family="RedHatText-Regular, Red Hat Text" font-size="14" font-weight="normal" fill="#6A6E73">
+                            <tspan x="0" y="53">Establish the initial connection between your client and Kafka instance.</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <rect id="Rectangle" stroke="#D2D2D2" stroke-width="2" x="1" y="1" width="1022" height="759"></rect>
+    </g>
+</svg>
