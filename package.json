@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "frontend assets for cloud.redhat.com",
   "main": "index.js",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=7.0.0"
+  },
   "scripts": {
     "build": "ncp src/ dist/"
   },
