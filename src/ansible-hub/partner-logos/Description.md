@@ -4,26 +4,22 @@ Merge request to add ansible-hub partner logos to keep images local to redhat.co
 
 [ansible](https://console.redhat.com/apps/automation-hub/fonts/default-logo.svg)
 
-https://static.redhat.com/libs/redhat/brand-assets/2/corp/logo--200.png
-
-https://automation-hub-ci.s3.us-east-2.amazonaws.com/_logos/
-
 [A10-NewLogos-Blue-NoReg-RGB.png A10 Networks](https://www.a10networks.com/wp-content/uploads/A10-NewLogos-Blue-NoReg-RGB.png)
 
 ---
-[Amazon](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png)
+[Amazon(2560px-Amazon_logo.svg.png)](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/2560px-Amazon_logo.svg.png)
 
-[Arista](https://automation-hub-ci.s3.us-east-2.amazonaws.com/_logos/arista2.png)
+[Arista(arista2.png)](https://automation-hub-ci.s3.us-east-2.amazonaws.com/_logos/arista2.png)
 
-[Aruba](https://automation-hub-ci.s3.us-east-2.amazonaws.com/_logos/aruba.svg)
+[Aruba(aruba.svg)](https://automation-hub-ci.s3.us-east-2.amazonaws.com/_logos/aruba.svg)
 
-[Microsoft](https://automation-hub-ci.s3.us-east-2.amazonaws.com/_logos/microsoft.png)
+[Microsoft(microsoft.png)](https://automation-hub-ci.s3.us-east-2.amazonaws.com/_logos/microsoft.png)
 
-[Check Point](https://automation-hub-ci.s3.us-east-2.amazonaws.com/_logos/check_point.jpg)
+[Check Point(check_point.jpg)](https://automation-hub-ci.s3.us-east-2.amazonaws.com/_logos/check_point.jpg)
 
-[cisco](https://automation-hub-ci.s3.us-east-2.amazonaws.com/_logos/cisco.jpg)
+[cisco(cisco.jpg)](https://automation-hub-ci.s3.us-east-2.amazonaws.com/_logos/cisco.jpg)
 
-[CyberArk](https://automation-hub-ci.s3.us-east-2.amazonaws.com/_logos/cyberark.png)
+[CyberArk(cyberark.png)](https://automation-hub-ci.s3.us-east-2.amazonaws.com/_logos/cyberark.png)
 
 [Dynatrace(6412311.png)](https://avatars0.githubusercontent.com/u/6412311?v=4)
 
@@ -35,6 +31,23 @@ https://automation-hub-ci.s3.us-east-2.amazonaws.com/_logos/
 
 [Google Cloud(google.png)](https://automation-hub-ci.s3.us-east-2.amazonaws.com/_logos/google.png)
 
+[Hewlett Packard Enterprise(6004705.png)](https://avatars2.githubusercontent.com/u/6004705?s=200&v=4)
+
+[IBM(1459110.jpeg)](https://avatars0.githubusercontent.com/u/1459110?v=4)
+
+[Infinidat(1667528.png)](https://avatars3.githubusercontent.com/u/1667528?s=200&v=4)
+
+[Infoblox(8064882.png)](https://avatars.githubusercontent.com/u/8064882?s=200&v=4)
+
+[Juniper Networks(Juniper_Networks_logo.svg)](https://upload.wikimedia.org/wikipedia/commons/3/31/Juniper_Networks_logo.svg)
+
+[Kong Inc.(kong-logomark-color-128px.png)](https://konghq.com/wp-content/uploads/2018/08/kong-logomark-color-128px.png)
+
+[kubernetes(logo.png)](https://raw.githubusercontent.com/kubernetes/kubernetes/release-1.19/logo/logo.png)
+
+[Microsoft(Microsoft-logo_rgb_c-gray.png)](https://spetros.fedorapeople.org/Microsoft-logo_rgb_c-gray.png)
+
+[NetApp(netapp.svg)](https://automation-hub-ci.s3.us-east-2.amazonaws.com/_logos/netapp.svg)
 
 
 ---
