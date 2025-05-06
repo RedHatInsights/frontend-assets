@@ -7,36 +7,19 @@ export WORKSPACE=${WORKSPACE:-$APP_ROOT} # if running in jenkins, use the build'
 export APP_ROOT=$(pwd)
 export IMAGE="quay.io/cloudservices/frontend-assets"
 export IMAGE_TAG=$(git rev-parse --short=7 HEAD)
+COMMON_BUILDER=https://raw.githubusercontent.com/RedHatInsights/insights-frontend-builder-common/master
+
+# --------------------------------------------
+# Options that must be configured by app owner
+# --------------------------------------------
+IQE_PLUGINS="notifications"
+IQE_MARKER_EXPRESSION="smoke"
+IQE_FILTER_EXPRESSION=""
 
 set -exv
-
-if [[ -z "$QUAY_USER" || -z "$QUAY_TOKEN" ]]; then
-    echo "QUAY_USER and QUAY_TOKEN must be set"
-    exit 1
-fi
-
-if [[ -z "$RH_REGISTRY_USER" || -z "$RH_REGISTRY_TOKEN" ]]; then
-    echo "RH_REGISTRY_USER and RH_REGISTRY_TOKEN must be set"
-    exit 1
-fi
-
-# Create tmp dir to store data in during job run (do NOT store in $WORKSPACE)
-readonly TMP_JOB_DIR=$(mktemp -d -p "$HOME" -t "jenkins-${JOB_NAME}-${BUILD_NUMBER}-XXXXXX")
-echo "job tmp dir location: $TMP_JOB_DIR"
-
-function job_cleanup() {
-    echo "cleaning up job tmp dir: $TMP_JOB_DIR"
-    rm -fr $TMP_JOB_DIR
-}
-
-trap job_cleanup EXIT ERR SIGINT SIGTERM
-
-DOCKER_CONF="${TMP_JOB_DIR}/.docker"
-mkdir -p "$DOCKER_CONF"
-docker --config="$DOCKER_CONF" login -u="$QUAY_USER" -p="$QUAY_TOKEN" quay.io
-docker --config="$DOCKER_CONF" login -u="$RH_REGISTRY_USER" -p="$RH_REGISTRY_TOKEN" registry.redhat.io
-docker --config="$DOCKER_CONF" build -t "${IMAGE}:${IMAGE_TAG}" $APP_ROOT -f $APP_ROOT/Dockerfile
-docker --config="$DOCKER_CONF" push "${IMAGE}:${IMAGE_TAG}"
+# source is preferred to | bash -s in this case to avoid a subshell
+source <(curl -sSL $COMMON_BUILDER/src/frontend-build.sh)
+BUILD_RESULTS=$?
 
 # Stubbed out for now
 mkdir -p $WORKSPACE/artifacts

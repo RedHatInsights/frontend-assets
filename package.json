@@ -8,7 +8,8 @@
     "npm": ">=7.0.0"
   },
   "scripts": {
-    "build": "ncp src/ dist/"
+    "build": "ncp src/ dist/",
+    "verify": "npm run build"
   },
   "repository": {
     "type": "git",
