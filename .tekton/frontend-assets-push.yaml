@@ -28,7 +28,8 @@ spec:
     value: ./build-tools/Dockerfile
   pipelineRef:
     name: docker-build-oci-ta
-  taskRunTemplate: {}
+  taskRunTemplate:
+    serviceAccountName: build-pipeline-frontend-assets
   workspaces:
   - name: git-auth
     secret:
