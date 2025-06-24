@@ -219,9 +219,17 @@ async function writeExposedModulesConfig() {
     'utf8',
   );
 
+  // Sort the exposed module entries alphabetically for consistent output
+  const sortedExposedModuleEntries = Object.keys(exposedModuleEntries)
+    .sort()
+    .reduce((sorted, key) => {
+      sorted[key] = exposedModuleEntries[key];
+      return sorted;
+    }, {});
+
   // Create the new moduleFederation object
   const newModuleFederationConfig = `moduleFederation: {
-      exposes: ${JSON.stringify(exposedModuleEntries, null, 2)},
+      exposes: ${JSON.stringify(sortedExposedModuleEntries, null, 2)},
     }`;
 
   let newConfigContent;
@@ -268,8 +276,15 @@ async function writeExposedModulesConfig() {
     newConfigContent,
   );
 
+  // Sort component mappings alphabetically for consistent documentation
+  const sortedComponentMappings = componentMappings.sort((a, b) =>
+    a.componentName.localeCompare(b.componentName),
+  );
+
   // Generate and write the markdown documentation
-  const markdownContent = generateMarkdownDocumentation(componentMappings);
+  const markdownContent = generateMarkdownDocumentation(
+    sortedComponentMappings,
+  );
   await promisiFiedWriteFile(
     path.join(projectBase, 'COMPONENT_MAPPINGS.md'),
     markdownContent,

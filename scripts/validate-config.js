@@ -31,7 +31,15 @@ async function generateExpectedModuleEntries() {
     expectedEntries[exposedModuleName] = exposedModulePath;
   }
 
-  return expectedEntries;
+  // Sort the entries alphabetically for consistent comparison
+  const sortedExpectedEntries = Object.keys(expectedEntries)
+    .sort()
+    .reduce((sorted, key) => {
+      sorted[key] = expectedEntries[key];
+      return sorted;
+    }, {});
+
+  return sortedExpectedEntries;
 }
 
 /**
