@@ -10,6 +10,7 @@ const { generateSvgMetadata } = require('./scripts/metadata-generator');
 const {
   generateMarkdownDocumentation,
 } = require('./scripts/documentation-generator');
+const { cleanupGeneratedIcons } = require('./scripts/cleanup');
 
 const projectBase = path.resolve(__dirname);
 const iconsBase = path.resolve(projectBase, 'src');
@@ -218,12 +219,48 @@ async function writeExposedModulesConfig() {
     'utf8',
   );
 
-  const newConfigContent = currentConfigContent.replace(
-    'moduleFederation: {},',
-    `moduleFederation: {
+  // Create the new moduleFederation object
+  const newModuleFederationConfig = `moduleFederation: {
       exposes: ${JSON.stringify(exposedModuleEntries, null, 2)},
-    },`,
-  );
+    }`;
+
+  let newConfigContent;
+
+  // More robust replacement logic
+  if (currentConfigContent.includes('moduleFederation:')) {
+    // Find the start of moduleFederation
+    const moduleFedStart = currentConfigContent.indexOf('moduleFederation:');
+
+    // Find the opening brace after moduleFederation:
+    let braceCount = 0;
+    let startPos = currentConfigContent.indexOf('{', moduleFedStart);
+    let endPos = startPos;
+
+    // Find the matching closing brace
+    for (let i = startPos; i < currentConfigContent.length; i++) {
+      if (currentConfigContent[i] === '{') {
+        braceCount++;
+      } else if (currentConfigContent[i] === '}') {
+        braceCount--;
+        if (braceCount === 0) {
+          endPos = i;
+          break;
+        }
+      }
+    }
+
+    // Replace the entire moduleFederation block
+    const beforeModuleFed = currentConfigContent.substring(0, moduleFedStart);
+    const afterModuleFed = currentConfigContent.substring(endPos + 1);
+    newConfigContent =
+      beforeModuleFed + newModuleFederationConfig + afterModuleFed;
+  } else {
+    // Add moduleFederation if it doesn't exist (fallback)
+    newConfigContent = currentConfigContent.replace(
+      'moduleFederation: {},',
+      newModuleFederationConfig + ',',
+    );
+  }
 
   // Write the updated config
   await promisiFiedWriteFile(
@@ -264,9 +301,17 @@ async function processReactIcons(svgFiles) {
  * Main execution function
  */
 async function run() {
+  console.log('Starting icon generation process...');
+
+  // First, cleanup any existing generated TSX files
+  console.log('Cleaning up existing generated files...');
+  await cleanupGeneratedIcons(iconsBase);
+
   const svgFiles = await findAllSvgFiles(iconsBase);
   console.log(`Found ${svgFiles.length} SVG files in ${iconsBase}`);
   await processReactIcons(svgFiles);
+
+  console.log('Icon generation complete!');
 }
 
 // Execute the script
