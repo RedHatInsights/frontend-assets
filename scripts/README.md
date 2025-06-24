@@ -23,9 +23,10 @@ The `validate-config.js` script ensures that the module federation configuration
 ### How It Works
 
 1. **Scans SVG Files**: Finds all `.svg` files in the `src/` directory
-2. **Generates Expected Config**: Creates the expected module federation entries based on current SVG files
+2. **Generates Expected Config**: Creates the expected module federation entries based on current SVG files using relative paths (e.g., `src/icons/example.tsx`)
 3. **Compares Configurations**: Compares current `fec.config.js` with expected configuration
 4. **Reports Differences**: Provides detailed error messages if configurations don't match
+5. **Cross-Platform Compatible**: Uses relative paths to ensure consistency across different development environments (local, CI, etc.)
 
 ### Usage
 

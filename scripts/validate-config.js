@@ -27,7 +27,10 @@ async function generateExpectedModuleEntries() {
   for (const file of svgFiles) {
     const metadata = generateSvgMetadata(file, iconsBase);
     const exposedModuleName = `./${metadata.name}`;
-    const exposedModulePath = path.join(iconsBase, metadata.sourceFilePath);
+    // Use path.resolve for unambiguous path resolution from fec.config.js directory
+    // Remove leading slash from sourceFilePath and add 'src' prefix
+    const cleanPath = metadata.sourceFilePath.replace(/^\/+/, '');
+    const exposedModulePath = `path.resolve(__dirname, 'src', '${cleanPath}')`;
     expectedEntries[exposedModuleName] = exposedModulePath;
   }
 
@@ -55,24 +58,52 @@ function getCurrentModuleEntries() {
     return {};
   }
 
-  // Extract the exposes object
+  // Find the start of moduleFederation
   const moduleFedStart = configContent.indexOf('moduleFederation:');
-  const exposesMatch = configContent
-    .slice(moduleFedStart)
-    .match(/exposes:\s*(\{[^}]*(?:\{[^}]*\}[^}]*)*\})/s);
 
-  if (!exposesMatch) {
+  // Find the exposes object
+  const exposesStart = configContent.indexOf('exposes:', moduleFedStart);
+  if (exposesStart === -1) {
     return {};
   }
 
-  try {
-    // Parse the exposes object as JSON
-    const exposesStr = exposesMatch[1];
-    return JSON.parse(exposesStr);
-  } catch (error) {
-    console.error('Error parsing current module federation config:', error);
+  // Find the opening brace after exposes:
+  let braceStart = configContent.indexOf('{', exposesStart);
+  if (braceStart === -1) {
     return {};
   }
+
+  // Find the matching closing brace
+  let braceCount = 0;
+  let braceEnd = braceStart;
+  for (let i = braceStart; i < configContent.length; i++) {
+    if (configContent[i] === '{') {
+      braceCount++;
+    } else if (configContent[i] === '}') {
+      braceCount--;
+      if (braceCount === 0) {
+        braceEnd = i;
+        break;
+      }
+    }
+  }
+
+  // Extract the exposes content
+  const exposesContent = configContent.substring(braceStart + 1, braceEnd);
+
+  // Parse the entries using regex to extract key-value pairs
+  const entries = {};
+  const entryRegex =
+    /["']([^"']+)["']:\s*path\.resolve\(__dirname,\s*['"]src['"],\s*['"]([^'"]+)['"]\)/g;
+
+  let match;
+  while ((match = entryRegex.exec(exposesContent)) !== null) {
+    const [, key, relativePath] = match;
+    // Reconstruct the expected format for comparison
+    entries[key] = `path.resolve(__dirname, 'src', '${relativePath}')`;
+  }
+
+  return entries;
 }
 
 /**

@@ -193,7 +193,10 @@ const componentMappings = [];
  */
 function addExposedModuleEntry(metadata) {
   const exposedModuleName = `./${metadata.name}`;
-  const exposedModulePath = path.join(iconsBase, metadata.sourceFilePath);
+  // Use path.resolve for unambiguous path resolution from fec.config.js directory
+  // Remove leading slash from sourceFilePath and add 'src' prefix
+  const cleanPath = metadata.sourceFilePath.replace(/^\/+/, '');
+  const exposedModulePath = `path.resolve(__dirname, 'src', '${cleanPath}')`;
   exposedModuleEntries[exposedModuleName] = exposedModulePath;
 }
 
@@ -227,9 +230,15 @@ async function writeExposedModulesConfig() {
       return sorted;
     }, {});
 
-  // Create the new moduleFederation object
+  // Create the new moduleFederation object with path.resolve calls
+  const exposesEntries = Object.entries(sortedExposedModuleEntries)
+    .map(([key, value]) => `  ${JSON.stringify(key)}: ${value}`)
+    .join(',\n');
+
   const newModuleFederationConfig = `moduleFederation: {
-      exposes: ${JSON.stringify(sortedExposedModuleEntries, null, 2)},
+      exposes: {
+${exposesEntries}
+},
     }`;
 
   let newConfigContent;
