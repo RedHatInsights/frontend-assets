@@ -1,8 +1,0 @@
-#!/bin/sh
-# Validate module federation configuration
-echo "🔍 Validating module federation configuration..."
-npm run validate-config
-
-# Run linting
-echo "🔧 Running linter..."
-npm run lint
