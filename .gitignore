@@ -1,3 +1,6 @@
 node_modules/
 dist/
 .DS_STORE
+src/**/*.tsx
+!src/entry.tsx
+!src/demo.tsx
