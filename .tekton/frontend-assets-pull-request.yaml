@@ -9,7 +9,7 @@ metadata:
     pipelinesascode.tekton.dev/max-keep-runs: "3"
     pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch
       == "master"
-    pipelinesascode.tekton.dev/pipeline: https://github.com/RedHatInsights/konflux-pipelines/raw/main/pipelines/platform-ui/docker-build-run-unit-tests.yaml
+    pipelinesascode.tekton.dev/pipeline: https://github.com/RedHatInsights/konflux-pipelines/blob/main/pipelines/docker-build-oci-ta.yaml
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: frontend-assets
@@ -29,30 +29,11 @@ spec:
     value: 5d
   - name: dockerfile
     value: ./build-tools/Dockerfile
-  - name: unit-tests-script
-    value: |
-      #!/bin/bash
-      set -ex
-
-      npm install
-      npm run lint
-      npm run validate-config
   pipelineRef:
-    name: docker-build
+    name: docker-build-oci-ta
   taskRunTemplate:
     serviceAccountName: build-pipeline-frontend-assets
   workspaces:
-  - name: workspace
-    volumeClaimTemplate:
-      metadata:
-        creationTimestamp: null
-      spec:
-        accessModes:
-        - ReadWriteOnce
-        resources:
-          requests:
-            storage: 1Gi
-      status: {}
   - name: git-auth
     secret:
       secretName: '{{ git_auth_secret }}'
