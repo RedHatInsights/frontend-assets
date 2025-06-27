@@ -1,0 +1,344 @@
+const path = require('path');
+const fs = require('fs');
+const { glob } = require('glob');
+const util = require('util');
+
+// Import our modular functions
+const { dashToCamelCase, upperCaseFirstLetter } = require('./scripts/utils');
+const { parseSvgContent } = require('./scripts/svg-parser');
+const { generateSvgMetadata } = require('./scripts/metadata-generator');
+const {
+  generateMarkdownDocumentation,
+} = require('./scripts/documentation-generator');
+const { cleanupGeneratedIcons } = require('./scripts/cleanup');
+
+const projectBase = path.resolve(__dirname);
+const iconsBase = path.resolve(projectBase, 'src');
+
+const promisiFiedWriteFile = util.promisify(fs.writeFile);
+
+/**
+ * Find all SVG files in a directory
+ * @param {string} dir - Directory to search
+ * @returns {Promise<string[]>} Array of SVG file paths
+ */
+async function findAllSvgFiles(dir) {
+  return await glob('**/*.svg', { cwd: dir, absolute: true });
+}
+
+/**
+ * Generates the content for a TSX file based on the provided SVG metadata.
+ * @param {Object} metadata - The metadata object for the SVG file.
+ * @returns {string} The generated TSX file content as a string.
+ */
+function generateTSXFileContent(metadata) {
+  const { name, filePath } = metadata;
+  const svgContent = fs.readFileSync(path.join(iconsBase, filePath), 'utf8');
+  const camelCaseName = dashToCamelCase(name);
+  const componentName = upperCaseFirstLetter(`${camelCaseName}Icon`);
+
+  // Add component mapping for documentation
+  addComponentMapping(metadata, componentName);
+
+  try {
+    const { attributes, innerContent } = parseSvgContent(svgContent);
+
+    // Create default attributes with fallbacks
+    const defaultAttributes = {
+      width: attributes.width || '24',
+      height: attributes.height || '24',
+      viewBox:
+        attributes.viewBox ||
+        `0 0 ${attributes.width || '24'} ${attributes.height || '24'}`,
+      xmlns: 'http://www.w3.org/2000/svg',
+      ...attributes,
+    };
+
+    // Detect if there are any fill colors (inline or CSS) in the content
+    const hasInlineFills = innerContent.includes('fill=');
+    const hasCssFills =
+      innerContent.includes('fill:') || innerContent.includes('fill:#');
+    const hasGradients =
+      innerContent.includes('linearGradient') ||
+      innerContent.includes('radialGradient');
+    const hasStopColors =
+      innerContent.includes('stopColor') || innerContent.includes('stop-color');
+    const hasAnyFills =
+      hasInlineFills || hasCssFills || hasGradients || hasStopColors;
+
+    // Only add fill="currentColor" if the SVG doesn't already have specific fill colors
+    if (!hasAnyFills) {
+      defaultAttributes.fill = 'currentColor';
+    }
+
+    // Generate the attributes string for the SVG element
+    const attributesEntries = Object.entries(defaultAttributes);
+    const svgAttributes = attributesEntries
+      .map(([key, value]) => {
+        if (
+          key === 'style' &&
+          typeof value === 'string' &&
+          value.startsWith('{')
+        ) {
+          // Handle style object - convert JSON string back to object syntax
+          return `style={${value}}`;
+        }
+        return `${key}="${value}"`;
+      })
+      .join('\n    ');
+
+    const tsxContent = `import React from 'react';
+import { Icon, IconComponentProps } from '@patternfly/react-core';
+
+export type ${componentName}Props = {
+  pfIconWrapper?: boolean;
+  iconProps?: IconComponentProps;
+  svgProps?: React.SVGProps<SVGSVGElement>;
+};
+
+export const ${componentName} = (props: ${componentName}Props) => {
+  const svgElement = (
+    <svg
+      ${svgAttributes}
+      {...props.svgProps}
+    >
+      ${innerContent}
+    </svg>
+  );
+
+  if (props.pfIconWrapper) {
+    return (
+      <Icon
+        aria-label="${name}"
+        className="${name}-icon"
+        {...props.iconProps}
+      >
+        {svgElement}
+      </Icon>
+    );
+  }
+
+  return svgElement;
+};
+
+export default ${componentName};
+
+`;
+    return tsxContent;
+  } catch (error) {
+    console.error(`Error parsing SVG content for ${name}:`, error);
+    // Fallback to simpler approach if parsing fails
+    const tsxContent = `import React from 'react';
+import { Icon, IconComponentProps } from '@patternfly/react-core';
+
+export type ${componentName}Props = {
+  pfIconWrapper?: boolean;
+  iconProps?: IconComponentProps;
+  svgProps?: React.SVGProps<SVGSVGElement>;
+};
+
+export const ${componentName} = (props: ${componentName}Props) => {
+  const svgElement = ${svgContent.replace('<svg', '<svg {...props.svgProps}').replace(/xmlns="[^"]*"/g, '')};
+
+  if (props.pfIconWrapper) {
+    return (
+      <Icon
+        aria-label="${name}"
+        className="${name}-icon"
+        {...props.iconProps}
+      >
+        {svgElement}
+      </Icon>
+    );
+  }
+
+  return svgElement;
+};
+
+export default ${componentName};
+
+`;
+    return tsxContent;
+  }
+}
+
+/**
+ * Writes the generated TSX content to a file.
+ * @param {Object} metadata - The metadata object for the SVG file.
+ * @param {string} content - The content to write to the TSX file.
+ */
+function writeTSXFile(metadata, content) {
+  const tsxFilePath = path.join(iconsBase, metadata.sourceFilePath);
+  return promisiFiedWriteFile(tsxFilePath, content)
+    .then(() => {
+      console.log(`Generated TSX file: ${tsxFilePath}`);
+    })
+    .catch((err) => {
+      console.error(`Error writing TSX file ${tsxFilePath}:`, err);
+    });
+}
+
+/**
+ * @type {Record<string, string>}
+ */
+const exposedModuleEntries = {};
+
+/**
+ * @type {Array<{componentName: string, originalName: string, filePath: string, tsxPath: string}>}
+ */
+const componentMappings = [];
+
+/**
+ * @param {Object} metadata - The metadata object for the SVG file.
+ */
+function addExposedModuleEntry(metadata) {
+  const exposedModuleName = `./${metadata.name}`;
+  // Use path.resolve for unambiguous path resolution from fec.config.js directory
+  // Remove leading slash from sourceFilePath and add 'src' prefix
+  const cleanPath = metadata.sourceFilePath.replace(/^\/+/, '');
+  const exposedModulePath = `path.resolve(__dirname, 'src', '${cleanPath}')`;
+  exposedModuleEntries[exposedModuleName] = exposedModulePath;
+}
+
+/**
+ * @param {Object} metadata - The metadata object for the SVG file.
+ * @param {string} componentName - The generated component name.
+ */
+function addComponentMapping(metadata, componentName) {
+  componentMappings.push({
+    componentName,
+    originalName: metadata.originalName,
+    filePath: metadata.filePath,
+    tsxPath: metadata.sourceFilePath,
+  });
+}
+
+/**
+ * Write the module federation config and documentation
+ */
+async function writeExposedModulesConfig() {
+  const currentConfigContent = fs.readFileSync(
+    path.join(projectBase, 'fec.config.js'),
+    'utf8',
+  );
+
+  // Sort the exposed module entries alphabetically for consistent output
+  const sortedExposedModuleEntries = Object.keys(exposedModuleEntries)
+    .sort()
+    .reduce((sorted, key) => {
+      sorted[key] = exposedModuleEntries[key];
+      return sorted;
+    }, {});
+
+  // Create the new moduleFederation object with path.resolve calls
+  const exposesEntries = Object.entries(sortedExposedModuleEntries)
+    .map(([key, value]) => `  ${JSON.stringify(key)}: ${value}`)
+    .join(',\n');
+
+  const newModuleFederationConfig = `moduleFederation: {
+      exposes: {
+${exposesEntries}
+},
+    }`;
+
+  let newConfigContent;
+
+  // More robust replacement logic
+  if (currentConfigContent.includes('moduleFederation:')) {
+    // Find the start of moduleFederation
+    const moduleFedStart = currentConfigContent.indexOf('moduleFederation:');
+
+    // Find the opening brace after moduleFederation:
+    let braceCount = 0;
+    let startPos = currentConfigContent.indexOf('{', moduleFedStart);
+    let endPos = startPos;
+
+    // Find the matching closing brace
+    for (let i = startPos; i < currentConfigContent.length; i++) {
+      if (currentConfigContent[i] === '{') {
+        braceCount++;
+      } else if (currentConfigContent[i] === '}') {
+        braceCount--;
+        if (braceCount === 0) {
+          endPos = i;
+          break;
+        }
+      }
+    }
+
+    // Replace the entire moduleFederation block
+    const beforeModuleFed = currentConfigContent.substring(0, moduleFedStart);
+    const afterModuleFed = currentConfigContent.substring(endPos + 1);
+    newConfigContent =
+      beforeModuleFed + newModuleFederationConfig + afterModuleFed;
+  } else {
+    // Add moduleFederation if it doesn't exist (fallback)
+    newConfigContent = currentConfigContent.replace(
+      'moduleFederation: {},',
+      newModuleFederationConfig + ',',
+    );
+  }
+
+  // Write the updated config
+  await promisiFiedWriteFile(
+    path.join(projectBase, 'fec.config.js'),
+    newConfigContent,
+  );
+
+  // Sort component mappings alphabetically for consistent documentation
+  const sortedComponentMappings = componentMappings.sort((a, b) =>
+    a.componentName.localeCompare(b.componentName),
+  );
+
+  // Generate and write the markdown documentation
+  const markdownContent = generateMarkdownDocumentation(
+    sortedComponentMappings,
+  );
+  await promisiFiedWriteFile(
+    path.join(projectBase, 'COMPONENT_MAPPINGS.md'),
+    markdownContent,
+  );
+
+  console.log(
+    `Generated documentation: ${path.join(projectBase, 'COMPONENT_MAPPINGS.md')}`,
+  );
+}
+
+/**
+ * Generates React components for the provided SVG files.
+ * @param {string[]} svgFiles - An array of paths to SVG files.
+ * @returns {Promise<void>} A promise that resolves when all TSX files are generated.
+ */
+async function processReactIcons(svgFiles) {
+  const promises = [];
+  for (const file of svgFiles) {
+    const metadata = generateSvgMetadata(file, iconsBase);
+    const tsxContent = generateTSXFileContent(metadata);
+    promises.push(writeTSXFile(metadata, tsxContent));
+    addExposedModuleEntry(metadata);
+  }
+  await Promise.all(promises);
+  await writeExposedModulesConfig();
+}
+
+/**
+ * Main execution function
+ */
+async function run() {
+  console.log('Starting icon generation process...');
+
+  // First, cleanup any existing generated TSX files
+  console.log('Cleaning up existing generated files...');
+  await cleanupGeneratedIcons(iconsBase);
+
+  const svgFiles = await findAllSvgFiles(iconsBase);
+  console.log(`Found ${svgFiles.length} SVG files in ${iconsBase}`);
+  await processReactIcons(svgFiles);
+
+  console.log('Icon generation complete!');
+}
+
+// Execute the script
+(async () => {
+  await run();
+})().catch(console.error);
