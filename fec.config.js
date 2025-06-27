@@ -14,8 +14,10 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, 'src', '**/*.svg'),
-          to: ({ absoluteFilename }) => {
-            return absoluteFilename.replace('/src', '/dist');
+          to: ({ absoluteFilename, context }) => {
+            // Ensure the destination path of icons is relative to the context
+            const dest = `${context}${absoluteFilename.replace(context, '').replace('/src', '/dist')}`;
+            return dest;
           },
         },
       ],
