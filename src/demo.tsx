@@ -139,7 +139,7 @@ const App = () => {
         </Toolbar>
         <Gallery
           minWidths={{
-            md: '300px',
+            md: '250px',
           }}
           hasGutter
         >
