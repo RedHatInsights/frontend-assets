@@ -1,18 +1,33 @@
-import '@patternfly/react-core/dist/styles/base.css'
-import React, { Suspense, useMemo } from 'react';
-import {createRoot} from 'react-dom/client'
+import React, { Suspense, useMemo, useState } from 'react';
+import { createRoot } from 'react-dom/client';
+import '@patternfly/react-core/dist/styles/base.css';
+import '@patternfly/patternfly/patternfly-addons.css';
+import { SortAlphaDownIcon, SortAlphaUpIcon } from '@patternfly/react-icons';
+import {
+  Button,
+  Card,
+  CardBody,
+  CardTitle,
+  Content,
+  Gallery,
+  GalleryItem,
+  IconComponentProps,
+  Masthead,
+  Page,
+  PageSection,
+  Toolbar,
+  ToolbarContent,
+  ToolbarItem,
+  TextInput,
+} from '@patternfly/react-core';
 
-import { Grid, GridItem, IconComponentProps, Label } from '@patternfly/react-core';
+const allIcons = (process.env.COMPONENT_IMPORTS || []) as { componentName: string, componentPath: string }[];
+if (!allIcons.length) {
+  console.warn('No icons found in process.env.COMPONENT_IMPORTS');
+}
 
-
-
-const allIcons = process.env.COMPONENT_IMPORTS as unknown as {componentName: string, componentPath: string}[];
-console.log(allIcons);
-
-// Dynamic import component - currently disabled to avoid webpack parsing all files
 const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
   const LazyIcon = useMemo(() => {
-    console.log(path);
     return React.lazy<React.ComponentType<{
       iconProps?: IconComponentProps;
       svgProps?: React.SVGProps<SVGSVGElement>;
@@ -20,31 +35,124 @@ const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
   }, [path]);
 
   return (
-    <GridItem style={{border: '1px solid red', width: '140px', height: '140px' }} span={3}>
-          <Label>{name}</Label>
-          <div style={{padding: 50}}>
-            <Suspense fallback={<div>Loading...</div>}>
-              <LazyIcon svgProps={{ width: 100, height: 100 }} />
+    <GalleryItem>
+      <Card>
+        <CardTitle>{name}</CardTitle>
+        <CardBody className="pf-v6-u-text-align-center">
+          <Suspense fallback={<div>Loading...</div>}>
+            <LazyIcon svgProps={{ width: 100, height: 100 }} />
           </Suspense>
-          </div>
-    </GridItem>
+        </CardBody>
+      </Card>
+    </GalleryItem>
   );
-}
+};
+
+const masthead = (
+  <Masthead>
+  </Masthead>
+);
 
 const App = () => {
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc' | null>(null);
+  const [filterText, setFilterText] = useState('');
+
+  const filteredAndSortedIcons = useMemo(() => {
+    let icons = [...allIcons];
+
+    // Apply filter
+    if (filterText) {
+      const lowerFilter = filterText.toLowerCase();
+      icons = icons.filter((icon) =>
+        icon.componentName.toLowerCase().includes(lowerFilter)
+      );
+    }
+
+    // Apply sorting
+    if (sortOrder) {
+      icons.sort((a, b) =>
+        sortOrder === 'asc'
+          ? a.componentName.localeCompare(b.componentName)
+          : b.componentName.localeCompare(b.componentName)
+      );
+    }
+
+    return icons;
+  }, [sortOrder, filterText]);
+
   const nodes = useMemo(() => {
-    return allIcons.map((icon, index) => {
-      return <DynamicIcon key={index} name={icon.componentName} path={icon.componentPath} />
-    })
-  }, [allIcons])
+    return filteredAndSortedIcons.map((icon, index) => (
+      <DynamicIcon key={index} name={icon.componentName} path={icon.componentPath} />
+    ));
+  }, [filteredAndSortedIcons]);
+
+  const toggleSort = () => {
+    setSortOrder((prev) => (prev === 'asc' ? 'desc' : prev === 'desc' ? null : 'asc'));
+  };
+
+  const handleFilterChange = (value: string) => {
+    setFilterText(value);
+  };
 
   return (
-    <Grid>
-
-      {nodes}
-    </Grid>
+    <Page
+      masthead={masthead}
+      additionalGroupedContent={
+        <PageSection isWidthLimited>
+          <Content>
+            <h1>Frontend Assets</h1>
+          </Content>
+        </PageSection>
+      }
+    >
+      <PageSection isWidthLimited>
+        <Toolbar>
+          <ToolbarContent>
+            <ToolbarItem>
+              <TextInput
+                type="search"
+                placeholder="Filter by name..."
+                value={filterText}
+                onChange={(_event, value) => handleFilterChange(value)}
+                aria-label="Filter icons by name"
+              />
+            </ToolbarItem>
+            <ToolbarItem>
+              <Button
+                variant="plain"
+                onClick={toggleSort}
+                icon={
+                  sortOrder === 'asc' ? (
+                    <SortAlphaUpIcon />
+                  ) : sortOrder === 'desc' ? (
+                    <SortAlphaDownIcon />
+                  ) : (
+                    <SortAlphaUpIcon />
+                  )
+                }
+                aria-label={`Sort icons by name ${sortOrder === 'asc' ? 'descending' : 'ascending'}`}
+              >
+                Sort by Name
+              </Button>
+            </ToolbarItem>
+          </ToolbarContent>
+        </Toolbar>
+        <Gallery
+          minWidths={{
+            md: '300px',
+          }}
+          hasGutter
+        >
+          {nodes.length > 0 ? (
+            nodes
+          ) : (
+            <div>No icons match the filter.</div>
+          )}
+        </Gallery>
+      </PageSection>
+    </Page>
   );
-}
+};
 
 const rootElement = document.createElement('div');
 rootElement.id = 'demo-root';
