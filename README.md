@@ -38,7 +38,7 @@ git commit -m "Add new icon"
 
 ```
 src/new/
-├── badges/                      # Red Hat badges used on various dashboards
+├── technology-icons/                      # Red Hat technology icons
 ```
 
 ### Generated Components
