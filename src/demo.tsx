@@ -33,7 +33,6 @@ if (!allIcons.length) {
   console.warn('No icons found in process.env.COMPONENT_IMPORTS');
 }
 
-// Reusable function for lazy loading icons
 const lazyLoadIcon = (name: string, path: string) => {
   return React.lazy<React.ComponentType<{
     iconProps?: IconComponentProps;
