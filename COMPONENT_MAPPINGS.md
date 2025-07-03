@@ -67,6 +67,7 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/ansible-hub/partner-logos/opensvc-logo-2018.svg" alt="opensvc-logo-2018" width="24" height="24" /> | `AnsibleHubPartnerLogosOpensvcLogo2018Icon` | `opensvc-logo-2018.svg` | `/ansible-hub/partner-logos/opensvc-logo-2018.svg` | `/ansible-hub/partner-logos/opensvc-logo-2018.tsx` |
 | <img src="src/ansible-hub/partner-logos/sensu.svg" alt="sensu" width="24" height="24" /> | `AnsibleHubPartnerLogosSensuIcon` | `sensu.svg` | `/ansible-hub/partner-logos/sensu.svg` | `/ansible-hub/partner-logos/sensu.tsx` |
 | <img src="src/ansible-hub/partner-logos/vyos-logo.svg" alt="vyos-logo" width="24" height="24" /> | `AnsibleHubPartnerLogosVyosLogoIcon` | `vyos-logo.svg` | `/ansible-hub/partner-logos/vyos-logo.svg` | `/ansible-hub/partner-logos/vyos-logo.tsx` |
+| <img src="src/ask-red-hat/icon.svg" alt="icon" width="24" height="24" /> | `AskRedHatIconIcon` | `icon.svg` | `/ask-red-hat/icon.svg` | `/ask-red-hat/icon.tsx` |
 | <img src="src/background-images/bg__hero.svg" alt="bg__hero" width="24" height="24" /> | `BackgroundImagesBgHeroIcon` | `bg__hero.svg` | `/background-images/bg__hero.svg` | `/background-images/bg__hero.tsx` |
 | <img src="src/background-images/fedora-background.svg" alt="fedora-background" width="24" height="24" /> | `BackgroundImagesFedoraBackgroundIcon` | `fedora-background.svg` | `/background-images/fedora-background.svg` | `/background-images/fedora-background.tsx` |
 | <img src="src/background-images/fedora-background-left.svg" alt="fedora-background-left" width="24" height="24" /> | `BackgroundImagesFedoraBackgroundLeftIcon` | `fedora-background-left.svg` | `/background-images/fedora-background-left.svg` | `/background-images/fedora-background-left.tsx` |
@@ -187,4 +188,4 @@ These components are exposed through module federation with the scope `frontendA
 
 ## Generated Components
 
-Total components generated: 132
+Total components generated: 133
