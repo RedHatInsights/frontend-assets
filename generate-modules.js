@@ -13,7 +13,8 @@ const {
 const { cleanupGeneratedIcons } = require('./scripts/cleanup');
 
 const projectBase = path.resolve(__dirname);
-const iconsBase = path.resolve(projectBase, 'src');
+// Updated: Icons will now be sourced from and generated into 'src/new'
+const iconsBase = path.resolve(projectBase, 'src', 'new');
 
 const promisiFiedWriteFile = util.promisify(fs.writeFile);
 
@@ -33,6 +34,7 @@ async function findAllSvgFiles(dir) {
  */
 function generateTSXFileContent(metadata) {
   const { name, filePath } = metadata;
+  // filePath is already relative to iconsBase, so path.join works correctly
   const svgContent = fs.readFileSync(path.join(iconsBase, filePath), 'utf8');
   const camelCaseName = dashToCamelCase(name);
   const componentName = upperCaseFirstLetter(`${camelCaseName}Icon`);
@@ -168,6 +170,7 @@ export default ${componentName};
  * @param {string} content - The content to write to the TSX file.
  */
 function writeTSXFile(metadata, content) {
+  // metadata.sourceFilePath is already relative to iconsBase, so path.join works correctly
   const tsxFilePath = path.join(iconsBase, metadata.sourceFilePath);
   return promisiFiedWriteFile(tsxFilePath, content)
     .then(() => {
@@ -194,9 +197,9 @@ const componentMappings = [];
 function addExposedModuleEntry(metadata) {
   const exposedModuleName = `./${metadata.name}`;
   // Use path.resolve for unambiguous path resolution from fec.config.js directory
-  // Remove leading slash from sourceFilePath and add 'src' prefix
+  // Remove leading slash from sourceFilePath and add 'src/new' prefix
   const cleanPath = metadata.sourceFilePath.replace(/^\/+/, '');
-  const exposedModulePath = `path.resolve(__dirname, 'src', '${cleanPath}')`;
+  const exposedModulePath = `path.resolve(__dirname, 'src', 'new', '${cleanPath}')`;
   exposedModuleEntries[exposedModuleName] = exposedModulePath;
 }
 
@@ -327,9 +330,9 @@ async function processReactIcons(svgFiles) {
 async function run() {
   console.log('Starting icon generation process...');
 
-  // First, cleanup any existing generated TSX files
-  console.log('Cleaning up existing generated files...');
-  await cleanupGeneratedIcons(iconsBase);
+  // Updated: Cleaning up existing generated files from the entire 'src' directory
+  console.log('Cleaning up existing generated files across the src directory...');
+  await cleanupGeneratedIcons(path.resolve(projectBase, 'src'));
 
   const svgFiles = await findAllSvgFiles(iconsBase);
   console.log(`Found ${svgFiles.length} SVG files in ${iconsBase}`);
@@ -342,3 +345,4 @@ async function run() {
 (async () => {
   await run();
 })().catch(console.error);
+
