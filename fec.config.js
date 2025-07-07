@@ -43,7 +43,7 @@ module.exports = {
   "./AnsibleHubPartnerLogosOpensvcLogo2018": path.resolve(__dirname, 'src', 'ansible-hub/partner-logos/opensvc-logo-2018.tsx'),
   "./AnsibleHubPartnerLogosSensu": path.resolve(__dirname, 'src', 'ansible-hub/partner-logos/sensu.tsx'),
   "./AnsibleHubPartnerLogosVyosLogo": path.resolve(__dirname, 'src', 'ansible-hub/partner-logos/vyos-logo.tsx'),
-  "./AskRedHatIcon": path.resolve(__dirname, 'src', 'ask-red-hat/icon.tsx'),
+  "./AskRedhatAskRedhatIcon": path.resolve(__dirname, 'src', 'ask-redhat/ask-redhat-icon.tsx'),
   "./BackgroundImagesBgHero": path.resolve(__dirname, 'src', 'background-images/bg__hero.tsx'),
   "./BackgroundImagesFedoraBackground": path.resolve(__dirname, 'src', 'background-images/fedora-background.tsx'),
   "./BackgroundImagesFedoraBackgroundLeft": path.resolve(__dirname, 'src', 'background-images/fedora-background-left.tsx'),
