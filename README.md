@@ -38,22 +38,7 @@ git commit -m "Add new icon"
 
 ```
 src/
-├── ansible-hub/partner-logos/    # Partner logos for Ansible Hub
-├── background-images/            # Background images and patterns
-├── console-landing/             # Console landing page assets
-├── console-logos/               # Console branding logos
-├── email-assets/                # Email template assets
-├── icons/                       # General purpose icons
-├── integrations/                # Integration-related icons
-├── learning-resources/          # Learning and documentation icons
-├── logos/                       # Product and service logos
-├── partners-icons/              # Partner service icons
-├── platform-icons/              # Platform UI icons
-├── platform-logos/              # Platform service logos
-├── pendo/                       # Pendo tour assets
-├── rbac-landing/                # RBAC landing page assets
-├── red-hat-logos/               # Red Hat branding
-└── sources-integrations/        # Source integration icons
+├── technology-icons/            # Red Hat technology icons
 ```
 
 ### Generated Components
