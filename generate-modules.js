@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports */
 const path = require('path');
 const fs = require('fs');
 const { glob } = require('glob');
@@ -138,7 +139,9 @@ export type ${componentName}Props = {
 };
 
 export const ${componentName} = (props: ${componentName}Props) => {
-  const svgElement = ${svgContent.replace('<svg', '<svg {...props.svgProps}').replace(/xmlns="[^"]*"/g, '')};
+  const svgElement = ${svgContent
+    .replace('<svg', '<svg {...props.svgProps}')
+    .replace(/xmlns="[^"]*"/g, '')};
 
   if (props.pfIconWrapper) {
     return (
@@ -217,10 +220,8 @@ function addComponentMapping(metadata, componentName) {
  * Write the module federation config and documentation
  */
 async function writeExposedModulesConfig() {
-  const currentConfigContent = fs.readFileSync(
-    path.join(projectBase, 'fec.config.js'),
-    'utf8',
-  );
+  const configPath = path.join(projectBase, 'fec.config.js');
+  const currentConfigContent = fs.readFileSync(configPath, 'utf8');
 
   // Sort the exposed module entries alphabetically for consistent output
   const sortedExposedModuleEntries = Object.keys(exposedModuleEntries)
@@ -230,60 +231,46 @@ async function writeExposedModulesConfig() {
       return sorted;
     }, {});
 
-  // Create the new moduleFederation object with path.resolve calls
+  // Create the new 'exposes' entries string with correct indentation
   const exposesEntries = Object.entries(sortedExposedModuleEntries)
-    .map(([key, value]) => `  ${JSON.stringify(key)}: ${value}`)
+    .map(([key, value]) => `      ${JSON.stringify(key)}: ${value}`)
     .join(',\n');
 
-  const newModuleFederationConfig = `moduleFederation: {
-      exposes: {
+  // Construct the entire new moduleFederation block, preserving comments and structure
+  const newModuleFederationBlock = `/* eslint-disable prettier/prettier */
+  moduleFederation: {
+    exposes: {
 ${exposesEntries}
-},
-    }`;
+    },
+  },
+  /* eslint-enable prettier/prettier */`;
+
+  // Regex to find the entire moduleFederation block, including the comments
+  const configBlockRegex =
+    /\/\* eslint-disable prettier\/prettier \*\/[\s\S]*?moduleFederation:[\s\S]*?\/\* eslint-enable prettier\/prettier \*\//;
 
   let newConfigContent;
 
-  // More robust replacement logic
-  if (currentConfigContent.includes('moduleFederation:')) {
-    // Find the start of moduleFederation
-    const moduleFedStart = currentConfigContent.indexOf('moduleFederation:');
-
-    // Find the opening brace after moduleFederation:
-    let braceCount = 0;
-    let startPos = currentConfigContent.indexOf('{', moduleFedStart);
-    let endPos = startPos;
-
-    // Find the matching closing brace
-    for (let i = startPos; i < currentConfigContent.length; i++) {
-      if (currentConfigContent[i] === '{') {
-        braceCount++;
-      } else if (currentConfigContent[i] === '}') {
-        braceCount--;
-        if (braceCount === 0) {
-          endPos = i;
-          break;
-        }
-      }
-    }
-
-    // Replace the entire moduleFederation block
-    const beforeModuleFed = currentConfigContent.substring(0, moduleFedStart);
-    const afterModuleFed = currentConfigContent.substring(endPos + 1);
-    newConfigContent =
-      beforeModuleFed + newModuleFederationConfig + afterModuleFed;
-  } else {
-    // Add moduleFederation if it doesn't exist (fallback)
+  if (configBlockRegex.test(currentConfigContent)) {
+    // If the block is found, replace it
     newConfigContent = currentConfigContent.replace(
-      'moduleFederation: {},',
-      newModuleFederationConfig + ',',
+      configBlockRegex,
+      newModuleFederationBlock,
     );
+  } else {
+    // Fallback for when the block isn't found
+    console.error(
+      '❌ Could not find the target moduleFederation block in fec.config.js.',
+    );
+    console.error(
+      'Please ensure the file contains the /* eslint-disable prettier/prettier */ comments around the moduleFederation object.',
+    );
+    throw new Error('Failed to update fec.config.js due to unexpected format.');
   }
 
   // Write the updated config
-  await promisiFiedWriteFile(
-    path.join(projectBase, 'fec.config.js'),
-    newConfigContent,
-  );
+  await promisiFiedWriteFile(configPath, newConfigContent);
+  console.log('✅ Updated fec.config.js with new module federation entries.');
 
   // Sort component mappings alphabetically for consistent documentation
   const sortedComponentMappings = componentMappings.sort((a, b) =>
@@ -291,16 +278,17 @@ ${exposesEntries}
   );
 
   // Generate and write the markdown documentation
-  const markdownContent = generateMarkdownDocumentation(
-    sortedComponentMappings,
-  );
+  const markdownContent = generateMarkdownDocumentation(sortedComponentMappings);
   await promisiFiedWriteFile(
     path.join(projectBase, 'COMPONENT_MAPPINGS.md'),
     markdownContent,
   );
 
   console.log(
-    `Generated documentation: ${path.join(projectBase, 'COMPONENT_MAPPINGS.md')}`,
+    `Generated documentation: ${path.join(
+      projectBase,
+      'COMPONENT_MAPPINGS.md',
+    )}`,
   );
 }
 
@@ -331,8 +319,19 @@ async function run() {
   console.log('Cleaning up existing generated files...');
   await cleanupGeneratedIcons(iconsBase);
 
-  const svgFiles = await findAllSvgFiles(iconsBase);
-  console.log(`Found ${svgFiles.length} SVG files in ${iconsBase}`);
+  // Define the specific directories to search for icons.
+  // More directories can be added to this array in the future.
+  const iconFolders = ['technology-icons'];
+  let svgFiles = [];
+
+  for (const folder of iconFolders) {
+    const searchDirectory = path.join(iconsBase, folder);
+    const filesInFolder = await findAllSvgFiles(searchDirectory);
+    console.log(`Found ${filesInFolder.length} SVG files in ${searchDirectory}`);
+    svgFiles = svgFiles.concat(filesInFolder);
+  }
+
+  console.log(`Found a total of ${svgFiles.length} SVG files to process.`);
   await processReactIcons(svgFiles);
 
   console.log('Icon generation complete!');

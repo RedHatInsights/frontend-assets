@@ -7,6 +7,10 @@ const { generateSvgMetadata } = require('./metadata-generator');
 const projectBase = path.resolve(__dirname, '..');
 const iconsBase = path.resolve(projectBase, 'src');
 
+// Define the specific directories to search for icons.
+// This should match the configuration in generate-modules.js
+const iconFolders = ['technology-icons'];
+
 /**
  * Find all SVG files in a directory
  * @param {string} dir - Directory to search
@@ -21,7 +25,15 @@ async function findAllSvgFiles(dir) {
  * @returns {Promise<Record<string, string>>} Expected module entries
  */
 async function generateExpectedModuleEntries() {
-  const svgFiles = await findAllSvgFiles(iconsBase);
+  let svgFiles = [];
+
+  // Only search in the specified icon folders
+  for (const folder of iconFolders) {
+    const searchDirectory = path.join(iconsBase, folder);
+    const filesInFolder = await findAllSvgFiles(searchDirectory);
+    svgFiles = svgFiles.concat(filesInFolder);
+  }
+
   const expectedEntries = {};
 
   for (const file of svgFiles) {
