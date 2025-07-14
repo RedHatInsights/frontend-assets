@@ -52,6 +52,7 @@ These components are exposed through module federation with the scope `frontendA
 
 | Preview | Component Name | Original SVG Name | Source SVG Path | Generated TSX Path |
 |---|---|---|---|---|
+| <img src="src/partners/aws.svg" alt="aws" width="24" height="24" /> | `PartnersAwsIcon` | `aws.svg` | `/partners/aws.svg` | `/partners/aws.tsx` |
 | <img src="src/technology-icons/3scale-api-management.svg" alt="3scale-api-management" width="24" height="24" /> | `TechnologyIcons3scaleApiManagementIcon` | `3scale-api-management.svg` | `/technology-icons/3scale-api-management.svg` | `/technology-icons/3scale-api-management.tsx` |
 | <img src="src/technology-icons/acm-for-kubernetes.svg" alt="acm-for-kubernetes" width="24" height="24" /> | `TechnologyIconsAcmForKubernetesIcon` | `acm-for-kubernetes.svg` | `/technology-icons/acm-for-kubernetes.svg` | `/technology-icons/acm-for-kubernetes.tsx` |
 | <img src="src/technology-icons/acs.svg" alt="acs" width="24" height="24" /> | `TechnologyIconsAcsIcon` | `acs.svg` | `/technology-icons/acs.svg` | `/technology-icons/acs.tsx` |
@@ -132,4 +133,4 @@ These components are exposed through module federation with the scope `frontendA
 
 ## Generated Components
 
-Total components generated: 77
+Total components generated: 78
