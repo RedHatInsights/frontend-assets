@@ -303,7 +303,7 @@ const App = () => {
       additionalGroupedContent={
         <PageSection>
           <Content>
-            <h1>Frontend Assets</h1>
+            <h1>Hybrid Cloud Console Image Library</h1>
           </Content>
         </PageSection>
       }
