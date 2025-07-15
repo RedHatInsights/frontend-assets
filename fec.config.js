@@ -28,6 +28,7 @@ module.exports = {
   /* eslint-disable prettier/prettier */
   moduleFederation: {
     exposes: {
+      "./PartnersAws": path.resolve(__dirname, 'src', 'partners/aws.tsx'),
       "./TechnologyIcons3scaleApiManagement": path.resolve(__dirname, 'src', 'technology-icons/3scale-api-management.tsx'),
       "./TechnologyIconsAcmForKubernetes": path.resolve(__dirname, 'src', 'technology-icons/acm-for-kubernetes.tsx'),
       "./TechnologyIconsAcs": path.resolve(__dirname, 'src', 'technology-icons/acs.tsx'),
