@@ -102,7 +102,12 @@ const config = {
       },
     ],
   },
-  plugins: [new HtmlWebpackPlugin(), componentImportsPlugin],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    }),
+    componentImportsPlugin
+  ],
   devServer: {
     port: 8003,
   },
