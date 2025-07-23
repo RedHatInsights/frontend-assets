@@ -1,4 +1,4 @@
-import React, { Suspense, useMemo, useState } from 'react';
+import React, { Suspense, useMemo, useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import '@patternfly/react-core/dist/styles/base.css';
 import '@patternfly/patternfly/patternfly-addons.css';
@@ -175,18 +175,65 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
 
 const masthead = <Masthead />;
 
+// Custom hook for persistent state
+function usePersistentState<T>(key: string, initialValue: T): [T, (value: T | ((prev: T) => T)) => void] {
+  const [state, setState] = useState<T>(() => {
+    try {
+      const item = window.localStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      console.warn(`Error reading localStorage key "${key}":`, error);
+      return initialValue;
+    }
+  });
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(key, JSON.stringify(state));
+    } catch (error) {
+      console.warn(`Error setting localStorage key "${key}":`, error);
+    }
+  }, [key, state]);
+
+  return [state, setState];
+}
+
+// Custom hook for persistent Set state
+function usePersistentSetState(key: string, initialValue: Set<string>): [Set<string>, (value: Set<string> | ((prev: Set<string>) => Set<string>)) => void] {
+  const [state, setState] = useState<Set<string>>(() => {
+    try {
+      const item = window.localStorage.getItem(key);
+      return item ? new Set(JSON.parse(item)) : initialValue;
+    } catch (error) {
+      console.warn(`Error reading localStorage key "${key}":`, error);
+      return initialValue;
+    }
+  });
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(key, JSON.stringify(Array.from(state)));
+    } catch (error) {
+      console.warn(`Error setting localStorage key "${key}":`, error);
+    }
+  }, [key, state]);
+
+  return [state, setState];
+}
+
 const App = () => {
-  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
-  const [filterText, setFilterText] = useState('');
-  const [viewMode, setViewMode] = useState<'cards' | 'list'>('cards');
-  const [page, setPage] = useState(1);
-  const [perPage, setPerPage] = useState<number | undefined>(undefined);
+  const [sortOrder, setSortOrder] = usePersistentState<'asc' | 'desc'>('demo-sort-order', 'asc');
+  const [filterText, setFilterText] = usePersistentState<string>('demo-filter-text', '');
+  const [viewMode, setViewMode] = usePersistentState<'cards' | 'list'>('demo-view-mode', 'cards');
+  const [page, setPage] = usePersistentState<number>('demo-page', 1);
+  const [perPage, setPerPage] = usePersistentState<number | undefined>('demo-per-page', undefined);
   
   // Get all available folder types (technology and partners)
   const availableFolderTypes = FOLDER_TYPES;
   
   // Initialize selectedImageTypes with all available types by default
-  const [selectedImageTypes, setSelectedImageTypes] = useState<Set<string>>(
+  const [selectedImageTypes, setSelectedImageTypes] = usePersistentSetState(
+    'demo-selected-image-types',
     new Set(availableFolderTypes.map(f => f.key))
   );
   const [isSelectOpen, setIsSelectOpen] = useState(false);
@@ -237,13 +284,17 @@ const App = () => {
   };
 
   const handleFilterChange = (value: string) => {
-    setFilterText(value);
-    setPage(1);
+    if (value !== filterText) {
+      setFilterText(value);
+      setPage(1);
+    }
   };
 
   const handleViewToggle = (value: 'cards' | 'list') => {
-    setViewMode(value);
-    setPage(1);
+    if (value !== viewMode) {
+      setViewMode(value);
+      setPage(1);
+    }
   };
 
   const handleImageTypeSelect = (_event: React.MouseEvent<Element, MouseEvent> | undefined, value: string | number | undefined) => {
@@ -429,16 +480,25 @@ const App = () => {
               <EmptyStateFooter>
                 <EmptyStateActions>
                   {filterText ? (
-                    <Button variant="primary" onClick={() => setFilterText('')}>
+                    <Button variant="primary" onClick={() => {
+                      setFilterText('');
+                      setPage(1);
+                    }}>
                       Clear search
                     </Button>
                   ) : selectedImageTypes.size === 0 ? (
-                    <Button variant="primary" onClick={() => setSelectedImageTypes(new Set(availableFolderTypes.map(f => f.key)))}>
+                    <Button variant="primary" onClick={() => {
+                      setSelectedImageTypes(new Set(availableFolderTypes.map(f => f.key)));
+                      setPage(1);
+                    }}>
                       Show all icons
                     </Button>
                   ) : null}
                   {filterText && selectedImageTypes.size === 0 && (
-                    <Button variant="secondary" onClick={() => setSelectedImageTypes(new Set(availableFolderTypes.map(f => f.key)))}>
+                    <Button variant="secondary" onClick={() => {
+                      setSelectedImageTypes(new Set(availableFolderTypes.map(f => f.key)));
+                      setPage(1);
+                    }}>
                       Select All Types
                     </Button>
                   )}
