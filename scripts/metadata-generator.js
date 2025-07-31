@@ -46,12 +46,7 @@ function generateSvgMetadata(file, iconsBase) {
     .join('');
 
   // Use only the cleaned filename without directory prefix for component naming
-  let uniqueName = upperCaseFirstLetter(cleanBaseName);
-
-  // Handle filenames that start with numbers (JavaScript identifiers cannot start with numbers)
-  if (/^[0-9]/.test(uniqueName)) {
-    uniqueName = uniqueName.replace(/^3scale/, 'ThreeScale');
-  }
+  const uniqueName = upperCaseFirstLetter(cleanBaseName);
 
   const metadata = {
     name: uniqueName,

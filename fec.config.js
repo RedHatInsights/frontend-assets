@@ -101,7 +101,7 @@ module.exports = {
       "./Settings": path.resolve(__dirname, 'src', 'technology-icons/settings.tsx'),
       "./SingleSignOn": path.resolve(__dirname, 'src', 'technology-icons/single-sign-on.tsx'),
       "./Subscriptions": path.resolve(__dirname, 'src', 'technology-icons/subscriptions.tsx'),
-      "./ThreeScaleApiManagement": path.resolve(__dirname, 'src', 'technology-icons/3scale-api-management.tsx'),
+      "./ThreescaleApiManagement": path.resolve(__dirname, 'src', 'technology-icons/threescale-api-management.tsx'),
       "./TrustedArtifact": path.resolve(__dirname, 'src', 'technology-icons/trusted-artifact.tsx'),
       "./TrustedArtifactSigner": path.resolve(__dirname, 'src', 'technology-icons/trusted-artifact-signer.tsx'),
       "./TrustedContent1": path.resolve(__dirname, 'src', 'technology-icons/trusted-content-1.tsx'),
