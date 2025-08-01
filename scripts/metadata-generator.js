@@ -45,10 +45,8 @@ function generateSvgMetadata(file, iconsBase) {
     )
     .join('');
 
-  // Combine directory parts with cleaned filename for unique naming
-  const uniqueName = dirParts
-    ? `${dirParts}${upperCaseFirstLetter(cleanBaseName)}`
-    : upperCaseFirstLetter(cleanBaseName);
+  // Use only the cleaned filename without directory prefix for component naming
+  const uniqueName = upperCaseFirstLetter(cleanBaseName);
 
   const metadata = {
     name: uniqueName,
