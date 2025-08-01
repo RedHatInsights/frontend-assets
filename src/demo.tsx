@@ -2,13 +2,14 @@ import React, { Suspense, useMemo, useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import '@patternfly/react-core/dist/styles/base.css';
 import '@patternfly/patternfly/patternfly-addons.css';
-import { SortAlphaDownIcon, SortAlphaUpIcon, ThIcon, ListIcon, CubesIcon } from '@patternfly/react-icons';
+import { SortAlphaDownIcon, SortAlphaUpIcon, ThIcon, ListIcon, CubesIcon, InfoCircleIcon } from '@patternfly/react-icons';
 import {
   Button,
   Card,
   CardBody,
   CardFooter,
   CardHeader,
+  ClipboardCopy,
   Content,
   Divider,
   EmptyState,
@@ -24,6 +25,8 @@ import {
   Masthead,
   MenuToggle,
   MenuToggleElement,
+  Modal,
+  ModalVariant,
   Page,
   PageSection,
   Pagination,
@@ -82,83 +85,63 @@ const lazyLoadIcon = (name: string, path: string) => {
 const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
   const LazyIcon = useMemo(() => lazyLoadIcon(name, path), [path, name]);
   const folderLabel = getFolderLabel(path);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleInfoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsModalOpen(true);
+  };
 
   return (
-    <GalleryItem>
-      <Card isFullHeight>
-        <CardHeader>
-          <Content 
-            className="pf-v6-u-font-weight-bold pf-v6-u-font-size-sm"
-            style={{
-              whiteSpace: 'nowrap',
-              overflow: 'hidden',
-              textOverflow: 'ellipsis',
-              maxWidth: '100%',
-              color: 'var(--pf-v6-global--Color--100)'
-            }}
-          >
-            {name}
-          </Content>
-        </CardHeader>
-        <CardBody className="pf-v6-u-text-align-center">
-          <Suspense fallback={<div>Loading...</div>}>
-            <LazyIcon svgProps={{ 
-              width: 80, 
-              height: 80 
-            }} />
-          </Suspense>
-        </CardBody>
-        <CardFooter>
-          <Label 
-            color={folderLabel.color} 
-            isCompact
-            style={{
-              maxWidth: '100%',
-              whiteSpace: 'nowrap',
-              overflow: 'hidden',
-              textOverflow: 'ellipsis'
-            }}
-          >
-            {folderLabel.text}
-          </Label>
-        </CardFooter>
-      </Card>
-    </GalleryItem>
-  );
-};
-
-const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
-  const LazyIcon = useMemo(() => lazyLoadIcon(name, path), [path, name]);
-  const folderLabel = getFolderLabel(path);
-
-  return (
-    <Flex className="pf-v6-u-mt-md" alignItems={{ default: 'alignItemsCenter' }} spacer={{ default: 'spacerSm' }} flexWrap={{ default: 'nowrap' }}>
-      <FlexItem>
-        <Suspense fallback={<div>Loading...</div>}>
-          <LazyIcon svgProps={{ width: 40, height: 40 }} />
-        </Suspense>
-      </FlexItem>
-      <FlexItem flex={{ default: 'flex_1' }}>
-        <Flex direction={{ default: 'column' }}>
-          <FlexItem>
-            <Content 
-              className="pf-v6-u-font-weight-bold pf-v6-u-font-size-sm"
-              style={{
-                whiteSpace: 'nowrap',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis',
-                maxWidth: '100%'
-              }}
-            >
-              {name}
-            </Content>
-          </FlexItem>
-          <FlexItem>
+    <>
+      <GalleryItem>
+        <Card isFullHeight>
+          <CardHeader>
+            <Flex justifyContent={{ default: 'justifyContentSpaceBetween' }} alignItems={{ default: 'alignItemsCenter' }}>
+              <FlexItem flex={{ default: 'flex_1' }}>
+                <Content 
+                  className="pf-v6-u-font-weight-bold pf-v6-u-font-size-sm"
+                  style={{
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    maxWidth: '100%',
+                    color: 'var(--pf-v6-global--Color--100)'
+                  }}
+                >
+                  {name}
+                </Content>
+              </FlexItem>
+              <FlexItem>
+                <Button
+                  variant="plain"
+                  icon={<InfoCircleIcon />}
+                  onClick={handleInfoClick}
+                  aria-label={`Show details for ${name}`}
+                  style={{ 
+                    padding: '4px',
+                    fontSize: '14px',
+                    color: 'var(--pf-v6-global--Color--200)'
+                  }}
+                />
+              </FlexItem>
+            </Flex>
+          </CardHeader>
+          <CardBody className="pf-v6-u-text-align-center">
+            <Suspense fallback={<div>Loading...</div>}>
+              <LazyIcon svgProps={{ 
+                width: 80, 
+                height: 80 
+              }} />
+            </Suspense>
+          </CardBody>
+          <CardFooter>
             <Label 
               color={folderLabel.color} 
               isCompact
               style={{
-                maxWidth: '200px',
+                maxWidth: '100%',
                 whiteSpace: 'nowrap',
                 overflow: 'hidden',
                 textOverflow: 'ellipsis'
@@ -166,10 +149,194 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
             >
               {folderLabel.text}
             </Label>
-          </FlexItem>
-        </Flex>
-      </FlexItem>
-    </Flex>
+          </CardFooter>
+        </Card>
+      </GalleryItem>
+
+      <Modal
+        variant={ModalVariant.large}
+        title={`Icon Details: ${name}`}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      >
+        <div style={{ padding: '24px', margin: 0 }}>
+          <Title headingLevel="h4" size="md" style={{ marginBottom: '12px' }}>
+            Usage Examples
+          </Title>
+          <p style={{ marginBottom: '16px', fontSize: '14px', color: 'var(--pf-v6-global--Color--200)' }}>
+            Copy any of these code examples to use the icon in your application:
+          </p>
+          
+          <div style={{ marginBottom: '20px' }}>
+            <Title headingLevel="h5" size="md" style={{ marginBottom: '8px' }}>
+              Without PatternFly Wrapper (Preserves original SVG dimensions)
+            </Title>
+            <ClipboardCopy isReadOnly>
+{`<ScalprumComponent 
+  scope="frontendAssets" 
+  module="./${name}" 
+  svgProps={{width: 50, height: 50}} 
+/>`}
+            </ClipboardCopy>
+          </div>
+
+          <div style={{ marginBottom: '20px' }}>
+            <Title headingLevel="h5" size="md" style={{ marginBottom: '8px' }}>
+              With PatternFly Wrapper (Uses PatternFly Icon styling)
+            </Title>
+            <ClipboardCopy isReadOnly>
+{`<ScalprumComponent 
+  scope="frontendAssets" 
+  module="./${name}" 
+  pfIconWrapper={true} 
+  iconProps={{size: "lg"}} 
+/>`}
+            </ClipboardCopy>
+          </div>
+
+          <div>
+            <Title headingLevel="h5" size="md" style={{ marginBottom: '8px' }}>
+              Combined Usage (PatternFly wrapper + custom SVG props)
+            </Title>
+            <ClipboardCopy isReadOnly>
+{`<ScalprumComponent 
+  scope="frontendAssets" 
+  module="./${name}" 
+  pfIconWrapper={true}
+  iconProps={{size: "md"}}
+  svgProps={{className: "custom-icon-class"}} 
+/>`}
+            </ClipboardCopy>
+          </div>
+        </div>
+      </Modal>
+    </>
+  );
+};
+
+const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
+  const LazyIcon = useMemo(() => lazyLoadIcon(name, path), [path, name]);
+  const folderLabel = getFolderLabel(path);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleInfoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsModalOpen(true);
+  };
+
+  return (
+    <>
+      <Flex className="pf-v6-u-mt-md" alignItems={{ default: 'alignItemsCenter' }} spacer={{ default: 'spacerSm' }} flexWrap={{ default: 'nowrap' }}>
+        <FlexItem>
+          <Suspense fallback={<div>Loading...</div>}>
+            <LazyIcon svgProps={{ width: 40, height: 40 }} />
+          </Suspense>
+        </FlexItem>
+        <FlexItem flex={{ default: 'flex_1' }}>
+          <Flex direction={{ default: 'column' }}>
+            <FlexItem>
+              <Content 
+                className="pf-v6-u-font-weight-bold pf-v6-u-font-size-sm"
+                style={{
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  maxWidth: '100%'
+                }}
+              >
+                {name}
+              </Content>
+            </FlexItem>
+            <FlexItem>
+              <Label 
+                color={folderLabel.color} 
+                isCompact
+                style={{
+                  maxWidth: '200px',
+                  whiteSpace: 'nowrap',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis'
+                }}
+              >
+                {folderLabel.text}
+              </Label>
+            </FlexItem>
+          </Flex>
+        </FlexItem>
+        <FlexItem>
+          <Button
+            variant="plain"
+            icon={<InfoCircleIcon />}
+            onClick={handleInfoClick}
+            aria-label={`Show details for ${name}`}
+            style={{ 
+              padding: '4px',
+              fontSize: '14px',
+              color: 'var(--pf-v6-global--Color--200)'
+            }}
+          />
+        </FlexItem>
+      </Flex>
+
+      <Modal
+        variant={ModalVariant.large}
+        title={`Icon Details: ${name}`}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      >
+        <div style={{ padding: '24px', margin: 0 }}>
+          <Title headingLevel="h4" size="md" style={{ marginBottom: '12px' }}>
+            Usage Examples
+          </Title>
+          <p style={{ marginBottom: '16px', fontSize: '14px', color: 'var(--pf-v6-global--Color--200)' }}>
+            Copy any of these code examples to use the icon in your application:
+          </p>
+          
+          <div style={{ marginBottom: '20px' }}>
+            <Title headingLevel="h5" size="md" style={{ marginBottom: '8px' }}>
+              Without PatternFly Wrapper (Preserves original SVG dimensions)
+            </Title>
+            <ClipboardCopy isReadOnly>
+{`<ScalprumComponent 
+  scope="frontendAssets" 
+  module="./${name}" 
+  svgProps={{width: 50, height: 50}} 
+/>`}
+            </ClipboardCopy>
+          </div>
+
+          <div style={{ marginBottom: '20px' }}>
+            <Title headingLevel="h5" size="md" style={{ marginBottom: '8px' }}>
+              With PatternFly Wrapper (Uses PatternFly Icon styling)
+            </Title>
+            <ClipboardCopy isReadOnly>
+{`<ScalprumComponent 
+  scope="frontendAssets" 
+  module="./${name}" 
+  pfIconWrapper={true} 
+  iconProps={{size: "lg"}} 
+/>`}
+            </ClipboardCopy>
+          </div>
+
+          <div>
+            <Title headingLevel="h5" size="md" style={{ marginBottom: '8px' }}>
+              Combined Usage (PatternFly wrapper + custom SVG props)
+            </Title>
+            <ClipboardCopy isReadOnly>
+{`<ScalprumComponent 
+  scope="frontendAssets" 
+  module="./${name}" 
+  pfIconWrapper={true}
+  iconProps={{size: "md"}}
+  svgProps={{className: "custom-icon-class"}} 
+/>`}
+            </ClipboardCopy>
+          </div>
+        </div>
+      </Modal>
+    </>
   );
 };
 
