@@ -63,7 +63,7 @@ if (!allIcons.length) {
 
 // Function to determine folder type from component path
 const getFolderLabel = (componentPath: string): { text: string; color: 'blue' | 'green' | 'orange' | 'purple' | 'red' | 'teal'; key: string } => {
-  if (componentPath.includes('partners/')) {
+  if (componentPath.includes('partners-icons/')) {
     return { text: 'Partners', color: 'green', key: 'partners' };
   }
   // Default to technology for all other paths
@@ -131,8 +131,8 @@ const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
           <CardBody className="pf-v6-u-text-align-center">
             <Suspense fallback={<div>Loading...</div>}>
               <LazyIcon svgProps={{ 
-                width: 80, 
-                height: 80 
+                width: 100, 
+                height: 100 
               }} />
             </Suspense>
           </CardBody>
@@ -227,10 +227,10 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
 
   return (
     <>
-      <Flex className="pf-v6-u-mt-md" alignItems={{ default: 'alignItemsCenter' }} spacer={{ default: 'spacerSm' }} flexWrap={{ default: 'nowrap' }}>
+      <Flex alignItems={{ default: 'alignItemsCenter' }} spacer={{ default: 'spacerSm' }} flexWrap={{ default: 'nowrap' }}>
         <FlexItem>
           <Suspense fallback={<div>Loading...</div>}>
-            <LazyIcon svgProps={{ width: 40, height: 40 }} />
+            <LazyIcon svgProps={{ width: 50, height: 50 }} />
           </Suspense>
         </FlexItem>
         <FlexItem flex={{ default: 'flex_1' }}>
