@@ -112,6 +112,7 @@ module.exports = {
       "./Microsoft": path.resolve(__dirname, 'src', 'partners-icons/microsoft.tsx'),
       "./MicrosoftAzure": path.resolve(__dirname, 'src', 'partners-icons/microsoft-azure.tsx'),
       "./MicrosoftAzureLogomark": path.resolve(__dirname, 'src', 'partners-icons/microsoft-azure-logomark.tsx'),
+      "./MicrosoftAzureShort": path.resolve(__dirname, 'src', 'partners-icons/microsoft-azure-short.tsx'),
       "./MicrosoftLogomark": path.resolve(__dirname, 'src', 'partners-icons/microsoft-logomark.tsx'),
       "./MicrosoftOfficeTeams": path.resolve(__dirname, 'src', 'partners-icons/microsoft-office-teams.tsx'),
       "./MicrosoftShort": path.resolve(__dirname, 'src', 'partners-icons/microsoft-short.tsx'),
