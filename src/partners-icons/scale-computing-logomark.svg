@@ -1,0 +1,24 @@
+<svg viewBox="14 0 64 64">
+<defs>
+<style>
+.st9{fill:url(#New_Gradient_Swatch_25);}
+.st14{fill:#fff;}
+</style>
+<linearGradient id="New_Gradient_Swatch_2" data-name="New Gradient Swatch 2" x1="168.23" y1="31.82" x2="192.72" y2="31.82" gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#0f4d8e"/>
+<stop offset="1" stop-color="#059bd8"/>
+</linearGradient>
+<linearGradient id="New_Gradient_Swatch_21" data-name="New Gradient Swatch 2" x1="155.7" x2="180.19" xlink:href="#New_Gradient_Swatch_2"/>
+<linearGradient id="New_Gradient_Swatch_22" data-name="New Gradient Swatch 2" x1="155.7" x2="180.19" xlink:href="#New_Gradient_Swatch_2"/>
+<linearGradient id="New_Gradient_Swatch_23" data-name="New Gradient Swatch 2" x1="14.85" x2="77.16" xlink:href="#New_Gradient_Swatch_2"/>
+<linearGradient id="New_Gradient_Swatch_24" data-name="New Gradient Swatch 2" x1="155.7" x2="180.19" xlink:href="#New_Gradient_Swatch_2"/>
+<linearGradient id="New_Gradient_Swatch_25" data-name="New Gradient Swatch 2" x1="14.85" x2="77.16" xlink:href="#New_Gradient_Swatch_2"/>
+</defs>
+<g id="blue_x5F_grey_x5F_acumera">
+<g>
+<path class="st9" d="M46.01.66c-17.21,0-31.16,13.95-31.16,31.16,0,17.21,13.95,31.16,31.16,31.16,17.19,0,31.14-13.93,31.16-31.12.02-17.21-13.91-31.17-31.12-31.19-.01,0-.02,0-.04,0Z"/>
+<polygon class="st14" points="27.99 51.53 44.96 12.33 52.25 12.33 35.29 51.53 27.99 51.53"/>
+<polygon class="st14" points="47.72 51.53 40.39 51.53 57.38 12.33 64.68 12.33 47.72 51.53"/>
+</g>
+</g>
+</svg>

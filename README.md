@@ -38,7 +38,8 @@ git commit -m "Add new icon"
 
 ```
 src/
-├── technology-icons/            # Red Hat technology icons
+├── partners-icons/            # External images that are not internally given by Red Hat
+├── technology-icons/         # Red Hat technology icons
 ```
 
 ### Generated Components
