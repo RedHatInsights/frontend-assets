@@ -79,6 +79,8 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/partners-icons/aws.svg" alt="aws" width="24" height="24" /> | `AwsIcon` | `aws.svg` | `/partners-icons/aws.svg` | `/partners-icons/aws.tsx` |
 | <img src="src/partners-icons/aws-logomark.svg" alt="aws-logomark" width="24" height="24" /> | `AwsLogomarkIcon` | `aws-logomark.svg` | `/partners-icons/aws-logomark.svg` | `/partners-icons/aws-logomark.tsx` |
 | <img src="src/partners-icons/aws-long.svg" alt="aws-long" width="24" height="24" /> | `AwsLongIcon` | `aws-long.svg` | `/partners-icons/aws-long.svg` | `/partners-icons/aws-long.tsx` |
+| <img src="src/partners-icons/bigpandaio.svg" alt="bigpandaio" width="24" height="24" /> | `BigpandaioIcon` | `bigpandaio.svg` | `/partners-icons/bigpandaio.svg` | `/partners-icons/bigpandaio.tsx` |
+| <img src="src/partners-icons/bigpandaio-logomark.svg" alt="bigpandaio-logomark" width="24" height="24" /> | `BigpandaioLogomarkIcon` | `bigpandaio-logomark.svg` | `/partners-icons/bigpandaio-logomark.svg` | `/partners-icons/bigpandaio-logomark.tsx` |
 | <img src="src/technology-icons/build-of-apache-camel.svg" alt="build-of-apache-camel" width="24" height="24" /> | `BuildOfApacheCamelIcon` | `build-of-apache-camel.svg` | `/technology-icons/build-of-apache-camel.svg` | `/technology-icons/build-of-apache-camel.tsx` |
 | <img src="src/technology-icons/build-of-open-telemetry.svg" alt="build-of-open-telemetry" width="24" height="24" /> | `BuildOfOpenTelemetryIcon` | `build-of-open-telemetry.svg` | `/technology-icons/build-of-open-telemetry.svg` | `/technology-icons/build-of-open-telemetry.tsx` |
 | <img src="src/technology-icons/build-of-quarkus.svg" alt="build-of-quarkus" width="24" height="24" /> | `BuildOfQuarkusIcon` | `build-of-quarkus.svg` | `/technology-icons/build-of-quarkus.svg` | `/technology-icons/build-of-quarkus.tsx` |
@@ -98,6 +100,8 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/partners-icons/datadog.svg" alt="datadog" width="24" height="24" /> | `DatadogIcon` | `datadog.svg` | `/partners-icons/datadog.svg` | `/partners-icons/datadog.tsx` |
 | <img src="src/partners-icons/datadog-logomark.svg" alt="datadog-logomark" width="24" height="24" /> | `DatadogLogomarkIcon` | `datadog-logomark.svg` | `/partners-icons/datadog-logomark.svg` | `/partners-icons/datadog-logomark.tsx` |
 | <img src="src/technology-icons/data-science.svg" alt="data-science" width="24" height="24" /> | `DataScienceIcon` | `data-science.svg` | `/technology-icons/data-science.svg` | `/technology-icons/data-science.tsx` |
+| <img src="src/partners-icons/delinea.svg" alt="delinea" width="24" height="24" /> | `DelineaIcon` | `delinea.svg` | `/partners-icons/delinea.svg` | `/partners-icons/delinea.tsx` |
+| <img src="src/partners-icons/delinea-logomark.svg" alt="delinea-logomark" width="24" height="24" /> | `DelineaLogomarkIcon` | `delinea-logomark.svg` | `/partners-icons/delinea-logomark.svg` | `/partners-icons/delinea-logomark.tsx` |
 | <img src="src/partners-icons/dell-technologies-2.svg" alt="dell-technologies-2" width="24" height="24" /> | `DellTechnologies2Icon` | `dell-technologies-2.svg` | `/partners-icons/dell-technologies-2.svg` | `/partners-icons/dell-technologies-2.tsx` |
 | <img src="src/partners-icons/dell-technologies.svg" alt="dell-technologies" width="24" height="24" /> | `DellTechnologiesIcon` | `dell-technologies.svg` | `/partners-icons/dell-technologies.svg` | `/partners-icons/dell-technologies.tsx` |
 | <img src="src/technology-icons/dependency-analytics.svg" alt="dependency-analytics" width="24" height="24" /> | `DependencyAnalyticsIcon` | `dependency-analytics.svg` | `/technology-icons/dependency-analytics.svg` | `/technology-icons/dependency-analytics.tsx` |
@@ -125,11 +129,15 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/partners-icons/ibm.svg" alt="ibm" width="24" height="24" /> | `IbmIcon` | `ibm.svg` | `/partners-icons/ibm.svg` | `/partners-icons/ibm.tsx` |
 | <img src="src/technology-icons/image-mode.svg" alt="image-mode" width="24" height="24" /> | `ImageModeIcon` | `image-mode.svg` | `/technology-icons/image-mode.svg` | `/technology-icons/image-mode.tsx` |
 | <img src="src/partners-icons/infiidat.svg" alt="infiidat" width="24" height="24" /> | `InfiidatIcon` | `infiidat.svg` | `/partners-icons/infiidat.svg` | `/partners-icons/infiidat.tsx` |
+| <img src="src/partners-icons/infoblox.svg" alt="infoblox" width="24" height="24" /> | `InfobloxIcon` | `infoblox.svg` | `/partners-icons/infoblox.svg` | `/partners-icons/infoblox.tsx` |
 | <img src="src/technology-icons/infrared-intelligence-feature.svg" alt="infrared-intelligence-feature" width="24" height="24" /> | `InfraredIntelligenceFeatureIcon` | `infrared-intelligence-feature.svg` | `/technology-icons/infrared-intelligence-feature.svg` | `/technology-icons/infrared-intelligence-feature.tsx` |
 | <img src="src/technology-icons/infrastructure-operator-for-openshift.svg" alt="infrastructure-operator-for-openshift" width="24" height="24" /> | `InfrastructureOperatorForOpenshiftIcon` | `infrastructure-operator-for-openshift.svg` | `/technology-icons/infrastructure-operator-for-openshift.svg` | `/technology-icons/infrastructure-operator-for-openshift.tsx` |
 | <img src="src/technology-icons/insights.svg" alt="insights" width="24" height="24" /> | `InsightsIcon` | `insights.svg` | `/technology-icons/insights.svg` | `/technology-icons/insights.tsx` |
+| <img src="src/partners-icons/inspur.svg" alt="inspur" width="24" height="24" /> | `InspurIcon` | `inspur.svg` | `/partners-icons/inspur.svg` | `/partners-icons/inspur.tsx` |
 | <img src="src/technology-icons/integrations.svg" alt="integrations" width="24" height="24" /> | `IntegrationsIcon` | `integrations.svg` | `/technology-icons/integrations.svg` | `/technology-icons/integrations.tsx` |
 | <img src="src/technology-icons/jboss-eap.svg" alt="jboss-eap" width="24" height="24" /> | `JbossEapIcon` | `jboss-eap.svg` | `/technology-icons/jboss-eap.svg` | `/technology-icons/jboss-eap.tsx` |
+| <img src="src/partners-icons/kentik.svg" alt="kentik" width="24" height="24" /> | `KentikIcon` | `kentik.svg` | `/partners-icons/kentik.svg` | `/partners-icons/kentik.tsx` |
+| <img src="src/partners-icons/kentik-logomark.svg" alt="kentik-logomark" width="24" height="24" /> | `KentikLogomarkIcon` | `kentik-logomark.svg` | `/partners-icons/kentik-logomark.svg` | `/partners-icons/kentik-logomark.tsx` |
 | <img src="src/partners-icons/kong-short.svg" alt="kong-short" width="24" height="24" /> | `KongShortIcon` | `kong-short.svg` | `/partners-icons/kong-short.svg` | `/partners-icons/kong-short.tsx` |
 | <img src="src/technology-icons/learning-resources.svg" alt="learning-resources" width="24" height="24" /> | `LearningResourcesIcon` | `learning-resources.svg` | `/technology-icons/learning-resources.svg` | `/technology-icons/learning-resources.tsx` |
 | <img src="src/technology-icons/lightspeed.svg" alt="lightspeed" width="24" height="24" /> | `LightspeedIcon` | `lightspeed.svg` | `/technology-icons/lightspeed.svg` | `/technology-icons/lightspeed.tsx` |
@@ -143,6 +151,8 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/technology-icons/migration-toolkit.svg" alt="migration-toolkit" width="24" height="24" /> | `MigrationToolkitIcon` | `migration-toolkit.svg` | `/technology-icons/migration-toolkit.svg` | `/technology-icons/migration-toolkit.tsx` |
 | <img src="src/partners-icons/netapp.svg" alt="netapp" width="24" height="24" /> | `NetappIcon` | `netapp.svg` | `/partners-icons/netapp.svg` | `/partners-icons/netapp.tsx` |
 | <img src="src/partners-icons/netapp-logomark.svg" alt="netapp-logomark" width="24" height="24" /> | `NetappLogomarkIcon` | `netapp-logomark.svg` | `/partners-icons/netapp-logomark.svg` | `/partners-icons/netapp-logomark.tsx` |
+| <img src="src/partners-icons/netscaler.svg" alt="netscaler" width="24" height="24" /> | `NetscalerIcon` | `netscaler.svg` | `/partners-icons/netscaler.svg` | `/partners-icons/netscaler.tsx` |
+| <img src="src/partners-icons/netscaler-logomark.svg" alt="netscaler-logomark" width="24" height="24" /> | `NetscalerLogomarkIcon` | `netscaler-logomark.svg` | `/partners-icons/netscaler-logomark.svg` | `/partners-icons/netscaler-logomark.tsx` |
 | <img src="src/partners-icons/new-relic.svg" alt="new-relic" width="24" height="24" /> | `NewRelicIcon` | `new-relic.svg` | `/partners-icons/new-relic.svg` | `/partners-icons/new-relic.tsx` |
 | <img src="src/partners-icons/new-relic-logomark.svg" alt="new-relic-logomark" width="24" height="24" /> | `NewRelicLogomarkIcon` | `new-relic-logomark.svg` | `/partners-icons/new-relic-logomark.svg` | `/partners-icons/new-relic-logomark.tsx` |
 | <img src="src/partners-icons/nginx.svg" alt="nginx" width="24" height="24" /> | `NginxIcon` | `nginx.svg` | `/partners-icons/nginx.svg` | `/partners-icons/nginx.tsx` |
@@ -176,6 +186,7 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/partners-icons/oracle-cloud-infra-stacked.svg" alt="oracle-cloud-infra-stacked" width="24" height="24" /> | `OracleCloudInfraStackedIcon` | `oracle-cloud-infra-stacked.svg` | `/partners-icons/oracle-cloud-infra-stacked.svg` | `/partners-icons/oracle-cloud-infra-stacked.tsx` |
 | <img src="src/partners-icons/Oracle.svg" alt="Oracle" width="24" height="24" /> | `OracleIcon` | `Oracle.svg` | `/partners-icons/Oracle.svg` | `/partners-icons/Oracle.tsx` |
 | <img src="src/partners-icons/oracle-short.svg" alt="oracle-short" width="24" height="24" /> | `OracleShortIcon` | `oracle-short.svg` | `/partners-icons/oracle-short.svg` | `/partners-icons/oracle-short.tsx` |
+| <img src="src/partners-icons/os-migrate.svg" alt="os-migrate" width="24" height="24" /> | `OsMigrateIcon` | `os-migrate.svg` | `/partners-icons/os-migrate.svg` | `/partners-icons/os-migrate.tsx` |
 | <img src="src/partners-icons/pagerduty.svg" alt="pagerduty" width="24" height="24" /> | `PagerdutyIcon` | `pagerduty.svg` | `/partners-icons/pagerduty.svg` | `/partners-icons/pagerduty.tsx` |
 | <img src="src/partners-icons/pagerduty-short.svg" alt="pagerduty-short" width="24" height="24" /> | `PagerdutyShortIcon` | `pagerduty-short.svg` | `/partners-icons/pagerduty-short.svg` | `/partners-icons/pagerduty-short.tsx` |
 | <img src="src/partners-icons/palo-alto-networks.svg" alt="palo-alto-networks" width="24" height="24" /> | `PaloAltoNetworksIcon` | `palo-alto-networks.svg` | `/partners-icons/palo-alto-networks.svg` | `/partners-icons/palo-alto-networks.tsx` |
@@ -197,7 +208,6 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/partners-icons/scale-computing.svg" alt="scale-computing" width="24" height="24" /> | `ScaleComputingIcon` | `scale-computing.svg` | `/partners-icons/scale-computing.svg` | `/partners-icons/scale-computing.tsx` |
 | <img src="src/partners-icons/scale-computing-logomark.svg" alt="scale-computing-logomark" width="24" height="24" /> | `ScaleComputingLogomarkIcon` | `scale-computing-logomark.svg` | `/partners-icons/scale-computing-logomark.svg` | `/partners-icons/scale-computing-logomark.tsx` |
 | <img src="src/technology-icons/security-profile-operator.svg" alt="security-profile-operator" width="24" height="24" /> | `SecurityProfileOperatorIcon` | `security-profile-operator.svg` | `/technology-icons/security-profile-operator.svg` | `/technology-icons/security-profile-operator.tsx` |
-| <img src="src/partners-icons/seiko-2.svg" alt="seiko-2" width="24" height="24" /> | `Seiko2Icon` | `seiko-2.svg` | `/partners-icons/seiko-2.svg` | `/partners-icons/seiko-2.tsx` |
 | <img src="src/partners-icons/seiko.svg" alt="seiko" width="24" height="24" /> | `SeikoIcon` | `seiko.svg` | `/partners-icons/seiko.svg` | `/partners-icons/seiko.tsx` |
 | <img src="src/partners-icons/sensu.svg" alt="sensu" width="24" height="24" /> | `SensuIcon` | `sensu.svg` | `/partners-icons/sensu.svg` | `/partners-icons/sensu.tsx` |
 | <img src="src/partners-icons/servicenow.svg" alt="servicenow" width="24" height="24" /> | `ServicenowIcon` | `servicenow.svg` | `/partners-icons/servicenow.svg` | `/partners-icons/servicenow.tsx` |
@@ -218,6 +228,10 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/technology-icons/trusted-artifact-signer.svg" alt="trusted-artifact-signer" width="24" height="24" /> | `TrustedArtifactSignerIcon` | `trusted-artifact-signer.svg` | `/technology-icons/trusted-artifact-signer.svg` | `/technology-icons/trusted-artifact-signer.tsx` |
 | <img src="src/technology-icons/trusted-content-1.svg" alt="trusted-content-1" width="24" height="24" /> | `TrustedContent1Icon` | `trusted-content-1.svg` | `/technology-icons/trusted-content-1.svg` | `/technology-icons/trusted-content-1.tsx` |
 | <img src="src/technology-icons/trusted-content-2.svg" alt="trusted-content-2" width="24" height="24" /> | `TrustedContent2Icon` | `trusted-content-2.svg` | `/technology-icons/trusted-content-2.svg` | `/technology-icons/trusted-content-2.tsx` |
+| <img src="src/partners-icons/venafi.svg" alt="venafi" width="24" height="24" /> | `VenafiIcon` | `venafi.svg` | `/partners-icons/venafi.svg` | `/partners-icons/venafi.tsx` |
+| <img src="src/partners-icons/venafi-logomark.svg" alt="venafi-logomark" width="24" height="24" /> | `VenafiLogomarkIcon` | `venafi-logomark.svg` | `/partners-icons/venafi-logomark.svg` | `/partners-icons/venafi-logomark.tsx` |
+| <img src="src/partners-icons/vertice.svg" alt="vertice" width="24" height="24" /> | `VerticeIcon` | `vertice.svg` | `/partners-icons/vertice.svg` | `/partners-icons/vertice.tsx` |
+| <img src="src/partners-icons/vertice-logomark.svg" alt="vertice-logomark" width="24" height="24" /> | `VerticeLogomarkIcon` | `vertice-logomark.svg` | `/partners-icons/vertice-logomark.svg` | `/partners-icons/vertice-logomark.tsx` |
 | <img src="src/partners-icons/vmware-2.svg" alt="vmware-2" width="24" height="24" /> | `Vmware2Icon` | `vmware-2.svg` | `/partners-icons/vmware-2.svg` | `/partners-icons/vmware-2.tsx` |
 | <img src="src/partners-icons/vmware.svg" alt="vmware" width="24" height="24" /> | `VmwareIcon` | `vmware.svg` | `/partners-icons/vmware.svg` | `/partners-icons/vmware.tsx` |
 | <img src="src/partners-icons/vyos.svg" alt="vyos" width="24" height="24" /> | `VyosIcon` | `vyos.svg` | `/partners-icons/vyos.svg` | `/partners-icons/vyos.tsx` |
@@ -228,4 +242,4 @@ These components are exposed through module federation with the scope `frontendA
 
 ## Generated Components
 
-Total components generated: 173
+Total components generated: 187
