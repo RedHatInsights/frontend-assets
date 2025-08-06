@@ -117,6 +117,7 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/partners-icons/google-chat.svg" alt="google-chat" width="24" height="24" /> | `GoogleChatIcon` | `google-chat.svg` | `/partners-icons/google-chat.svg` | `/partners-icons/google-chat.tsx` |
 | <img src="src/partners-icons/google-cloud.svg" alt="google-cloud" width="24" height="24" /> | `GoogleCloudIcon` | `google-cloud.svg` | `/partners-icons/google-cloud.svg` | `/partners-icons/google-cloud.tsx` |
 | <img src="src/partners-icons/google-cloud-logomark.svg" alt="google-cloud-logomark" width="24" height="24" /> | `GoogleCloudLogomarkIcon` | `google-cloud-logomark.svg` | `/partners-icons/google-cloud-logomark.svg` | `/partners-icons/google-cloud-logomark.tsx` |
+| <img src="src/partners-icons/google-cloud-short.svg" alt="google-cloud-short" width="24" height="24" /> | `GoogleCloudShortIcon` | `google-cloud-short.svg` | `/partners-icons/google-cloud-short.svg` | `/partners-icons/google-cloud-short.tsx` |
 | <img src="src/partners-icons/hp-enterprise-2.svg" alt="hp-enterprise-2" width="24" height="24" /> | `HpEnterprise2Icon` | `hp-enterprise-2.svg` | `/partners-icons/hp-enterprise-2.svg` | `/partners-icons/hp-enterprise-2.tsx` |
 | <img src="src/partners-icons/hp-enterprise.svg" alt="hp-enterprise" width="24" height="24" /> | `HpEnterpriseIcon` | `hp-enterprise.svg` | `/partners-icons/hp-enterprise.svg` | `/partners-icons/hp-enterprise.tsx` |
 | <img src="src/technology-icons/iam.svg" alt="iam" width="24" height="24" /> | `IamIcon` | `iam.svg` | `/technology-icons/iam.svg` | `/technology-icons/iam.tsx` |
@@ -137,6 +138,7 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/partners-icons/microsoft.svg" alt="microsoft" width="24" height="24" /> | `MicrosoftIcon` | `microsoft.svg` | `/partners-icons/microsoft.svg` | `/partners-icons/microsoft.tsx` |
 | <img src="src/partners-icons/microsoft-logomark.svg" alt="microsoft-logomark" width="24" height="24" /> | `MicrosoftLogomarkIcon` | `microsoft-logomark.svg` | `/partners-icons/microsoft-logomark.svg` | `/partners-icons/microsoft-logomark.tsx` |
 | <img src="src/partners-icons/microsoft-office-teams.svg" alt="microsoft-office-teams" width="24" height="24" /> | `MicrosoftOfficeTeamsIcon` | `microsoft-office-teams.svg` | `/partners-icons/microsoft-office-teams.svg` | `/partners-icons/microsoft-office-teams.tsx` |
+| <img src="src/partners-icons/microsoft-short.svg" alt="microsoft-short" width="24" height="24" /> | `MicrosoftShortIcon` | `microsoft-short.svg` | `/partners-icons/microsoft-short.svg` | `/partners-icons/microsoft-short.tsx` |
 | <img src="src/technology-icons/migration-toolkit.svg" alt="migration-toolkit" width="24" height="24" /> | `MigrationToolkitIcon` | `migration-toolkit.svg` | `/technology-icons/migration-toolkit.svg` | `/technology-icons/migration-toolkit.tsx` |
 | <img src="src/partners-icons/netapp.svg" alt="netapp" width="24" height="24" /> | `NetappIcon` | `netapp.svg` | `/partners-icons/netapp.svg` | `/partners-icons/netapp.tsx` |
 | <img src="src/partners-icons/netapp-logomark.svg" alt="netapp-logomark" width="24" height="24" /> | `NetappLogomarkIcon` | `netapp-logomark.svg` | `/partners-icons/netapp-logomark.svg` | `/partners-icons/netapp-logomark.tsx` |
@@ -225,4 +227,4 @@ These components are exposed through module federation with the scope `frontendA
 
 ## Generated Components
 
-Total components generated: 170
+Total components generated: 172
