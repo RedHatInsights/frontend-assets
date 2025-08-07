@@ -1,23 +1,18 @@
-
 <svg viewBox="0 0 48 48">
   <defs>
     <style>
       .cls-1 {
         fill: #e00;
       }
-
       .cls-1, .cls-2, .cls-3, .cls-4 {
         stroke-width: 0px;
       }
-
       .cls-2 {
         fill: #151515;
       }
-
       .cls-3 {
         fill: #fff;
       }
-
       .cls-4 {
         fill: #000;
         fill-rule: evenodd;
