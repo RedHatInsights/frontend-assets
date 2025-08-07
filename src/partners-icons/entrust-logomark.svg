@@ -1,0 +1,12 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="78.6 137.4 179 203.4">
+<style type="text/css">
+	.hexagon{fill:#762B8A;}
+	.polygon{fill:url(#Gradient_1);}
+</style>
+<linearGradient id="Gradient_1" gradientUnits="userSpaceOnUse" x1="78.6" y1="137.4" x2="257.6" y2="340.8">
+	<stop offset="0.2" style="stop-color:#C6168D"/>
+	<stop offset="0.8" style="stop-color:#762B8A"/>
+</linearGradient>
+<path class="hexagon" d="M168.1,335.8L83.6,287v-97.6l84.5-48.8l84.5,48.8V287L168.1,335.8z M239,279.2v-81.9l-70.9-40.9l-70.9,40.9v81.9l70.9,40.9L239,279.2z"/>
+<polygon class="polygon" points="181.4,283.3 181.4,269.7 225.3,244.1 225.3,230.5 181.4,255.8 181.4,242.2 225.4,217 225.4,205.2 168.1,172.1 110.7,205.2 110.7,271.3 168.1,304.4 225.4,271.3 225.4,257.7"/>
+</svg>
