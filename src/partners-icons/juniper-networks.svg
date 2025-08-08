@@ -1,7 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" x="0px" y="0px" viewBox="0 0 718.2 196.3" style="enable-background:new 0 0 718.2 196.3;">
-  <style type="text/css">
-	.Arched_x0020_Green{fill:url(#SVGID_1_);stroke:none;}
-</style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 718.2 196.3">
+  <style type="text/css"> .Arched_x0020_Green{fill:url(#SVGID_1_);stroke:none;} </style>
   <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="718.2" y2="196.3">
     <stop offset="0" style="stop-color:#20AC4B"/>
     <stop offset="0.9831" style="stop-color:#19361A"/>
