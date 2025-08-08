@@ -1,10 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="uuid-0d793a03-fc60-4b5c-9470-514d99efbf87" viewBox="0 0 38 38">
   <defs>
-    <style>
-      .uuid-6783b8f1-3340-4b95-b47b-be491d902680 { fill: #e00; }
-      .uuid-f84a3fc3-c473-4734-877b-54d769d15b04 { fill: #fff; }
-      .uuid-df5fc6ae-4b6b-4ae1-854b-251108ec99a5 { fill: #4d4d4d; }
-    </style>
+    <style> .uuid-6783b8f1-3340-4b95-b47b-be491d902680 { fill: #e00; } .uuid-f84a3fc3-c473-4734-877b-54d769d15b04 { fill: #fff; } .uuid-df5fc6ae-4b6b-4ae1-854b-251108ec99a5 { fill: #4d4d4d; } </style>
   </defs>
   <rect x="1" y="1" width="36" height="36" rx="9" ry="9"/>
   <path class="uuid-df5fc6ae-4b6b-4ae1-854b-251108ec99a5" d="m28,2.25c4.27338,0,7.75,3.47664,7.75,7.75v18c0,4.27336-3.47662,7.75-7.75,7.75H10c-4.27338,0-7.75-3.47664-7.75-7.75V10c0-4.27336,3.47662-7.75,7.75-7.75h18m0-1.25H10C5.02942,1,1,5.02943,1,10v18c0,4.97057,4.02942,9,9,9h18c4.97058,0,9-4.02943,9-9V10c0-4.97057-4.02942-9-9-9h0Z"/>

@@ -1,8 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="78.6 137.4 179 203.4">
-  <style type="text/css">
-	.hexagon{fill:#762B8A;}
-	.polygon{fill:url(#Gradient_1);}
-</style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="78.6 137.4 179 203.4">
+  <style type="text/css"> .hexagon{fill:#762B8A;} .polygon{fill:url(#Gradient_1);} </style>
   <linearGradient id="Gradient_1" gradientUnits="userSpaceOnUse" x1="78.6" y1="137.4" x2="257.6" y2="340.8">
     <stop offset="0.2" style="stop-color:#C6168D"/>
     <stop offset="0.8" style="stop-color:#762B8A"/>

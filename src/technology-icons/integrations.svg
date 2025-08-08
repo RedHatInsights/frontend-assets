@@ -1,25 +1,8 @@
 <svg viewBox="0 0 48 48">
   <defs>
-    <style>
-      .cls-1 {
-        fill: #e00;
-      }
-      .cls-1, .cls-2, .cls-3, .cls-4 {
-        stroke-width: 0px;
-      }
-      .cls-2 {
-        fill: #151515;
-      }
-      .cls-3 {
-        fill: #fff;
-      }
-      .cls-4 {
-        fill: #000;
-        fill-rule: evenodd;
-      }
-    </style>
+    <style> .cls-1 { fill: #e00; } .cls-1, .cls-2, .cls-3, .cls-4 { stroke-width: 0px; } .cls-2 { fill: #151515; } .cls-3 { fill: #fff; } .cls-4 { fill: #000; fill-rule: evenodd; } </style>
   </defs>
-  <g id="Layer_1-2" data-name="Layer 1">
+  <g id="Layer_1-2">
     <g>
       <rect class="cls-3" width="48" height="48" rx="13" ry="13"/>
       <path class="cls-4" d="M12,0h24c6.63,0,12,5.37,12,12v24c0,6.63-5.37,12-12,12H12c-6.63,0-12-5.37-12-12V12C0,5.37,5.37,0,12,0ZM45.86,12c0-5.44-4.42-9.85-9.86-9.86H12c-5.44,0-9.85,4.42-9.86,9.86v24c0,5.44,4.42,9.85,9.86,9.86h24c5.44,0,9.85-4.42,9.86-9.86V12Z"/>

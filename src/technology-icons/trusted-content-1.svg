@@ -1,10 +1,6 @@
 <svg viewBox="0 0 38 38">
   <defs>
-    <style>
-      .fill-red { fill: #e00; }
-      .fill-white { fill: #fff; }
-      .fill-gray { fill: #4d4d4d; }
-    </style>
+    <style> .fill-red { fill: #e00; } .fill-white { fill: #fff; } .fill-gray { fill: #4d4d4d; } </style>
   </defs>
   <rect x="1" y="1" width="36" height="36" rx="9" ry="9"/>
   <path class="fill-gray" d="m28,2.25c4.27338,0,7.75,3.47662,7.75,7.75v18c0,4.27338-3.47662,7.75-7.75,7.75H10c-4.27338,0-7.75-3.47662-7.75-7.75V10c0-4.27338,3.47662-7.75,7.75-7.75h18m0-1.25H10C5.02942,1,1,5.02942,1,10v18c0,4.97058,4.02942,9,9,9h18c4.97058,0,9-4.02942,9-9V10c0-4.97058-4.02942-9-9-9h0Z"/>
