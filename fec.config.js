@@ -64,7 +64,7 @@ module.exports = {
       "./BuildsForOpenshift": path.resolve(__dirname, 'src', 'technology-icons/builds-for-openshift.tsx'),
       "./CheckPointTechnologies": path.resolve(__dirname, 'src', 'partners-icons/check-point-technologies.tsx'),
       "./Chocolatey": path.resolve(__dirname, 'src', 'partners-icons/chocolatey.tsx'),
-      "./Citirx": path.resolve(__dirname, 'src', 'partners-icons/citirx.tsx'),
+      "./Citrix": path.resolve(__dirname, 'src', 'partners-icons/citrix.tsx'),
       "./Cohesity": path.resolve(__dirname, 'src', 'partners-icons/cohesity.tsx'),
       "./ComplianceOperator": path.resolve(__dirname, 'src', 'technology-icons/compliance-operator.tsx'),
       "./Confluent": path.resolve(__dirname, 'src', 'partners-icons/confluent.tsx'),
