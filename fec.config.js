@@ -184,7 +184,7 @@ module.exports = {
       "./PureStorage": path.resolve(__dirname, 'src', 'partners-icons/pure-storage.tsx'),
       "./PureStorageLogomark": path.resolve(__dirname, 'src', 'partners-icons/pure-storage-logomark.tsx'),
       "./QuayIo": path.resolve(__dirname, 'src', 'technology-icons/quay-io.tsx'),
-      "./RedHatBadge": path.resolve(__dirname, 'src', 'technology-icons/Red-hat-badge.tsx'),
+      "./RedHatBadge": path.resolve(__dirname, 'src', 'technology-icons/red-hat-badge.tsx'),
       "./Rhel": path.resolve(__dirname, 'src', 'technology-icons/rhel.tsx'),
       "./RhelLinuxForWorkstations": path.resolve(__dirname, 'src', 'technology-icons/rhel-linux-for-workstations.tsx'),
       "./Rhtap": path.resolve(__dirname, 'src', 'technology-icons/rhtap.tsx'),
