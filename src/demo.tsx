@@ -159,16 +159,16 @@ const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       >
-        <div style={{ padding: '24px', margin: 0 }}>
-          <Title headingLevel="h4" size="md" style={{ marginBottom: '12px' }}>
+        <div className="pf-v6-u-p-lg">
+          <Title headingLevel="h4" size="md" className="pf-v6-u-mb-md">
             Usage Examples
           </Title>
           <p style={{ marginBottom: '16px', fontSize: '14px', color: 'var(--pf-v6-global--Color--200)' }}>
             Copy any of these code examples to use the icon in your application:
           </p>
           
-          <div style={{ marginBottom: '20px' }}>
-            <Title headingLevel="h5" size="md" style={{ marginBottom: '8px' }}>
+          <div className="pf-v6-u-mb-lg">
+            <Title headingLevel="h5" size="md" className="pf-v6-u-mb-sm">
               Without PatternFly Wrapper (Preserves original SVG dimensions)
             </Title>
             <ClipboardCopy isReadOnly>
@@ -180,8 +180,8 @@ const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
             </ClipboardCopy>
           </div>
 
-          <div style={{ marginBottom: '20px' }}>
-            <Title headingLevel="h5" size="md" style={{ marginBottom: '8px' }}>
+          <div className="pf-v6-u-mb-lg">
+            <Title headingLevel="h5" size="md" className="pf-v6-u-mb-sm">
               With PatternFly Wrapper (Uses PatternFly Icon styling)
             </Title>
             <ClipboardCopy isReadOnly>
@@ -194,8 +194,8 @@ const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
             </ClipboardCopy>
           </div>
 
-          <div>
-            <Title headingLevel="h5" size="md" style={{ marginBottom: '8px' }}>
+          <div className="pf-v6-u-mb-lg">
+            <Title headingLevel="h5" size="md" className="pf-v6-u-mb-sm">
               Combined Usage (PatternFly wrapper + custom SVG props)
             </Title>
             <ClipboardCopy isReadOnly>
@@ -206,6 +206,24 @@ const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
   iconProps={{size: "md"}}
   svgProps={{className: "custom-icon-class"}} 
 />`}
+            </ClipboardCopy>
+          </div>
+
+          <div className="pf-v6-u-mb-lg">
+            <Title headingLevel="h5" size="md" className="pf-v6-u-mb-sm">
+              Full URL
+            </Title>
+            <ClipboardCopy isReadOnly>
+{`https://console.redhat.com/apps/frontend-assets/${path.replace('src/', '').replace('./', '')}.svg`}
+            </ClipboardCopy>
+          </div>
+
+          <div>
+            <Title headingLevel="h5" size="md" className="pf-v6-u-mb-sm">
+              Root-Relative URL
+            </Title>
+            <ClipboardCopy isReadOnly>
+{`/apps/frontend-assets/${path.replace('src/', '').replace('./', '')}.svg`}
             </ClipboardCopy>
           </div>
         </div>
@@ -285,16 +303,16 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       >
-        <div style={{ padding: '24px', margin: 0 }}>
-          <Title headingLevel="h4" size="md" style={{ marginBottom: '12px' }}>
+        <div className="pf-v6-u-p-lg">
+          <Title headingLevel="h4" size="md" className="pf-v6-u-mb-md">
             Usage Examples
           </Title>
           <p style={{ marginBottom: '16px', fontSize: '14px', color: 'var(--pf-v6-global--Color--200)' }}>
             Copy any of these code examples to use the icon in your application:
           </p>
           
-          <div style={{ marginBottom: '20px' }}>
-            <Title headingLevel="h5" size="md" style={{ marginBottom: '8px' }}>
+          <div className="pf-v6-u-mb-lg">
+            <Title headingLevel="h5" size="md" className="pf-v6-u-mb-sm">
               Without PatternFly Wrapper (Preserves original SVG dimensions)
             </Title>
             <ClipboardCopy isReadOnly>
@@ -306,8 +324,8 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
             </ClipboardCopy>
           </div>
 
-          <div style={{ marginBottom: '20px' }}>
-            <Title headingLevel="h5" size="md" style={{ marginBottom: '8px' }}>
+          <div className="pf-v6-u-mb-lg">
+            <Title headingLevel="h5" size="md" className="pf-v6-u-mb-sm">
               With PatternFly Wrapper (Uses PatternFly Icon styling)
             </Title>
             <ClipboardCopy isReadOnly>
@@ -320,8 +338,8 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
             </ClipboardCopy>
           </div>
 
-          <div>
-            <Title headingLevel="h5" size="md" style={{ marginBottom: '8px' }}>
+          <div className="pf-v6-u-mb-lg">
+            <Title headingLevel="h5" size="md" className="pf-v6-u-mb-sm">
               Combined Usage (PatternFly wrapper + custom SVG props)
             </Title>
             <ClipboardCopy isReadOnly>
@@ -332,6 +350,24 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
   iconProps={{size: "md"}}
   svgProps={{className: "custom-icon-class"}} 
 />`}
+            </ClipboardCopy>
+          </div>
+
+          <div className="pf-v6-u-mb-lg">
+            <Title headingLevel="h5" size="md" className="pf-v6-u-mb-sm">
+              Full URL
+            </Title>
+            <ClipboardCopy isReadOnly>
+{`https://console.redhat.com/apps/frontend-assets/${path.replace('src/', '').replace('./', '')}.svg`}
+            </ClipboardCopy>
+          </div>
+
+          <div>
+            <Title headingLevel="h5" size="md" className="pf-v6-u-mb-sm">
+              Root-Relative URL
+            </Title>
+            <ClipboardCopy isReadOnly>
+{`/apps/frontend-assets/${path.replace('src/', '').replace('./', '')}.svg`}
             </ClipboardCopy>
           </div>
         </div>
