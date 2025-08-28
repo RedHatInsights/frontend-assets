@@ -174,7 +174,7 @@ const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
             <ClipboardCopy isReadOnly>
 {`<ScalprumComponent 
   scope="frontendAssets" 
-  module="./${name}" 
+  module="./Icon${name}" 
   svgProps={{width: 50, height: 50}} 
 />`}
             </ClipboardCopy>
@@ -187,7 +187,7 @@ const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
             <ClipboardCopy isReadOnly>
 {`<ScalprumComponent 
   scope="frontendAssets" 
-  module="./${name}" 
+  module="./Icon${name}" 
   pfIconWrapper={true} 
   iconProps={{size: "lg"}} 
 />`}
@@ -201,7 +201,7 @@ const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
             <ClipboardCopy isReadOnly>
 {`<ScalprumComponent 
   scope="frontendAssets" 
-  module="./${name}" 
+  module="./Icon${name}" 
   pfIconWrapper={true}
   iconProps={{size: "md"}}
   svgProps={{className: "custom-icon-class"}} 
@@ -318,7 +318,7 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
             <ClipboardCopy isReadOnly>
 {`<ScalprumComponent 
   scope="frontendAssets" 
-  module="./${name}" 
+  module="./Icon${name}" 
   svgProps={{width: 50, height: 50}} 
 />`}
             </ClipboardCopy>
@@ -331,7 +331,7 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
             <ClipboardCopy isReadOnly>
 {`<ScalprumComponent 
   scope="frontendAssets" 
-  module="./${name}" 
+  module="./Icon${name}" 
   pfIconWrapper={true} 
   iconProps={{size: "lg"}} 
 />`}
@@ -345,7 +345,7 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
             <ClipboardCopy isReadOnly>
 {`<ScalprumComponent 
   scope="frontendAssets" 
-  module="./${name}" 
+  module="./Icon${name}" 
   pfIconWrapper={true}
   iconProps={{size: "md"}}
   svgProps={{className: "custom-icon-class"}} 
