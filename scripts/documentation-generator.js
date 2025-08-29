@@ -20,7 +20,7 @@ These components are designed to be used with ScalprumComponent for dynamic load
 \`\`\`tsx
 <ScalprumComponent 
   scope="frontendAssets" 
-  module="./ComponentName" 
+  module="./IconComponentName" 
   svgProps={{width: 50, height: 50}} 
 />
 \`\`\`
@@ -29,7 +29,7 @@ These components are designed to be used with ScalprumComponent for dynamic load
 \`\`\`tsx
 <ScalprumComponent 
   scope="frontendAssets" 
-  module="./ComponentName" 
+  module="./IconComponentName" 
   pfIconWrapper={true} 
   iconProps={{size: "lg"}} 
 />
@@ -39,7 +39,7 @@ These components are designed to be used with ScalprumComponent for dynamic load
 \`\`\`tsx
 <ScalprumComponent 
   scope="frontendAssets" 
-  module="./ComponentName" 
+  module="./IconComponentName" 
   pfIconWrapper={true}
   iconProps={{size: "md"}}
   svgProps={{className: "custom-icon-class"}} 

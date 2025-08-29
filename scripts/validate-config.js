@@ -38,7 +38,7 @@ async function generateExpectedModuleEntries() {
 
   for (const file of svgFiles) {
     const metadata = generateSvgMetadata(file, iconsBase);
-    const exposedModuleName = `./${metadata.name}`;
+    const exposedModuleName = `./Icon${metadata.name}`;
     // Use path.resolve for unambiguous path resolution from fec.config.js directory
     // Remove leading slash from sourceFilePath and add 'src' prefix
     const cleanPath = metadata.sourceFilePath.replace(/^\/+/, '');
