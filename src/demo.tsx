@@ -2,7 +2,7 @@ import React, { Suspense, useMemo, useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import '@patternfly/react-core/dist/styles/base.css';
 import '@patternfly/patternfly/patternfly-addons.css';
-import { SortAlphaDownIcon, SortAlphaUpIcon, ThIcon, ListIcon, CubesIcon, InfoCircleIcon } from '@patternfly/react-icons';
+import { SortAlphaDownIcon, SortAlphaUpIcon, ThIcon, ListIcon, CubesIcon, InfoCircleIcon, ExternalLinkAltIcon } from '@patternfly/react-icons';
 import {
   Button,
   Card,
@@ -627,6 +627,32 @@ const App = () => {
                 Sort by Name
               </Button>
             </ToolbarItem>
+            <ToolbarItem className="pf-v6-u-display-flex pf-v6-u-align-items-center">
+              <Button
+                variant="primary"
+                component="a"
+                href="https://www.patternfly.org/design-foundations/icons"
+                target="_blank"
+                rel="noopener noreferrer"
+                icon={<ExternalLinkAltIcon />}
+                iconPosition="end"
+              >
+                PF Icons Guide
+              </Button>
+            </ToolbarItem>
+            <ToolbarItem className="pf-v6-u-display-flex pf-v6-u-align-items-center">
+              <Button
+                variant="primary"
+                component="a"
+                href="https://patternfly-react.surge.sh/icons/"
+                target="_blank"
+                rel="noopener noreferrer"
+                icon={<ExternalLinkAltIcon />}
+                iconPosition="end"
+              >
+                Full PF Library
+              </Button>
+            </ToolbarItem>
             <ToolbarItem align={{ default: 'alignEnd' }} className="pf-v6-u-display-flex pf-v6-u-align-items-center">
               <ToggleGroup aria-label="View toggle">
                 <ToggleGroupItem
@@ -714,7 +740,7 @@ const App = () => {
             {viewMode === 'cards' ? (
               <Gallery
                 className="pf-v6-u-m-md pf-v6-u-mt-lg"
-                minWidths={{ md: '280px' }}
+                minWidths={{ md: '400px' }}
                 hasGutter
               >
                 {nodes}
