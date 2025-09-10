@@ -86,10 +86,34 @@ const lazyLoadIcon = (name: string, path: string) => {
   );
 };
 
+// Convert component path to proper module name for federation
+// Memoized for performance with 289+ icons
+const moduleNameCache = new Map<string, string>();
+
+const getModuleName = (path: string): string => {
+  if (moduleNameCache.has(path)) {
+    return moduleNameCache.get(path)!;
+  }
+  
+  // Extract filename without extension and directory
+  const filename = path.split('/').pop()?.replace('./', '') || '';
+  
+  // Convert kebab-case to PascalCase and add Icon suffix
+  const pascalCase = filename
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join('');
+  
+  const moduleName = `./${pascalCase}Icon`;
+  moduleNameCache.set(path, moduleName);
+  return moduleName;
+};
+
 const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
   const LazyIcon = useMemo(() => lazyLoadIcon(name, path), [path, name]);
-  const folderLabel = getFolderLabel(path);
+  const folderLabel = useMemo(() => getFolderLabel(path), [path]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const moduleName = useMemo(() => getModuleName(path), [path]);
 
   const handleInfoClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -178,7 +202,7 @@ const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
             <ClipboardCopy isReadOnly>
 {`<ScalprumComponent 
   scope="frontendAssets" 
-  module="./Icon${name}" 
+  module="${moduleName}" 
   svgProps={{width: 50, height: 50}} 
 />`}
             </ClipboardCopy>
@@ -191,7 +215,7 @@ const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
             <ClipboardCopy isReadOnly>
 {`<ScalprumComponent 
   scope="frontendAssets" 
-  module="./Icon${name}" 
+  module="${moduleName}" 
   pfIconWrapper={true} 
   iconProps={{size: "lg"}} 
 />`}
@@ -205,7 +229,7 @@ const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
             <ClipboardCopy isReadOnly>
 {`<ScalprumComponent 
   scope="frontendAssets" 
-  module="./Icon${name}" 
+  module="${moduleName}" 
   pfIconWrapper={true}
   iconProps={{size: "md"}}
   svgProps={{className: "custom-icon-class"}} 
@@ -238,8 +262,9 @@ const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
 
 const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
   const LazyIcon = useMemo(() => lazyLoadIcon(name, path), [path, name]);
-  const folderLabel = getFolderLabel(path);
+  const folderLabel = useMemo(() => getFolderLabel(path), [path]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const moduleName = useMemo(() => getModuleName(path), [path]);
 
   const handleInfoClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -322,7 +347,7 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
             <ClipboardCopy isReadOnly>
 {`<ScalprumComponent 
   scope="frontendAssets" 
-  module="./Icon${name}" 
+  module="${moduleName}" 
   svgProps={{width: 50, height: 50}} 
 />`}
             </ClipboardCopy>
@@ -335,7 +360,7 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
             <ClipboardCopy isReadOnly>
 {`<ScalprumComponent 
   scope="frontendAssets" 
-  module="./Icon${name}" 
+  module="${moduleName}" 
   pfIconWrapper={true} 
   iconProps={{size: "lg"}} 
 />`}
@@ -349,7 +374,7 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
             <ClipboardCopy isReadOnly>
 {`<ScalprumComponent 
   scope="frontendAssets" 
-  module="./Icon${name}" 
+  module="${moduleName}" 
   pfIconWrapper={true}
   iconProps={{size: "md"}}
   svgProps={{className: "custom-icon-class"}} 
