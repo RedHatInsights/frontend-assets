@@ -50,10 +50,11 @@ type FolderType = {
   color: 'blue' | 'green' | 'orange' | 'purple' | 'red' | 'teal';
 };
 
-// Include both technology and partners folders
+// Include technology, partners, and patternfly folders
 const FOLDER_TYPES: FolderType[] = [
   { key: 'technology', label: 'Technology', color: 'blue' },
   { key: 'partners', label: 'Partners', color: 'green' },
+  { key: 'patternfly', label: 'PatternFly', color: 'orange' },
 ];
 
 const allIcons = (process.env.COMPONENT_IMPORTS || []) as { componentName: string, componentPath: string }[];
@@ -65,6 +66,9 @@ if (!allIcons.length) {
 const getFolderLabel = (componentPath: string): { text: string; color: 'blue' | 'green' | 'orange' | 'purple' | 'red' | 'teal'; key: string } => {
   if (componentPath.includes('partners-icons/')) {
     return { text: 'Partners', color: 'green', key: 'partners' };
+  }
+  if (componentPath.includes('patternfly-icons/')) {
+    return { text: 'PatternFly', color: 'orange', key: 'patternfly' };
   }
   // Default to technology for all other paths
   return { text: 'Technology', color: 'blue', key: 'technology' };

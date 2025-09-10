@@ -9,7 +9,7 @@ const iconsBase = path.resolve(projectBase, 'src');
 
 // Define the specific directories to search for icons.
 // This should match the configuration in generate-modules.js
-const iconFolders = ['technology-icons', 'partners-icons'];
+const iconFolders = ['technology-icons', 'partners-icons', 'patternfly-icons'];
 
 /**
  * Find all SVG files in a directory

@@ -132,6 +132,7 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/technology-icons/iam.svg" alt="iam" width="24" height="24" /> | `IamIcon` | `iam.svg` | `/technology-icons/iam.svg` | `/technology-icons/iam.tsx` |
 | <img src="src/partners-icons/ibm-cloud.svg" alt="ibm-cloud" width="24" height="24" /> | `IbmCloudIcon` | `ibm-cloud.svg` | `/partners-icons/ibm-cloud.svg` | `/partners-icons/ibm-cloud.tsx` |
 | <img src="src/partners-icons/ibm.svg" alt="ibm" width="24" height="24" /> | `IbmIcon` | `ibm.svg` | `/partners-icons/ibm.svg` | `/partners-icons/ibm.tsx` |
+| <img src="src/patternfly-icons/id-badge.svg" alt="id-badge" width="24" height="24" /> | `IdBadgeIcon` | `id-badge.svg` | `/patternfly-icons/id-badge.svg` | `/patternfly-icons/id-badge.tsx` |
 | <img src="src/technology-icons/image-mode.svg" alt="image-mode" width="24" height="24" /> | `ImageModeIcon` | `image-mode.svg` | `/technology-icons/image-mode.svg` | `/technology-icons/image-mode.tsx` |
 | <img src="src/partners-icons/infiidat.svg" alt="infiidat" width="24" height="24" /> | `InfiidatIcon` | `infiidat.svg` | `/partners-icons/infiidat.svg` | `/partners-icons/infiidat.tsx` |
 | <img src="src/partners-icons/infoblox.svg" alt="infoblox" width="24" height="24" /> | `InfobloxIcon` | `infoblox.svg` | `/partners-icons/infoblox.svg` | `/partners-icons/infoblox.tsx` |
@@ -147,6 +148,7 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/partners-icons/kong-short.svg" alt="kong-short" width="24" height="24" /> | `KongShortIcon` | `kong-short.svg` | `/partners-icons/kong-short.svg` | `/partners-icons/kong-short.tsx` |
 | <img src="src/technology-icons/learning-resources.svg" alt="learning-resources" width="24" height="24" /> | `LearningResourcesIcon` | `learning-resources.svg` | `/technology-icons/learning-resources.svg` | `/technology-icons/learning-resources.tsx` |
 | <img src="src/technology-icons/lightspeed.svg" alt="lightspeed" width="24" height="24" /> | `LightspeedIcon` | `lightspeed.svg` | `/technology-icons/lightspeed.svg` | `/technology-icons/lightspeed.tsx` |
+| <img src="src/patternfly-icons/link.svg" alt="link" width="24" height="24" /> | `LinkIcon` | `link.svg` | `/patternfly-icons/link.svg` | `/patternfly-icons/link.tsx` |
 | <img src="src/partners-icons/microsoft-azure.svg" alt="microsoft-azure" width="24" height="24" /> | `MicrosoftAzureIcon` | `microsoft-azure.svg` | `/partners-icons/microsoft-azure.svg` | `/partners-icons/microsoft-azure.tsx` |
 | <img src="src/partners-icons/microsoft-azure-logomark.svg" alt="microsoft-azure-logomark" width="24" height="24" /> | `MicrosoftAzureLogomarkIcon` | `microsoft-azure-logomark.svg` | `/partners-icons/microsoft-azure-logomark.svg` | `/partners-icons/microsoft-azure-logomark.tsx` |
 | <img src="src/partners-icons/microsoft-azure-short.svg" alt="microsoft-azure-short" width="24" height="24" /> | `MicrosoftAzureShortIcon` | `microsoft-azure-short.svg` | `/partners-icons/microsoft-azure-short.svg` | `/partners-icons/microsoft-azure-short.tsx` |
@@ -212,6 +214,7 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/technology-icons/rhel.svg" alt="rhel" width="24" height="24" /> | `RhelIcon` | `rhel.svg` | `/technology-icons/rhel.svg` | `/technology-icons/rhel.tsx` |
 | <img src="src/technology-icons/rhel-linux-for-workstations.svg" alt="rhel-linux-for-workstations" width="24" height="24" /> | `RhelLinuxForWorkstationsIcon` | `rhel-linux-for-workstations.svg` | `/technology-icons/rhel-linux-for-workstations.svg` | `/technology-icons/rhel-linux-for-workstations.tsx` |
 | <img src="src/technology-icons/rhtap.svg" alt="rhtap" width="24" height="24" /> | `RhtapIcon` | `rhtap.svg` | `/technology-icons/rhtap.svg` | `/technology-icons/rhtap.tsx` |
+| <img src="src/patternfly-icons/rocket.svg" alt="rocket" width="24" height="24" /> | `RocketIcon` | `rocket.svg` | `/patternfly-icons/rocket.svg` | `/patternfly-icons/rocket.tsx` |
 | <img src="src/partners-icons/rubrik.svg" alt="rubrik" width="24" height="24" /> | `RubrikIcon` | `rubrik.svg` | `/partners-icons/rubrik.svg` | `/partners-icons/rubrik.tsx` |
 | <img src="src/partners-icons/rubrik-logomark.svg" alt="rubrik-logomark" width="24" height="24" /> | `RubrikLogomarkIcon` | `rubrik-logomark.svg` | `/partners-icons/rubrik-logomark.svg` | `/partners-icons/rubrik-logomark.tsx` |
 | <img src="src/technology-icons/runtimes.svg" alt="runtimes" width="24" height="24" /> | `RuntimesIcon` | `runtimes.svg` | `/technology-icons/runtimes.svg` | `/technology-icons/runtimes.tsx` |
@@ -256,4 +259,4 @@ These components are exposed through module federation with the scope `frontendA
 
 ## Generated Components
 
-Total components generated: 201
+Total components generated: 204
