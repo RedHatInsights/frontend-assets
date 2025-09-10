@@ -195,7 +195,7 @@ const componentMappings = [];
  * @param {Object} metadata - The metadata object for the SVG file.
  */
 function addExposedModuleEntry(metadata) {
-  const exposedModuleName = `./Icon${metadata.name}`;
+  const exposedModuleName = `./${metadata.name}Icon`;
   // Use path.resolve for unambiguous path resolution from fec.config.js directory
   // Remove leading slash from sourceFilePath and add 'src' prefix
   const cleanPath = metadata.sourceFilePath.replace(/^\/+/, '');
