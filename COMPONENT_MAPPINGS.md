@@ -149,6 +149,7 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/technology-icons/learning-resources.svg" alt="learning-resources" width="24" height="24" /> | `LearningResourcesIcon` | `learning-resources.svg` | `/technology-icons/learning-resources.svg` | `/technology-icons/learning-resources.tsx` |
 | <img src="src/technology-icons/lightspeed.svg" alt="lightspeed" width="24" height="24" /> | `LightspeedIcon` | `lightspeed.svg` | `/technology-icons/lightspeed.svg` | `/technology-icons/lightspeed.tsx` |
 | <img src="src/patternfly-icons/link.svg" alt="link" width="24" height="24" /> | `LinkIcon` | `link.svg` | `/patternfly-icons/link.svg` | `/patternfly-icons/link.tsx` |
+| <img src="src/patternfly-icons/mail.svg" alt="mail" width="24" height="24" /> | `MailIcon` | `mail.svg` | `/patternfly-icons/mail.svg` | `/patternfly-icons/mail.tsx` |
 | <img src="src/partners-icons/microsoft-azure.svg" alt="microsoft-azure" width="24" height="24" /> | `MicrosoftAzureIcon` | `microsoft-azure.svg` | `/partners-icons/microsoft-azure.svg` | `/partners-icons/microsoft-azure.tsx` |
 | <img src="src/partners-icons/microsoft-azure-logomark.svg" alt="microsoft-azure-logomark" width="24" height="24" /> | `MicrosoftAzureLogomarkIcon` | `microsoft-azure-logomark.svg` | `/partners-icons/microsoft-azure-logomark.svg` | `/partners-icons/microsoft-azure-logomark.tsx` |
 | <img src="src/partners-icons/microsoft-azure-short.svg" alt="microsoft-azure-short" width="24" height="24" /> | `MicrosoftAzureShortIcon` | `microsoft-azure-short.svg` | `/partners-icons/microsoft-azure-short.svg` | `/partners-icons/microsoft-azure-short.tsx` |
@@ -259,4 +260,4 @@ These components are exposed through module federation with the scope `frontendA
 
 ## Generated Components
 
-Total components generated: 204
+Total components generated: 205

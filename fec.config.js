@@ -125,6 +125,7 @@ module.exports = {
       "./IconLearningResources": path.resolve(__dirname, 'src', 'technology-icons/learning-resources.tsx'),
       "./IconLightspeed": path.resolve(__dirname, 'src', 'technology-icons/lightspeed.tsx'),
       "./IconLink": path.resolve(__dirname, 'src', 'patternfly-icons/link.tsx'),
+      "./IconMail": path.resolve(__dirname, 'src', 'patternfly-icons/mail.tsx'),
       "./IconMicrosoft": path.resolve(__dirname, 'src', 'partners-icons/microsoft.tsx'),
       "./IconMicrosoftAzure": path.resolve(__dirname, 'src', 'partners-icons/microsoft-azure.tsx'),
       "./IconMicrosoftAzureLogomark": path.resolve(__dirname, 'src', 'partners-icons/microsoft-azure-logomark.tsx'),
