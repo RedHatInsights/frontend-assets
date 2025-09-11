@@ -52,9 +52,10 @@ type FolderType = {
 
 // Include technology, partners, and patternfly folders
 const FOLDER_TYPES: FolderType[] = [
-  { key: 'technology', label: 'Technology', color: 'blue' },
-  { key: 'partners', label: 'Partners', color: 'green' },
-  { key: 'patternfly', label: 'PatternFly', color: 'orange' },
+  { key: 'technology', label: 'Technology icons', color: 'blue' },
+  { key: 'partners', label: 'Partner logos', color: 'green' },
+  { key: 'patternfly', label: 'PatternFly icons', color: 'orange' },
+  { key: 'console', label: 'Console Logos', color: 'purple' },
 ];
 
 const allIcons = (process.env.COMPONENT_IMPORTS || []) as { componentName: string, componentPath: string }[];
@@ -65,13 +66,16 @@ if (!allIcons.length) {
 // Function to determine folder type from component path
 const getFolderLabel = (componentPath: string): { text: string; color: 'blue' | 'green' | 'orange' | 'purple' | 'red' | 'teal'; key: string } => {
   if (componentPath.includes('partners-icons/')) {
-    return { text: 'Partners', color: 'green', key: 'partners' };
+    return { text: 'Partner logos', color: 'green', key: 'partners' };
   }
   if (componentPath.includes('patternfly-icons/')) {
-    return { text: 'PatternFly', color: 'orange', key: 'patternfly' };
+    return { text: 'PatternFly icons', color: 'orange', key: 'patternfly' };
+  }
+  if (componentPath.includes('console-logos/')) {
+    return { text: 'Console Logos', color: 'purple', key: 'console' };
   }
   // Default to technology for all other paths
-  return { text: 'Technology', color: 'blue', key: 'technology' };
+  return { text: 'Technology icons', color: 'blue', key: 'technology' };
 };
 
 const lazyLoadIcon = (name: string, path: string) => {
@@ -109,11 +113,95 @@ const getModuleName = (path: string): string => {
   return moduleName;
 };
 
+// Function to determine icon size based on folder type
+const getIconSize = (path: string): { width: number | 'auto'; height: number } => {
+  const lowerPath = path.toLowerCase();
+  
+  // Console logos and partner logos are often wider and benefit from larger display
+  if (lowerPath.includes('console-logos/') || lowerPath.includes('partners-icons/')) {
+    return {
+      width: 'auto',
+      height: 100
+    };
+  }
+  
+  // Technology icons and others use standard size
+  return {
+    width: 100,
+    height: 100
+  };
+};
+
+// Optimized cache for SVG metadata - using boolean directly for better performance
+const svgMetadataCache = new Map<string, boolean | null>();
+
+// Pre-compiled regex for better performance than string.includes()
+const DARK_BACKGROUND_REGEX = /<desc>background:dark<\/desc>/;
+
+// Function to parse SVG content and extract background metadata
+const parseSvgMetadata = async (path: string): Promise<boolean | null> => {
+  const cached = svgMetadataCache.get(path);
+  if (cached !== undefined) {
+    return cached;
+  }
+  
+  try {
+    const svgPath = path.startsWith('./') ? path.slice(2) : path;
+    const response = await fetch(`/${svgPath}`);
+    if (response.ok) {
+      const svgText = await response.text();
+      const needsDarkBackground = DARK_BACKGROUND_REGEX.test(svgText);
+      svgMetadataCache.set(path, needsDarkBackground);
+      return needsDarkBackground;
+    }
+  } catch {
+    // Silent fallback
+  }
+  
+  // Cache null result to avoid repeated failed fetches
+  svgMetadataCache.set(path, null);
+  return null;
+};
+
+// Pre-defined style objects to avoid object creation on every render
+const TRANSPARENT_STYLE = { backgroundColor: 'transparent', border: 'none', needsBackground: false };
+const DARK_STYLE = { backgroundColor: '#2d3748', border: '1px solid rgba(255, 255, 255, 0.1)', needsBackground: true };
+const LIGHT_STYLE = { backgroundColor: '#f7f7f7', border: '1px solid rgba(0, 0, 0, 0.1)', needsBackground: true };
+
+// Pre-compiled arrays and regex for better performance
+const SELF_CONTAINED_KEYWORDS = ['lightspeed', 'badge', 'card', 'button', 'tile', 'banner'];
+const WHITE_REVERSE_REGEX = /\b(white|reverse)\b/i;
+
+// Optimized function to determine background treatment for icons
+const getBackgroundStyle = (name: string, path: string, svgMetadata?: boolean | null) => {
+  // Fast path: self-contained icons don't need backgrounds
+  if (SELF_CONTAINED_KEYWORDS.some(keyword => name.includes(keyword) || path.includes(keyword))) {
+    return TRANSPARENT_STYLE;
+  }
+  
+  // Optimized dark background detection:
+  // 1. If SVG metadata is explicitly true -> dark
+  // 2. If no metadata available (null/undefined) -> use filename detection
+  // 3. If metadata is false -> light (explicit choice)
+  const needsDark = svgMetadata === true || 
+                   (svgMetadata == null && WHITE_REVERSE_REGEX.test(name));
+  
+  return needsDark ? DARK_STYLE : LIGHT_STYLE;
+};
+
 const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
   const LazyIcon = useMemo(() => lazyLoadIcon(name, path), [path, name]);
   const folderLabel = useMemo(() => getFolderLabel(path), [path]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [svgMetadata, setSvgMetadata] = useState<boolean | null | undefined>(undefined);
   const moduleName = useMemo(() => getModuleName(path), [path]);
+  const backgroundStyle = useMemo(() => getBackgroundStyle(name, path, svgMetadata), [name, path, svgMetadata]);
+  const iconSize = useMemo(() => getIconSize(path), [path]);
+
+  // Load SVG metadata asynchronously
+  useEffect(() => {
+    parseSvgMetadata(path).then(setSvgMetadata);
+  }, [path]);
 
   const handleInfoClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -124,7 +212,7 @@ const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
   return (
     <>
       <GalleryItem>
-        <Card isFullHeight>
+        <Card isFullHeight style={{ minWidth: '280px' }}>
           <CardHeader>
             <Flex justifyContent={{ default: 'justifyContentSpaceBetween' }} alignItems={{ default: 'alignItemsCenter' }}>
               <FlexItem flex={{ default: 'flex_1' }}>
@@ -157,12 +245,25 @@ const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
             </Flex>
           </CardHeader>
           <CardBody className="pf-v6-u-text-align-center">
-            <Suspense fallback={<div>Loading...</div>}>
-              <LazyIcon svgProps={{ 
-                width: 100, 
-                height: 100 
-              }} />
-            </Suspense>
+            <div style={{
+              backgroundColor: backgroundStyle.backgroundColor,
+              border: backgroundStyle.border,
+              padding: '16px',
+              borderRadius: '4px',
+              minHeight: '132px',
+              minWidth: '132px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              transition: 'all 0.2s ease'
+            }}>
+              <Suspense fallback={<div>Loading...</div>}>
+                <LazyIcon svgProps={{ 
+                  width: iconSize.width, 
+                  height: iconSize.height 
+                }} />
+              </Suspense>
+            </div>
           </CardBody>
           <CardFooter>
             <Label 
@@ -265,6 +366,7 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
   const folderLabel = useMemo(() => getFolderLabel(path), [path]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const moduleName = useMemo(() => getModuleName(path), [path]);
+  const backgroundStyle = useMemo(() => getBackgroundStyle(name, path), [name, path]);
 
   const handleInfoClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -274,11 +376,25 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
 
   return (
     <>
-      <Flex alignItems={{ default: 'alignItemsCenter' }} spacer={{ default: 'spacerSm' }} flexWrap={{ default: 'nowrap' }}>
+      <Flex alignItems={{ default: 'alignItemsFlexStart' }} spacer={{ default: 'spacerSm' }} flexWrap={{ default: 'nowrap' }} style={{ minHeight: '82px', paddingTop: '8px', paddingBottom: '8px' }}>
         <FlexItem>
-          <Suspense fallback={<div>Loading...</div>}>
-            <LazyIcon svgProps={{ width: 50, height: 50 }} />
-          </Suspense>
+          <div style={{
+            backgroundColor: backgroundStyle.backgroundColor,
+            border: backgroundStyle.border,
+            padding: '8px',
+            borderRadius: '4px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            minHeight: '66px',
+            minWidth: '66px',
+            transition: 'all 0.2s ease',
+            flexShrink: 0 // Prevent icon container from shrinking
+          }}>
+            <Suspense fallback={<div>Loading...</div>}>
+              <LazyIcon svgProps={{ width: 50, height: 50 }} />
+            </Suspense>
+          </div>
         </FlexItem>
         <FlexItem flex={{ default: 'flex_1' }}>
           <Flex direction={{ default: 'column' }}>
@@ -286,11 +402,15 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
               <Content 
                 className="pf-v6-u-font-weight-bold pf-v6-u-font-size-sm"
                 style={{
-                  whiteSpace: 'nowrap',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  maxWidth: '100%'
+                  wordBreak: 'break-word',
+                  lineHeight: '1.3',
+                  maxWidth: '100%',
+                  display: '-webkit-box',
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: 'vertical',
+                  overflow: 'hidden'
                 }}
+                title={name} // Show full name on hover
               >
                 {name}
               </Content>
@@ -769,7 +889,7 @@ const App = () => {
             {viewMode === 'cards' ? (
               <Gallery
                 className="pf-v6-u-m-md pf-v6-u-mt-lg"
-                minWidths={{ md: '400px' }}
+                minWidths={{ md: '450px' }}
                 hasGutter
               >
                 {nodes}
