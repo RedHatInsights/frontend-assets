@@ -147,6 +147,8 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/partners-icons/kong-short.svg" alt="kong-short" width="24" height="24" /> | `KongShortIcon` | `kong-short.svg` | `/partners-icons/kong-short.svg` | `/partners-icons/kong-short.tsx` |
 | <img src="src/technology-icons/learning-resources.svg" alt="learning-resources" width="24" height="24" /> | `LearningResourcesIcon` | `learning-resources.svg` | `/technology-icons/learning-resources.svg` | `/technology-icons/learning-resources.tsx` |
 | <img src="src/technology-icons/lightspeed.svg" alt="lightspeed" width="24" height="24" /> | `LightspeedIcon` | `lightspeed.svg` | `/technology-icons/lightspeed.svg` | `/technology-icons/lightspeed.tsx` |
+| <img src="src/red-hat-logos/logo_hat-only.svg" alt="logo_hat-only" width="24" height="24" /> | `LogoHatOnlyIcon` | `logo_hat-only.svg` | `/red-hat-logos/logo_hat-only.svg` | `/red-hat-logos/logo_hat-only.tsx` |
+| <img src="src/red-hat-logos/logo.svg" alt="logo" width="24" height="24" /> | `LogoIcon` | `logo.svg` | `/red-hat-logos/logo.svg` | `/red-hat-logos/logo.tsx` |
 | <img src="src/console-logos/Logo-Red_Hat-A-Standard-RGB.svg" alt="Logo-Red_Hat-A-Standard-RGB" width="24" height="24" /> | `LogoRedHatAStandardRGBIcon` | `Logo-Red_Hat-A-Standard-RGB.svg` | `/console-logos/Logo-Red_Hat-A-Standard-RGB.svg` | `/console-logos/Logo-Red_Hat-A-Standard-RGB.tsx` |
 | <img src="src/console-logos/Logo-Red_Hat-Hybrid_Cloud_Console-A-Black-RGB.svg" alt="Logo-Red_Hat-Hybrid_Cloud_Console-A-Black-RGB" width="24" height="24" /> | `LogoRedHatHybridCloudConsoleABlackRGBIcon` | `Logo-Red_Hat-Hybrid_Cloud_Console-A-Black-RGB.svg` | `/console-logos/Logo-Red_Hat-Hybrid_Cloud_Console-A-Black-RGB.svg` | `/console-logos/Logo-Red_Hat-Hybrid_Cloud_Console-A-Black-RGB.tsx` |
 | <img src="src/console-logos/Logo-Red_Hat-Hybrid-Cloud-Console-A-Black-RGB.svg" alt="Logo-Red_Hat-Hybrid-Cloud-Console-A-Black-RGB" width="24" height="24" /> | `LogoRedHatHybridCloudConsoleABlackRGBIcon` | `Logo-Red_Hat-Hybrid-Cloud-Console-A-Black-RGB.svg` | `/console-logos/Logo-Red_Hat-Hybrid-Cloud-Console-A-Black-RGB.svg` | `/console-logos/Logo-Red_Hat-Hybrid-Cloud-Console-A-Black-RGB.tsx` |
@@ -247,6 +249,7 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/partners-icons/slack.svg" alt="slack" width="24" height="24" /> | `SlackIcon` | `slack.svg` | `/partners-icons/slack.svg` | `/partners-icons/slack.tsx` |
 | <img src="src/partners-icons/splunk.svg" alt="splunk" width="24" height="24" /> | `SplunkIcon` | `splunk.svg` | `/partners-icons/splunk.svg` | `/partners-icons/splunk.tsx` |
 | <img src="src/partners-icons/splunk-logomark.svg" alt="splunk-logomark" width="24" height="24" /> | `SplunkLogomarkIcon` | `splunk-logomark.svg` | `/partners-icons/splunk-logomark.svg` | `/partners-icons/splunk-logomark.tsx` |
+| <img src="src/red-hat-logos/stacked.svg" alt="stacked" width="24" height="24" /> | `StackedIcon` | `stacked.svg` | `/red-hat-logos/stacked.svg` | `/red-hat-logos/stacked.tsx` |
 | <img src="src/partners-icons/styra.svg" alt="styra" width="24" height="24" /> | `StyraIcon` | `styra.svg` | `/partners-icons/styra.svg` | `/partners-icons/styra.tsx` |
 | <img src="src/partners-icons/styra-logomark.svg" alt="styra-logomark" width="24" height="24" /> | `StyraLogomarkIcon` | `styra-logomark.svg` | `/partners-icons/styra-logomark.svg` | `/partners-icons/styra-logomark.tsx` |
 | <img src="src/technology-icons/subscriptions.svg" alt="subscriptions" width="24" height="24" /> | `SubscriptionsIcon` | `subscriptions.svg` | `/technology-icons/subscriptions.svg` | `/technology-icons/subscriptions.tsx` |
@@ -274,4 +277,4 @@ These components are exposed through module federation with the scope `frontendA
 
 ## Generated Components
 
-Total components generated: 219
+Total components generated: 222
