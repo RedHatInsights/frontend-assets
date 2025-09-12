@@ -52,9 +52,10 @@ type FolderType = {
 
 // Include technology, partners, and patternfly folders
 const FOLDER_TYPES: FolderType[] = [
-  { key: 'technology', label: 'Technology', color: 'blue' },
-  { key: 'partners', label: 'Partners', color: 'green' },
-  { key: 'patternfly', label: 'PatternFly', color: 'orange' },
+  { key: 'technology', label: 'Technology icons', color: 'blue' },
+  { key: 'partners', label: 'Partner logos', color: 'green' },
+  { key: 'patternfly', label: 'PatternFly icons', color: 'orange' },
+  { key: 'console', label: 'Console Logos', color: 'purple' },
 ];
 
 const allIcons = (process.env.COMPONENT_IMPORTS || []) as { componentName: string, componentPath: string }[];
@@ -65,14 +66,19 @@ if (!allIcons.length) {
 // Function to determine folder type from component path
 const getFolderLabel = (componentPath: string): { text: string; color: 'blue' | 'green' | 'orange' | 'purple' | 'red' | 'teal'; key: string } => {
   if (componentPath.includes('partners-icons/')) {
-    return { text: 'Partners', color: 'green', key: 'partners' };
+    return { text: 'Partner logos', color: 'green', key: 'partners' };
   }
   if (componentPath.includes('patternfly-icons/')) {
-    return { text: 'PatternFly', color: 'orange', key: 'patternfly' };
+    return { text: 'PatternFly icons', color: 'orange', key: 'patternfly' };
+  }
+  if (componentPath.includes('console-logos/')) {
+    return { text: 'Console Logos', color: 'purple', key: 'console' };
   }
   // Default to technology for all other paths
-  return { text: 'Technology', color: 'blue', key: 'technology' };
+  return { text: 'Technology icons', color: 'blue', key: 'technology' };
 };
+
+
 
 const lazyLoadIcon = (name: string, path: string) => {
   return React.lazy<React.ComponentType<{
@@ -81,7 +87,7 @@ const lazyLoadIcon = (name: string, path: string) => {
   }>>(() =>
     import(`${path}.tsx`).catch((err) => {
       console.error(`Failed to load icon ${name}:`, err);
-      return { default: () => <div>Error loading icon</div> };
+      return { default: () => <div>Failed to load {name}</div> };
     })
   );
 };
@@ -109,11 +115,75 @@ const getModuleName = (path: string): string => {
   return moduleName;
 };
 
+
+// Optimized cache for SVG dark background metadata
+const svgMetadataCache = new Map<string, boolean | null>();
+
+// Pre-compiled regex for better performance than string.includes()
+const DARK_BACKGROUND_REGEX = /<desc>background:dark<\/desc>/;
+
+// Function to parse SVG content and extract dark background metadata
+const parseSvgMetadata = async (path: string): Promise<boolean | null> => {
+  const cached = svgMetadataCache.get(path);
+  if (cached !== undefined) {
+    return cached;
+  }
+  
+  try {
+    const svgPath = path.startsWith('./') ? path.slice(2) : path;
+    const response = await fetch(`/${svgPath}`);
+    if (response.ok) {
+      const svgText = await response.text();
+      const needsDarkBackground = DARK_BACKGROUND_REGEX.test(svgText);
+      svgMetadataCache.set(path, needsDarkBackground);
+      return needsDarkBackground;
+    }
+  } catch (error) {
+    console.warn(`Error parsing SVG metadata for ${path}:`, error);
+  }
+  
+  // Cache null result to avoid repeated failed fetches
+  svgMetadataCache.set(path, null);
+  return null;
+};
+
+// Pre-defined style objects for icon backgrounds
+const DARK_STYLE = { 
+  backgroundColor: '#2d3748', 
+  border: '1px solid rgba(255, 255, 255, 0.1)' 
+};
+const LIGHT_STYLE = { 
+  backgroundColor: '#f7f7f7', 
+  border: '1px solid rgba(0, 0, 0, 0.1)' 
+};
+
+// Pre-compiled regex for better performance
+const WHITE_REVERSE_REGEX = /\b(white|reverse)\b/i;
+
+// Optimized function to determine background treatment for icons
+const getBackgroundStyle = (name: string, path: string, needsDarkBackground?: boolean | null) => {
+  // Optimized dark background detection:
+  // 1. If SVG metadata is explicitly true -> dark
+  // 2. If no metadata available (null/undefined) -> use filename detection
+  // 3. If metadata is false -> light (explicit choice)
+  const needsDark = needsDarkBackground === true || 
+                   (needsDarkBackground == null && WHITE_REVERSE_REGEX.test(name));
+  
+  return needsDark ? DARK_STYLE : LIGHT_STYLE;
+};
+
 const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
   const LazyIcon = useMemo(() => lazyLoadIcon(name, path), [path, name]);
   const folderLabel = useMemo(() => getFolderLabel(path), [path]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [needsDarkBackground, setNeedsDarkBackground] = useState<boolean | null | undefined>(undefined);
   const moduleName = useMemo(() => getModuleName(path), [path]);
+  const backgroundStyle = useMemo(() => getBackgroundStyle(name, path, needsDarkBackground), [name, path, needsDarkBackground]);
+
+  // Load SVG metadata asynchronously
+  useEffect(() => {
+    parseSvgMetadata(path).then(setNeedsDarkBackground);
+  }, [path]);
 
   const handleInfoClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -124,7 +194,7 @@ const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
   return (
     <>
       <GalleryItem>
-        <Card isFullHeight>
+        <Card isFullHeight style={{ minWidth: '280px' }}>
           <CardHeader>
             <Flex justifyContent={{ default: 'justifyContentSpaceBetween' }} alignItems={{ default: 'alignItemsCenter' }}>
               <FlexItem flex={{ default: 'flex_1' }}>
@@ -157,12 +227,20 @@ const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
             </Flex>
           </CardHeader>
           <CardBody className="pf-v6-u-text-align-center">
+            <div className="pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-center pf-v6-u-p-md pf-v6-u-border-radius-sm" style={{
+              backgroundColor: backgroundStyle.backgroundColor,
+              border: backgroundStyle.border,
+              minHeight: '132px',
+              minWidth: '132px',
+              transition: 'all 0.2s ease'
+            }}>
             <Suspense fallback={<div>Loading...</div>}>
               <LazyIcon svgProps={{ 
-                width: 100, 
-                height: 100 
+                width: 'auto', 
+                height: 80 
               }} />
             </Suspense>
+            </div>
           </CardBody>
           <CardFooter>
             <Label 
@@ -264,7 +342,14 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
   const LazyIcon = useMemo(() => lazyLoadIcon(name, path), [path, name]);
   const folderLabel = useMemo(() => getFolderLabel(path), [path]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [needsDarkBackground, setNeedsDarkBackground] = useState<boolean | null | undefined>(undefined);
   const moduleName = useMemo(() => getModuleName(path), [path]);
+  const backgroundStyle = useMemo(() => getBackgroundStyle(name, path, needsDarkBackground), [name, path, needsDarkBackground]);
+
+  // Load SVG metadata asynchronously
+  useEffect(() => {
+    parseSvgMetadata(path).then(setNeedsDarkBackground);
+  }, [path]);
 
   const handleInfoClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -274,11 +359,22 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
 
   return (
     <>
-      <Flex alignItems={{ default: 'alignItemsCenter' }} spacer={{ default: 'spacerSm' }} flexWrap={{ default: 'nowrap' }}>
+      <Flex alignItems={{ default: 'alignItemsFlexStart' }} spacer={{ default: 'spacerSm' }} flexWrap={{ default: 'nowrap' }} style={{ minHeight: '82px', paddingTop: '8px', paddingBottom: '8px' }}>
         <FlexItem>
-          <Suspense fallback={<div>Loading...</div>}>
-            <LazyIcon svgProps={{ width: 50, height: 50 }} />
-          </Suspense>
+          <div className="pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-center pf-v6-u-p-sm pf-v6-u-border-radius-sm pf-v6-u-flex-shrink-0" style={{
+            backgroundColor: backgroundStyle.backgroundColor,
+            border: backgroundStyle.border,
+            minHeight: '66px',
+            minWidth: '66px',
+            transition: 'all 0.2s ease'
+          }}>
+            <Suspense fallback={<div>Loading...</div>}>
+              <LazyIcon svgProps={{ 
+                width: 50, 
+                height: 50 
+              }} />
+            </Suspense>
+          </div>
         </FlexItem>
         <FlexItem flex={{ default: 'flex_1' }}>
           <Flex direction={{ default: 'column' }}>
@@ -286,11 +382,15 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
               <Content 
                 className="pf-v6-u-font-weight-bold pf-v6-u-font-size-sm"
                 style={{
-                  whiteSpace: 'nowrap',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  maxWidth: '100%'
+                  wordBreak: 'break-word',
+                  lineHeight: '1.3',
+                  maxWidth: '100%',
+                  display: '-webkit-box',
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: 'vertical',
+                  overflow: 'hidden'
                 }}
+                title={name} // Show full name on hover
               >
                 {name}
               </Content>
@@ -404,6 +504,7 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
     </>
   );
 };
+
 
 const masthead = <Masthead />;
 
@@ -591,7 +692,7 @@ const App = () => {
         </PageSection>
       }
     >
-      <PageSection padding={{ default: 'noPadding' }} style={{ display: 'flex', flexDirection: 'column', height: 'calc(100vh - var(--pf-v6-global--spacer--3xl))', backgroundColor: '#fafafa' }}>
+      <PageSection padding={{ default: 'noPadding' }} style={{ display: 'flex', flexDirection: 'column', height: 'calc(100vh - var(--pf-v6-global--spacer--3xl))', backgroundColor: 'var(--pf-v6-global--BackgroundColor--100)' }}>
         <Toolbar className="pf-m-sticky pf-m-elevation-inset pf-v6-u-px-md">
           <ToolbarContent>
             <ToolbarItem className="pf-v6-u-display-flex pf-v6-u-align-items-center">
@@ -715,8 +816,8 @@ const App = () => {
               <CubesIcon 
                 style={{ 
                   fontSize: '80px', 
-                  color: '#8a8d90', 
-                  marginBottom: '32px' 
+                  color: 'var(--pf-v6-global--Color--200)', 
+                  marginBottom: 'var(--pf-v6-global--spacer--xl)' 
                 }} 
               />
               <Title headingLevel="h2" size="xl">
@@ -769,7 +870,7 @@ const App = () => {
             {viewMode === 'cards' ? (
               <Gallery
                 className="pf-v6-u-m-md pf-v6-u-mt-lg"
-                minWidths={{ md: '400px' }}
+                minWidths={{ md: '450px' }}
                 hasGutter
               >
                 {nodes}
@@ -791,9 +892,9 @@ const App = () => {
             position: 'sticky',
             bottom: 0,
             zIndex: 100,
-            backgroundColor: 'white',
-            boxShadow: '0 -2px 4px rgba(0, 0, 0, 0.1)',
-            padding: '12px 16px',
+            backgroundColor: 'var(--pf-v6-global--BackgroundColor--100)',
+            boxShadow: 'var(--pf-v6-global--BoxShadow--sm)',
+            padding: 'var(--pf-v6-global--spacer--sm) var(--pf-v6-global--spacer--md)',
           }}
         >
           <Pagination
