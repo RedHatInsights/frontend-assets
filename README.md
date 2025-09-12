@@ -41,10 +41,11 @@ src/
 ├── technology-icons/         # Red Hat technology icons (85 SVGs)
 ├── partners-icons/           # External partner logos (116 SVGs)
 ├── patternfly-icons/         # PatternFly icon library (2 SVGs)
-└── console-logos/            # Red Hat console logos (16 SVGs)
+├── console-logos/            # Red Hat console logos (16 SVGs)
+└── red-hat-logos/            # Red Hat brand logos (3 SVGs)
 ```
 
-**Total**: 219 React components across 4 icon categories
+**Total**: 222 React components across 5 icon categories
 
 ### Generated Components
 
@@ -117,7 +118,12 @@ npm install
 
 ### Adding New Assets
 
-1. **Add SVG File**: Place your SVG in the appropriate `src/` subdirectory
+1. **Add SVG File**: Place your SVG in one of these directories:
+   - `src/technology-icons/` - Red Hat technology icons
+   - `src/partners-icons/` - External partner logos
+   - `src/patternfly-icons/` - PatternFly icon library
+   - `src/console-logos/` - Red Hat console logos
+   - `src/red-hat-logos/` - Red Hat brand logos
 2. **Run Generation**: Execute `npm run generate-modules`
 3. **Review Output**: Check the generated `.tsx` file and updated `fec.config.js`
 4. **Test Locally**: Use `npm run dev` to test your changes
@@ -246,7 +252,12 @@ git commit -m "Update module federation config"
 
 1. **Fork** the repository
 2. **Create** a feature branch
-3. **Add** your SVG assets to the appropriate directory
+3. **Add** your SVG assets to one of the 5 icon directories:
+   - `src/technology-icons/` - Red Hat technology icons
+   - `src/partners-icons/` - External partner logos
+   - `src/patternfly-icons/` - PatternFly icon library
+   - `src/console-logos/` - Red Hat console logos
+   - `src/red-hat-logos/` - Red Hat brand logos
 4. **Run** `npm run generate-modules`
 5. **Test** your changes with `npm run dev`
 6. **Commit** your changes (hooks will validate)
