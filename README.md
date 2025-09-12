@@ -38,9 +38,14 @@ git commit -m "Add new icon"
 
 ```
 src/
-├── partners-icons/            # External images that are not internally given by Red Hat
-├── technology-icons/         # Red Hat technology icons
+├── technology-icons/         # Red Hat technology icons (85 SVGs)
+├── partners-icons/           # External partner logos (116 SVGs)
+├── patternfly-icons/         # PatternFly icon library (2 SVGs)
+├── console-logos/            # Red Hat console logos (16 SVGs)
+└── red-hat-logos/            # Red Hat brand logos (3 SVGs)
 ```
+
+**Total**: 222 React components across 5 icon categories
 
 ### Generated Components
 
@@ -49,8 +54,45 @@ Each SVG file becomes a TypeScript React component with:
 - **PatternFly Integration**: Optional PatternFly Icon wrapper
 - **Flexible Props**: Separate props for SVG and Icon wrapper
 - **Module Federation**: Automatic exposure via webpack
+- **Background Metadata**: Embedded background treatment information
+- **Performance Optimized**: Lazy loading and memoization
+
+### Background Treatment System
+
+Icons automatically receive appropriate background treatment based on embedded metadata:
+
+```typescript
+// SVG files can include background metadata
+<desc>background:dark</desc>  // For icons that need dark backgrounds
+<desc>background:light</desc> // For icons that need light backgrounds
+```
+
+The system automatically:
+- Extracts background metadata from SVG `<desc>` tags
+- Embeds metadata as static properties on React components
+- Applies appropriate background styles in the demo
+- Falls back to filename-based detection for legacy icons
 
 ## 🚀 Development
+
+### Demo Application
+
+The repository includes a comprehensive demo application that showcases all available icons:
+
+```bash
+npm run dev
+```
+
+**Features:**
+- 🖼️ Visual preview of all 219 icons
+- 🔍 Search and filter functionality
+- 📱 Responsive card and list views
+- 🎨 Background treatment for different icon types
+- 📋 Copy-paste usage examples
+- 🔗 Direct links to SVG files
+- 📖 PatternFly integration examples
+
+**Demo URL**: http://localhost:8003
 
 ### Prerequisites
 
@@ -76,7 +118,12 @@ npm install
 
 ### Adding New Assets
 
-1. **Add SVG File**: Place your SVG in the appropriate `src/` subdirectory
+1. **Add SVG File**: Place your SVG in one of these directories:
+   - `src/technology-icons/` - Red Hat technology icons
+   - `src/partners-icons/` - External partner logos
+   - `src/patternfly-icons/` - PatternFly icon library
+   - `src/console-logos/` - Red Hat console logos
+   - `src/red-hat-logos/` - Red Hat brand logos
 2. **Run Generation**: Execute `npm run generate-modules`
 3. **Review Output**: Check the generated `.tsx` file and updated `fec.config.js`
 4. **Test Locally**: Use `npm run dev` to test your changes
@@ -205,7 +252,12 @@ git commit -m "Update module federation config"
 
 1. **Fork** the repository
 2. **Create** a feature branch
-3. **Add** your SVG assets to the appropriate directory
+3. **Add** your SVG assets to one of the 5 icon directories:
+   - `src/technology-icons/` - Red Hat technology icons
+   - `src/partners-icons/` - External partner logos
+   - `src/patternfly-icons/` - PatternFly icon library
+   - `src/console-logos/` - Red Hat console logos
+   - `src/red-hat-logos/` - Red Hat brand logos
 4. **Run** `npm run generate-modules`
 5. **Test** your changes with `npm run dev`
 6. **Commit** your changes (hooks will validate)
