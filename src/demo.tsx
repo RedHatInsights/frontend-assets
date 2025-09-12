@@ -52,11 +52,11 @@ type FolderType = {
 
 // Include technology, partners, and patternfly folders
 const FOLDER_TYPES: FolderType[] = [
-  { key: 'technology', label: 'Technology icons', color: 'blue' },
+  { key: 'console', label: 'Console Logos', color: 'purple' },
   { key: 'partners', label: 'Partner logos', color: 'green' },
   { key: 'patternfly', label: 'PatternFly icons', color: 'orange' },
-  { key: 'console', label: 'Console Logos', color: 'purple' },
   { key: 'red-hat', label: 'Red Hat Logos', color: 'red' },
+  { key: 'technology', label: 'Technology icons', color: 'blue' },
 ];
 
 const allIcons = (process.env.COMPONENT_IMPORTS || []) as { componentName: string, componentPath: string }[];
