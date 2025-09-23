@@ -31,6 +31,8 @@ module.exports = {
       "./A10NetworksIcon": path.resolve(__dirname, 'src', 'partners-icons/a10-networks.tsx'),
       "./AcmForKubernetesIcon": path.resolve(__dirname, 'src', 'technology-icons/acm-for-kubernetes.tsx'),
       "./AcsIcon": path.resolve(__dirname, 'src', 'technology-icons/acs.tsx'),
+      "./AiChatAskRedhatIcon": path.resolve(__dirname, 'src', 'technology-icons/ai-chat-ask-redhat.tsx'),
+      "./AiChatChameleonIcon": path.resolve(__dirname, 'src', 'technology-icons/ai-chat-chameleon.tsx'),
       "./AmazonIcon": path.resolve(__dirname, 'src', 'partners-icons/amazon.tsx'),
       "./AmqIcon": path.resolve(__dirname, 'src', 'technology-icons/amq.tsx'),
       "./AnsibleAutomationHubHostedIcon": path.resolve(__dirname, 'src', 'technology-icons/ansible-automation-hub-hosted.tsx'),
