@@ -55,6 +55,8 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/partners-icons/a10-networks.svg" alt="a10-networks" width="24" height="24" /> | `A10NetworksIcon` | `a10-networks.svg` | `/partners-icons/a10-networks.svg` | `/partners-icons/a10-networks.tsx` |
 | <img src="src/technology-icons/acm-for-kubernetes.svg" alt="acm-for-kubernetes" width="24" height="24" /> | `AcmForKubernetesIcon` | `acm-for-kubernetes.svg` | `/technology-icons/acm-for-kubernetes.svg` | `/technology-icons/acm-for-kubernetes.tsx` |
 | <img src="src/technology-icons/acs.svg" alt="acs" width="24" height="24" /> | `AcsIcon` | `acs.svg` | `/technology-icons/acs.svg` | `/technology-icons/acs.tsx` |
+| <img src="src/technology-icons/ai-chat-ask-redhat.svg" alt="ai-chat-ask-redhat" width="24" height="24" /> | `AiChatAskRedhatIcon` | `ai-chat-ask-redhat.svg` | `/technology-icons/ai-chat-ask-redhat.svg` | `/technology-icons/ai-chat-ask-redhat.tsx` |
+| <img src="src/technology-icons/ai-chat-chameleon.svg" alt="ai-chat-chameleon" width="24" height="24" /> | `AiChatChameleonIcon` | `ai-chat-chameleon.svg` | `/technology-icons/ai-chat-chameleon.svg` | `/technology-icons/ai-chat-chameleon.tsx` |
 | <img src="src/partners-icons/amazon.svg" alt="amazon" width="24" height="24" /> | `AmazonIcon` | `amazon.svg` | `/partners-icons/amazon.svg` | `/partners-icons/amazon.tsx` |
 | <img src="src/technology-icons/amq.svg" alt="amq" width="24" height="24" /> | `AmqIcon` | `amq.svg` | `/technology-icons/amq.svg` | `/technology-icons/amq.tsx` |
 | <img src="src/technology-icons/ansible-automation-hub-hosted.svg" alt="ansible-automation-hub-hosted" width="24" height="24" /> | `AnsibleAutomationHubHostedIcon` | `ansible-automation-hub-hosted.svg` | `/technology-icons/ansible-automation-hub-hosted.svg` | `/technology-icons/ansible-automation-hub-hosted.tsx` |
@@ -277,4 +279,4 @@ These components are exposed through module federation with the scope `frontendA
 
 ## Generated Components
 
-Total components generated: 222
+Total components generated: 224
