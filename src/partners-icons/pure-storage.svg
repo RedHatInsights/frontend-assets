@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 105" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+<desc>background:light</desc>
   <mask id="a" x="21" y="268" width="116.6" height="105.7" maskUnits="userSpaceOnUse">
     <g filter="url(#b)">
       <path d="m21 268h117v105h-117z" fill="#fff"/>

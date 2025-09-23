@@ -131,10 +131,10 @@ function parseSvgContent(svgContent) {
   const innerContentMatch = svgContent.match(/<svg[^>]*>(.*)<\/svg>/is);
   let innerContent = innerContentMatch ? innerContentMatch[1].trim() : '';
 
-  // Clean up the inner content
-  innerContent = cleanSvgInnerContent(innerContent);
+  // Clean up the inner content and extract background metadata
+  const { cleanedContent, backgroundMetadata } = cleanSvgInnerContent(innerContent);
 
-  return { attributes, innerContent };
+  return { attributes, innerContent: cleanedContent, backgroundMetadata };
 }
 
 /**
@@ -148,6 +148,18 @@ function cleanSvgInnerContent(innerContent) {
 
   // Remove CDATA sections which are not valid in JSX
   innerContent = innerContent.replace(/<!\[CDATA\[[\s\S]*?\]\]>/g, '');
+
+  // Extract background metadata from desc tags before removing them
+  let backgroundMetadata = null;
+  const descMatch = innerContent.match(/<desc[^>]*>(.*?)<\/desc>/is);
+  if (descMatch) {
+    const descContent = descMatch[1].trim();
+    if (descContent === 'background:dark') {
+      backgroundMetadata = 'dark';
+    } else if (descContent === 'background:light') {
+      backgroundMetadata = 'light';
+    }
+  }
 
   // Remove common SVG metadata elements that don't render
   innerContent = innerContent.replace(/<title[^>]*>.*?<\/title>/gis, '');
@@ -230,7 +242,7 @@ function cleanSvgInnerContent(innerContent) {
   // Convert HTML attributes to JSX attributes
   innerContent = convertHtmlToJsxAttributes(innerContent);
 
-  return innerContent;
+  return { cleanedContent: innerContent, backgroundMetadata };
 }
 
 /**
