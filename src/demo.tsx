@@ -120,36 +120,7 @@ const getModuleName = (path: string): string => {
 };
 
 
-// Optimized cache for SVG dark background metadata
-const svgMetadataCache = new Map<string, boolean | null>();
-
-// Pre-compiled regex for better performance than string.includes()
-const DARK_BACKGROUND_REGEX = /<desc>background:dark<\/desc>/;
-
-// Function to parse SVG content and extract dark background metadata
-const parseSvgMetadata = async (path: string): Promise<boolean | null> => {
-  const cached = svgMetadataCache.get(path);
-  if (cached !== undefined) {
-    return cached;
-  }
-  
-  try {
-    const svgPath = path.startsWith('./') ? path.slice(2) : path;
-    const response = await fetch(`/${svgPath}`);
-    if (response.ok) {
-      const svgText = await response.text();
-      const needsDarkBackground = DARK_BACKGROUND_REGEX.test(svgText);
-      svgMetadataCache.set(path, needsDarkBackground);
-      return needsDarkBackground;
-    }
-  } catch (error) {
-    console.warn(`Error parsing SVG metadata for ${path}:`, error);
-  }
-  
-  // Cache null result to avoid repeated failed fetches
-  svgMetadataCache.set(path, null);
-  return null;
-};
+// Background metadata is now embedded in components as static properties
 
 // Pre-defined style objects for icon backgrounds
 const DARK_STYLE = { 
@@ -165,14 +136,17 @@ const LIGHT_STYLE = {
 const WHITE_REVERSE_REGEX = /\b(white|reverse)\b/i;
 
 // Optimized function to determine background treatment for icons
-const getBackgroundStyle = (name: string, path: string, needsDarkBackground?: boolean | null) => {
-  // Optimized dark background detection:
-  // 1. If SVG metadata is explicitly true -> dark
-  // 2. If no metadata available (null/undefined) -> use filename detection
-  // 3. If metadata is false -> light (explicit choice)
-  const needsDark = needsDarkBackground === true || 
-                   (needsDarkBackground == null && WHITE_REVERSE_REGEX.test(name));
+const getBackgroundStyle = (name: string, path: string, componentBackground?: string | null) => {
+  // Use embedded component background metadata if available
+  if (componentBackground === 'dark') {
+    return DARK_STYLE;
+  }
+  if (componentBackground === 'light') {
+    return LIGHT_STYLE;
+  }
   
+  // Fallback to filename detection if no embedded metadata
+  const needsDark = WHITE_REVERSE_REGEX.test(name);
   return needsDark ? DARK_STYLE : LIGHT_STYLE;
 };
 
@@ -180,14 +154,24 @@ const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
   const LazyIcon = useMemo(() => lazyLoadIcon(name, path), [path, name]);
   const folderLabel = useMemo(() => getFolderLabel(path), [path]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [needsDarkBackground, setNeedsDarkBackground] = useState<boolean | null | undefined>(undefined);
+  const [componentBackground, setComponentBackground] = useState<string | null | undefined>(undefined);
   const moduleName = useMemo(() => getModuleName(path), [path]);
-  const backgroundStyle = useMemo(() => getBackgroundStyle(name, path, needsDarkBackground), [name, path, needsDarkBackground]);
+  const backgroundStyle = useMemo(() => getBackgroundStyle(name, path, componentBackground), [name, path, componentBackground]);
 
-  // Load SVG metadata asynchronously
+  // Load component background metadata from the lazy-loaded component
   useEffect(() => {
-    parseSvgMetadata(path).then(setNeedsDarkBackground);
-  }, [path]);
+    const loadBackgroundMetadata = async () => {
+      try {
+        const component = await import(`${path}.tsx`);
+        const background = component.default?.background;
+        setComponentBackground(background);
+      } catch (error) {
+        console.warn(`Error loading background metadata for ${name}:`, error);
+        setComponentBackground(null);
+      }
+    };
+    loadBackgroundMetadata();
+  }, [path, name]);
 
   const handleInfoClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -346,14 +330,24 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
   const LazyIcon = useMemo(() => lazyLoadIcon(name, path), [path, name]);
   const folderLabel = useMemo(() => getFolderLabel(path), [path]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [needsDarkBackground, setNeedsDarkBackground] = useState<boolean | null | undefined>(undefined);
+  const [componentBackground, setComponentBackground] = useState<string | null | undefined>(undefined);
   const moduleName = useMemo(() => getModuleName(path), [path]);
-  const backgroundStyle = useMemo(() => getBackgroundStyle(name, path, needsDarkBackground), [name, path, needsDarkBackground]);
+  const backgroundStyle = useMemo(() => getBackgroundStyle(name, path, componentBackground), [name, path, componentBackground]);
 
-  // Load SVG metadata asynchronously
+  // Load component background metadata from the lazy-loaded component
   useEffect(() => {
-    parseSvgMetadata(path).then(setNeedsDarkBackground);
-  }, [path]);
+    const loadBackgroundMetadata = async () => {
+      try {
+        const component = await import(`${path}.tsx`);
+        const background = component.default?.background;
+        setComponentBackground(background);
+      } catch (error) {
+        console.warn(`Error loading background metadata for ${name}:`, error);
+        setComponentBackground(null);
+      }
+    };
+    loadBackgroundMetadata();
+  }, [path, name]);
 
   const handleInfoClick = (e: React.MouseEvent) => {
     e.preventDefault();

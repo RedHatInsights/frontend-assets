@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-140 130 600 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+<desc>background:light</desc>
   <style type="text/css"> .st0{fill:#762B8A;} .st1{fill:url(#Path_7_);} .st2{fill:#3F454F;} </style>
   <path id="Shape" class="st0" d="M168.1,335.8L83.6,287v-97.6l84.5-48.8l84.5,48.8V287L168.1,335.8z M239,279.2v-81.9l-70.9-40.9 l-70.9,40.9v81.9l70.9,40.9L239,279.2z"/>
   <linearGradient id="Path_7_" gradientUnits="userSpaceOnUse" x1="-289.0659" y1="554.4882" x2="-289.0659" y2="549.5491" gradientTransform="matrix(23.2105 0 0 -26.7996 6877.4238 15032.1035)">

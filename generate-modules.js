@@ -42,7 +42,7 @@ function generateTSXFileContent(metadata) {
   addComponentMapping(metadata, componentName);
 
   try {
-    const { attributes, innerContent } = parseSvgContent(svgContent);
+    const { attributes, innerContent, backgroundMetadata } = parseSvgContent(svgContent);
 
     // Create default attributes with fallbacks
     const defaultAttributes = {
@@ -122,6 +122,9 @@ export const ${componentName} = (props: ${componentName}Props) => {
   return svgElement;
 };
 
+// Static property for background metadata
+${componentName}.background = ${backgroundMetadata ? `'${backgroundMetadata}'` : 'null'};
+
 export default ${componentName};
 
 `;
@@ -157,6 +160,9 @@ export const ${componentName} = (props: ${componentName}Props) => {
 
   return svgElement;
 };
+
+// Static property for background metadata (fallback case)
+${componentName}.background = null;
 
 export default ${componentName};
 

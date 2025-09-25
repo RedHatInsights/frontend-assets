@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" viewBox="0 0 38 38" width="100%" height="100%">
+<desc>background:light</desc>
   <g id="uuid-978e5652-4fad-4fee-aa0e-32c084bbbdb7">
     <rect x="1" y="1" width="36" height="36" rx="9" ry="9" fill="#fff" stroke-width="0"/>
     <path d="m28,2.25c4.27,0,7.75,3.48,7.75,7.75v18c0,4.27-3.48,7.75-7.75,7.75H10c-4.27,0-7.75-3.48-7.75-7.75V10c0-4.27,3.48-7.75,7.75-7.75h18m0-1.25H10C5.03,1,1,5.03,1,10v18c0,4.97,4.03,9,9,9h18c4.97,0,9-4.03,9-9V10c0-4.97-4.03-9-9-9h0Z" fill="#e0e0e0" stroke-width="0"/>
