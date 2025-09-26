@@ -321,7 +321,7 @@ async function run() {
 
   // Define the specific directories to search for icons.
   // More directories can be added to this array in the future.
-  const iconFolders = ['technology-icons', 'partners-icons', 'patternfly-icons', 'console-logos', 'red-hat-logos'];
+  const iconFolders = ['technology-icons', 'partners-icons', 'patternfly-icons', 'console-logos', 'red-hat-logos', 'background-images'];
   let svgFiles = [];
 
   for (const folder of iconFolders) {

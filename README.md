@@ -38,14 +38,15 @@ git commit -m "Add new icon"
 
 ```
 src/
-├── technology-icons/         # Red Hat technology icons (85 SVGs)
+├── technology-icons/         # Red Hat technology icons (87 SVGs)
 ├── partners-icons/           # External partner logos (116 SVGs)
 ├── patternfly-icons/         # PatternFly icon library (2 SVGs)
 ├── console-logos/            # Red Hat console logos (16 SVGs)
-└── red-hat-logos/            # Red Hat brand logos (3 SVGs)
+├── red-hat-logos/            # Red Hat brand logos (3 SVGs)
+└── background-images/        # Background images (3 SVGs)
 ```
 
-**Total**: 222 React components across 5 icon categories
+**Total**: 227 React components across 6 icon categories
 
 ### Generated Components
 
@@ -84,7 +85,7 @@ npm run dev
 ```
 
 **Features:**
-- 🖼️ Visual preview of all 219 icons
+- 🖼️ Visual preview of all 227 icons
 - 🔍 Search and filter functionality
 - 📱 Responsive card and list views
 - 🎨 Background treatment for different icon types
@@ -124,6 +125,7 @@ npm install
    - `src/patternfly-icons/` - PatternFly icon library
    - `src/console-logos/` - Red Hat console logos
    - `src/red-hat-logos/` - Red Hat brand logos
+   - `src/background-images/` - Background images
 2. **Run Generation**: Execute `npm run generate-modules`
 3. **Review Output**: Check the generated `.tsx` file and updated `fec.config.js`
 4. **Test Locally**: Use `npm run dev` to test your changes
@@ -252,12 +254,13 @@ git commit -m "Update module federation config"
 
 1. **Fork** the repository
 2. **Create** a feature branch
-3. **Add** your SVG assets to one of the 5 icon directories:
+3. **Add** your SVG assets to one of the 6 icon directories:
    - `src/technology-icons/` - Red Hat technology icons
    - `src/partners-icons/` - External partner logos
    - `src/patternfly-icons/` - PatternFly icon library
    - `src/console-logos/` - Red Hat console logos
    - `src/red-hat-logos/` - Red Hat brand logos
+   - `src/background-images/` - Background images
 4. **Run** `npm run generate-modules`
 5. **Test** your changes with `npm run dev`
 6. **Commit** your changes (hooks will validate)
