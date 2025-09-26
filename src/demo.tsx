@@ -57,6 +57,7 @@ const FOLDER_TYPES: FolderType[] = [
   { key: 'patternfly', label: 'PatternFly icons', color: 'orange' },
   { key: 'red-hat', label: 'Red Hat Logos', color: 'red' },
   { key: 'technology', label: 'Technology icons', color: 'blue' },
+  { key: 'background-images', label: 'Background Images', color: 'teal' },
 ];
 
 const allIcons = (process.env.COMPONENT_IMPORTS || []) as { componentName: string, componentPath: string }[];
@@ -77,6 +78,9 @@ const getFolderLabel = (componentPath: string): { text: string; color: 'blue' | 
   }
   if (componentPath.includes('red-hat-logos/')) {
     return { text: 'Red Hat Logos', color: 'red', key: 'red-hat' };
+  }
+  if (componentPath.includes('background-images/')) {
+    return { text: 'Background Images', color: 'teal', key: 'background-images' };
   }
   // Default to technology for all other paths
   return { text: 'Technology icons', color: 'blue', key: 'technology' };

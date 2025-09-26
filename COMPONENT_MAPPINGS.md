@@ -119,6 +119,7 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/technology-icons/event-driven-ansible-controller.svg" alt="event-driven-ansible-controller" width="24" height="24" /> | `EventDrivenAnsibleControllerIcon` | `event-driven-ansible-controller.svg` | `/technology-icons/event-driven-ansible-controller.svg` | `/technology-icons/event-driven-ansible-controller.tsx` |
 | <img src="src/technology-icons/execution-environment-builder.svg" alt="execution-environment-builder" width="24" height="24" /> | `ExecutionEnvironmentBuilderIcon` | `execution-environment-builder.svg` | `/technology-icons/execution-environment-builder.svg` | `/technology-icons/execution-environment-builder.tsx` |
 | <img src="src/partners-icons/f5.svg" alt="f5" width="24" height="24" /> | `F5Icon` | `f5.svg` | `/partners-icons/f5.svg` | `/partners-icons/f5.tsx` |
+| <img src="src/background-images/favoriting-emptystate.svg" alt="favoriting-emptystate" width="24" height="24" /> | `FavoritingEmptystateIcon` | `favoriting-emptystate.svg` | `/background-images/favoriting-emptystate.svg` | `/background-images/favoriting-emptystate.tsx` |
 | <img src="src/technology-icons/file-integrity-operator.svg" alt="file-integrity-operator" width="24" height="24" /> | `FileIntegrityOperatorIcon` | `file-integrity-operator.svg` | `/technology-icons/file-integrity-operator.svg` | `/technology-icons/file-integrity-operator.tsx` |
 | <img src="src/partners-icons/fortinet.svg" alt="fortinet" width="24" height="24" /> | `FortinetIcon` | `fortinet.svg` | `/partners-icons/fortinet.svg` | `/partners-icons/fortinet.tsx` |
 | <img src="src/partners-icons/fortinet-logomark.svg" alt="fortinet-logomark" width="24" height="24" /> | `FortinetLogomarkIcon` | `fortinet-logomark.svg` | `/partners-icons/fortinet-logomark.svg` | `/partners-icons/fortinet-logomark.tsx` |
@@ -142,6 +143,7 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/technology-icons/insights.svg" alt="insights" width="24" height="24" /> | `InsightsIcon` | `insights.svg` | `/technology-icons/insights.svg` | `/technology-icons/insights.tsx` |
 | <img src="src/partners-icons/inspur.svg" alt="inspur" width="24" height="24" /> | `InspurIcon` | `inspur.svg` | `/partners-icons/inspur.svg` | `/partners-icons/inspur.tsx` |
 | <img src="src/technology-icons/integrations.svg" alt="integrations" width="24" height="24" /> | `IntegrationsIcon` | `integrations.svg` | `/technology-icons/integrations.svg` | `/technology-icons/integrations.tsx` |
+| <img src="src/background-images/integrations-landing-minispot.svg" alt="integrations-landing-minispot" width="24" height="24" /> | `IntegrationsLandingMinispotIcon` | `integrations-landing-minispot.svg` | `/background-images/integrations-landing-minispot.svg` | `/background-images/integrations-landing-minispot.tsx` |
 | <img src="src/technology-icons/jboss-eap.svg" alt="jboss-eap" width="24" height="24" /> | `JbossEapIcon` | `jboss-eap.svg` | `/technology-icons/jboss-eap.svg` | `/technology-icons/jboss-eap.tsx` |
 | <img src="src/partners-icons/juniper-networks.svg" alt="juniper-networks" width="24" height="24" /> | `JuniperNetworksIcon` | `juniper-networks.svg` | `/partners-icons/juniper-networks.svg` | `/partners-icons/juniper-networks.tsx` |
 | <img src="src/partners-icons/kentik.svg" alt="kentik" width="24" height="24" /> | `KentikIcon` | `kentik.svg` | `/partners-icons/kentik.svg` | `/partners-icons/kentik.tsx` |
@@ -229,6 +231,7 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/partners-icons/pure-storage.svg" alt="pure-storage" width="24" height="24" /> | `PureStorageIcon` | `pure-storage.svg` | `/partners-icons/pure-storage.svg` | `/partners-icons/pure-storage.tsx` |
 | <img src="src/partners-icons/pure-storage-logomark.svg" alt="pure-storage-logomark" width="24" height="24" /> | `PureStorageLogomarkIcon` | `pure-storage-logomark.svg` | `/partners-icons/pure-storage-logomark.svg` | `/partners-icons/pure-storage-logomark.tsx` |
 | <img src="src/technology-icons/quay-io.svg" alt="quay-io" width="24" height="24" /> | `QuayIoIcon` | `quay-io.svg` | `/technology-icons/quay-io.svg` | `/technology-icons/quay-io.tsx` |
+| <img src="src/background-images/rbac-landing-minispot.svg" alt="rbac-landing-minispot" width="24" height="24" /> | `RbacLandingMinispotIcon` | `rbac-landing-minispot.svg` | `/background-images/rbac-landing-minispot.svg` | `/background-images/rbac-landing-minispot.tsx` |
 | <img src="src/technology-icons/red-hat-badge.svg" alt="red-hat-badge" width="24" height="24" /> | `RedHatBadgeIcon` | `red-hat-badge.svg` | `/technology-icons/red-hat-badge.svg` | `/technology-icons/red-hat-badge.tsx` |
 | <img src="src/technology-icons/rhel.svg" alt="rhel" width="24" height="24" /> | `RhelIcon` | `rhel.svg` | `/technology-icons/rhel.svg` | `/technology-icons/rhel.tsx` |
 | <img src="src/technology-icons/rhel-linux-for-workstations.svg" alt="rhel-linux-for-workstations" width="24" height="24" /> | `RhelLinuxForWorkstationsIcon` | `rhel-linux-for-workstations.svg` | `/technology-icons/rhel-linux-for-workstations.svg` | `/technology-icons/rhel-linux-for-workstations.tsx` |
@@ -279,4 +282,4 @@ These components are exposed through module federation with the scope `frontendA
 
 ## Generated Components
 
-Total components generated: 224
+Total components generated: 227
