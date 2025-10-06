@@ -134,6 +134,8 @@ module.exports = {
       "./LogoHatOnlyIcon": path.resolve(__dirname, 'src', 'red-hat-logos/logo_hat-only.tsx'),
       "./LogoIcon": path.resolve(__dirname, 'src', 'red-hat-logos/logo.tsx'),
       "./LogoRedHatAStandardRGBIcon": path.resolve(__dirname, 'src', 'console-logos/Logo-Red_Hat-A-Standard-RGB.tsx'),
+      "./LogoRedHatAwsAStandardRgbIcon": path.resolve(__dirname, 'src', 'red-hat-logos/logo-red_hat-aws-a-standard-rgb.tsx'),
+      "./LogoRedHatDeveloperAStandardRgbIcon": path.resolve(__dirname, 'src', 'red-hat-logos/logo-red_hat-developer-a-standard-rgb.tsx'),
       "./LogoRedHatHybridCloudConsoleABlackRGBIcon": path.resolve(__dirname, 'src', 'console-logos/Logo-Red_Hat-Hybrid-Cloud-Console-A-Black-RGB.tsx'),
       "./LogoRedHatHybridCloudConsoleARedRGBIcon": path.resolve(__dirname, 'src', 'console-logos/Logo-Red_Hat-Hybrid-Cloud-Console-A-Red-RGB.tsx'),
       "./LogoRedHatHybridCloudConsoleAReverseRGBIcon": path.resolve(__dirname, 'src', 'console-logos/Logo-Red_Hat-Hybrid-Cloud-Console-A-Reverse-RGB.tsx'),

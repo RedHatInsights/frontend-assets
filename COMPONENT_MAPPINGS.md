@@ -158,6 +158,8 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/red-hat-logos/logo_hat-only.svg" alt="logo_hat-only" width="24" height="24" /> | `LogoHatOnlyIcon` | `logo_hat-only.svg` | `/red-hat-logos/logo_hat-only.svg` | `/red-hat-logos/logo_hat-only.tsx` |
 | <img src="src/red-hat-logos/logo.svg" alt="logo" width="24" height="24" /> | `LogoIcon` | `logo.svg` | `/red-hat-logos/logo.svg` | `/red-hat-logos/logo.tsx` |
 | <img src="src/console-logos/Logo-Red_Hat-A-Standard-RGB.svg" alt="Logo-Red_Hat-A-Standard-RGB" width="24" height="24" /> | `LogoRedHatAStandardRGBIcon` | `Logo-Red_Hat-A-Standard-RGB.svg` | `/console-logos/Logo-Red_Hat-A-Standard-RGB.svg` | `/console-logos/Logo-Red_Hat-A-Standard-RGB.tsx` |
+| <img src="src/red-hat-logos/logo-red_hat-aws-a-standard-rgb.svg" alt="logo-red_hat-aws-a-standard-rgb" width="24" height="24" /> | `LogoRedHatAwsAStandardRgbIcon` | `logo-red_hat-aws-a-standard-rgb.svg` | `/red-hat-logos/logo-red_hat-aws-a-standard-rgb.svg` | `/red-hat-logos/logo-red_hat-aws-a-standard-rgb.tsx` |
+| <img src="src/red-hat-logos/logo-red_hat-developer-a-standard-rgb.svg" alt="logo-red_hat-developer-a-standard-rgb" width="24" height="24" /> | `LogoRedHatDeveloperAStandardRgbIcon` | `logo-red_hat-developer-a-standard-rgb.svg` | `/red-hat-logos/logo-red_hat-developer-a-standard-rgb.svg` | `/red-hat-logos/logo-red_hat-developer-a-standard-rgb.tsx` |
 | <img src="src/console-logos/Logo-Red_Hat-Hybrid_Cloud_Console-A-Black-RGB.svg" alt="Logo-Red_Hat-Hybrid_Cloud_Console-A-Black-RGB" width="24" height="24" /> | `LogoRedHatHybridCloudConsoleABlackRGBIcon` | `Logo-Red_Hat-Hybrid_Cloud_Console-A-Black-RGB.svg` | `/console-logos/Logo-Red_Hat-Hybrid_Cloud_Console-A-Black-RGB.svg` | `/console-logos/Logo-Red_Hat-Hybrid_Cloud_Console-A-Black-RGB.tsx` |
 | <img src="src/console-logos/Logo-Red_Hat-Hybrid-Cloud-Console-A-Black-RGB.svg" alt="Logo-Red_Hat-Hybrid-Cloud-Console-A-Black-RGB" width="24" height="24" /> | `LogoRedHatHybridCloudConsoleABlackRGBIcon` | `Logo-Red_Hat-Hybrid-Cloud-Console-A-Black-RGB.svg` | `/console-logos/Logo-Red_Hat-Hybrid-Cloud-Console-A-Black-RGB.svg` | `/console-logos/Logo-Red_Hat-Hybrid-Cloud-Console-A-Black-RGB.tsx` |
 | <img src="src/console-logos/Logo-Red_Hat-Hybrid_Cloud_Console-A-Red-RGB.svg" alt="Logo-Red_Hat-Hybrid_Cloud_Console-A-Red-RGB" width="24" height="24" /> | `LogoRedHatHybridCloudConsoleARedRGBIcon` | `Logo-Red_Hat-Hybrid_Cloud_Console-A-Red-RGB.svg` | `/console-logos/Logo-Red_Hat-Hybrid_Cloud_Console-A-Red-RGB.svg` | `/console-logos/Logo-Red_Hat-Hybrid_Cloud_Console-A-Red-RGB.tsx` |
@@ -286,4 +288,4 @@ These components are exposed through module federation with the scope `frontendA
 
 ## Generated Components
 
-Total components generated: 231
+Total components generated: 233
