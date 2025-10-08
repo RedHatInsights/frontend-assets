@@ -37,6 +37,9 @@
   "insights": {
     "appname": "frontend-assets"
   },
+  "overrides": {
+    "webpack-dev-server": "^5.2.2"
+  },
   "devDependencies": {
     "@redhat-cloud-services/eslint-config-redhat-cloud-services": "^3.0.0",
     "@redhat-cloud-services/frontend-components-config": "^6.6.2",
