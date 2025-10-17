@@ -2,7 +2,8 @@ import React, { Suspense, useMemo, useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import '@patternfly/react-core/dist/styles/base.css';
 import '@patternfly/patternfly/patternfly-addons.css';
-import { SortAlphaDownIcon, SortAlphaUpIcon, ThIcon, ListIcon, CubesIcon, InfoCircleIcon, ExternalLinkAltIcon } from '@patternfly/react-icons';
+import { backgroundMetadata } from './backgroundMetadata.js';
+import { SortAlphaDownIcon, SortAlphaUpIcon, ThIcon, ListIcon, CubesIcon, InfoCircleIcon, ExternalLinkAltIcon, SearchPlusIcon, DownloadIcon } from '@patternfly/react-icons';
 import {
   Button,
   Card,
@@ -92,7 +93,7 @@ const lazyLoadIcon = (name: string, path: string) => {
   return React.lazy<React.ComponentType<{
     iconProps?: IconComponentProps;
     svgProps?: React.SVGProps<SVGSVGElement>;
-  }>>(() =>
+  }> & { backgroundMetadata?: 'dark' | 'light' }>(() =>
     import(`${path}.tsx`).catch((err) => {
       console.error(`Failed to load icon ${name}:`, err);
       return { default: () => <div>Failed to load {name}</div> };
@@ -124,36 +125,6 @@ const getModuleName = (path: string): string => {
 };
 
 
-// Optimized cache for SVG dark background metadata
-const svgMetadataCache = new Map<string, boolean | null>();
-
-// Pre-compiled regex for better performance than string.includes()
-const DARK_BACKGROUND_REGEX = /<desc>background:dark<\/desc>/;
-
-// Function to parse SVG content and extract dark background metadata
-const parseSvgMetadata = async (path: string): Promise<boolean | null> => {
-  const cached = svgMetadataCache.get(path);
-  if (cached !== undefined) {
-    return cached;
-  }
-  
-  try {
-    const svgPath = path.startsWith('./') ? path.slice(2) : path;
-    const response = await fetch(`/${svgPath}`);
-    if (response.ok) {
-      const svgText = await response.text();
-      const needsDarkBackground = DARK_BACKGROUND_REGEX.test(svgText);
-      svgMetadataCache.set(path, needsDarkBackground);
-      return needsDarkBackground;
-    }
-  } catch (error) {
-    console.warn(`Error parsing SVG metadata for ${path}:`, error);
-  }
-  
-  // Cache null result to avoid repeated failed fetches
-  svgMetadataCache.set(path, null);
-  return null;
-};
 
 // Pre-defined style objects for icon backgrounds
 const DARK_STYLE = { 
@@ -165,33 +136,30 @@ const LIGHT_STYLE = {
   border: '1px solid rgba(0, 0, 0, 0.1)' 
 };
 
-// Pre-compiled regex for better performance
-const WHITE_REVERSE_REGEX = /\b(white|reverse)\b/i;
-
 // Optimized function to determine background treatment for icons
-const getBackgroundStyle = (name: string, path: string, needsDarkBackground?: boolean | null) => {
-  // Optimized dark background detection:
-  // 1. If SVG metadata is explicitly true -> dark
-  // 2. If no metadata available (null/undefined) -> use filename detection
-  // 3. If metadata is false -> light (explicit choice)
-  const needsDark = needsDarkBackground === true || 
-                   (needsDarkBackground == null && WHITE_REVERSE_REGEX.test(name));
+const getBackgroundStyle = (backgroundMetadata: 'dark' | null) => {
+  // Apply background based on metadata:
+  // 1. If metadata is 'dark' -> dark background
+  // 2. Otherwise (null) -> light background (default)
+  if (backgroundMetadata === 'dark') {
+    return DARK_STYLE;
+  }
   
-  return needsDark ? DARK_STYLE : LIGHT_STYLE;
+  // Default to light background
+  return LIGHT_STYLE;
 };
 
 const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
   const LazyIcon = useMemo(() => lazyLoadIcon(name, path), [path, name]);
   const folderLabel = useMemo(() => getFolderLabel(path), [path]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [needsDarkBackground, setNeedsDarkBackground] = useState<boolean | null | undefined>(undefined);
+  const [isZoomModalOpen, setIsZoomModalOpen] = useState(false);
   const moduleName = useMemo(() => getModuleName(path), [path]);
-  const backgroundStyle = useMemo(() => getBackgroundStyle(name, path, needsDarkBackground), [name, path, needsDarkBackground]);
-
-  // Load SVG metadata asynchronously
-  useEffect(() => {
-    parseSvgMetadata(path).then(setNeedsDarkBackground);
-  }, [path]);
+  
+  // Get background metadata from imported metadata file
+  const iconMetadata = (backgroundMetadata as Record<string, 'dark' | null>)[path] || null;
+  const backgroundStyle = getBackgroundStyle(iconMetadata);
+  const isDarkBackground = iconMetadata === 'dark';
 
   const handleInfoClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -199,25 +167,97 @@ const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
     setIsModalOpen(true);
   };
 
+  const handleZoomClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsZoomModalOpen(true);
+  };
+
+  const handleDownloadClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    // Use the actual path on console.redhat.com
+    const svgPath = `https://console.redhat.com/apps/frontend-assets/${path.replace('src/', '').replace('./', '')}.svg`;
+    const a = document.createElement('a');
+    a.href = svgPath;
+    a.download = `${name}.svg`;
+    a.target = '_blank';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  };
+
   return (
     <>
       <GalleryItem>
         <Card isFullHeight style={{ minWidth: '280px' }}>
           <CardHeader>
-            <Flex justifyContent={{ default: 'justifyContentSpaceBetween' }} alignItems={{ default: 'alignItemsCenter' }}>
+            <Content 
+              className="pf-v6-u-font-weight-bold pf-v6-u-font-size-sm"
+              style={{
+                whiteSpace: 'nowrap',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                maxWidth: '100%',
+                color: 'var(--pf-v6-global--Color--100)'
+              }}
+            >
+              {name}
+            </Content>
+          </CardHeader>
+          <CardBody className="pf-v6-u-text-align-center">
+            <div style={{ position: 'relative' }}>
+              <div className="pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-center pf-v6-u-p-md pf-v6-u-border-radius-sm" style={{
+                backgroundColor: backgroundStyle.backgroundColor,
+                border: backgroundStyle.border,
+                minHeight: '132px',
+                minWidth: '132px',
+                transition: 'all 0.2s ease'
+              }}>
+              <Suspense fallback={<div>Loading...</div>}>
+                <LazyIcon svgProps={{ 
+                  width: 'auto', 
+                  height: 80 
+                }} />
+              </Suspense>
+              </div>
+              <Button
+                variant="plain"
+                onClick={handleZoomClick}
+                aria-label={`Zoom ${name}`}
+                style={{
+                  position: 'absolute',
+                  bottom: '4px',
+                  right: '8px'
+                }}
+              >
+                <SearchPlusIcon style={{ color: isDarkBackground ? '#ffffff' : '#6a6e73' }} />
+              </Button>
+            </div>
+          </CardBody>
+          <CardFooter>
+            <Flex 
+              justifyContent={{ default: 'justifyContentSpaceBetween' }} 
+              alignItems={{ default: 'alignItemsCenter' }}
+              gap={{ default: 'gapSm' }}
+            >
               <FlexItem flex={{ default: 'flex_1' }}>
-                <Content 
-                  className="pf-v6-u-font-weight-bold pf-v6-u-font-size-sm"
-                  style={{
-                    whiteSpace: 'nowrap',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    maxWidth: '100%',
-                    color: 'var(--pf-v6-global--Color--100)'
-                  }}
+                <Label 
+                  color={folderLabel.color} 
+                  isCompact
+                  className="pf-v6-u-text-truncate"
                 >
-                  {name}
-                </Content>
+                  {folderLabel.text}
+                </Label>
+              </FlexItem>
+              <FlexItem>
+                <Button
+                  variant="plain"
+                  icon={<DownloadIcon />}
+                  onClick={handleDownloadClick}
+                  aria-label={`Download ${name}`}
+                  className="pf-v6-u-p-xs"
+                />
               </FlexItem>
               <FlexItem>
                 <Button
@@ -225,44 +265,10 @@ const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
                   icon={<InfoCircleIcon />}
                   onClick={handleInfoClick}
                   aria-label={`Show details for ${name}`}
-                  style={{ 
-                    padding: '4px',
-                    fontSize: '14px',
-                    color: 'var(--pf-v6-global--Color--200)'
-                  }}
+                  className="pf-v6-u-p-xs"
                 />
               </FlexItem>
             </Flex>
-          </CardHeader>
-          <CardBody className="pf-v6-u-text-align-center">
-            <div className="pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-center pf-v6-u-p-md pf-v6-u-border-radius-sm" style={{
-              backgroundColor: backgroundStyle.backgroundColor,
-              border: backgroundStyle.border,
-              minHeight: '132px',
-              minWidth: '132px',
-              transition: 'all 0.2s ease'
-            }}>
-            <Suspense fallback={<div>Loading...</div>}>
-              <LazyIcon svgProps={{ 
-                width: 'auto', 
-                height: 80 
-              }} />
-            </Suspense>
-            </div>
-          </CardBody>
-          <CardFooter>
-            <Label 
-              color={folderLabel.color} 
-              isCompact
-              style={{
-                maxWidth: '100%',
-                whiteSpace: 'nowrap',
-                overflow: 'hidden',
-                textOverflow: 'ellipsis'
-              }}
-            >
-              {folderLabel.text}
-            </Label>
           </CardFooter>
         </Card>
       </GalleryItem>
@@ -342,6 +348,29 @@ const DynamicIcon = ({ name, path }: { name: string, path: string }) => {
           </div>
         </div>
       </Modal>
+
+      <Modal
+        variant={ModalVariant.medium}
+        title={name}
+        isOpen={isZoomModalOpen}
+        onClose={() => setIsZoomModalOpen(false)}
+      >
+        <div 
+          className="pf-v6-u-display-flex pf-v6-u-align-items-center pf-v6-u-justify-content-center pf-v6-u-p-xl pf-v6-u-mx-0"
+          style={{
+            backgroundColor: backgroundStyle.backgroundColor,
+            minHeight: '400px',
+          }}
+        >
+          <Suspense fallback={<div>Loading...</div>}>
+            <LazyIcon svgProps={{ 
+              width: 'auto', 
+              height: 300,
+              style: { maxWidth: '100%' }
+            }} />
+          </Suspense>
+        </div>
+      </Modal>
     </>
   );
 };
@@ -350,14 +379,11 @@ const DynamicIconList = ({ name, path }: { name: string, path: string }) => {
   const LazyIcon = useMemo(() => lazyLoadIcon(name, path), [path, name]);
   const folderLabel = useMemo(() => getFolderLabel(path), [path]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [needsDarkBackground, setNeedsDarkBackground] = useState<boolean | null | undefined>(undefined);
   const moduleName = useMemo(() => getModuleName(path), [path]);
-  const backgroundStyle = useMemo(() => getBackgroundStyle(name, path, needsDarkBackground), [name, path, needsDarkBackground]);
-
-  // Load SVG metadata asynchronously
-  useEffect(() => {
-    parseSvgMetadata(path).then(setNeedsDarkBackground);
-  }, [path]);
+  
+  // Get background metadata from imported metadata file
+  const iconMetadata = (backgroundMetadata as Record<string, 'dark' | null>)[path] || null;
+  const backgroundStyle = getBackgroundStyle(iconMetadata);
 
   const handleInfoClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -878,7 +904,7 @@ const App = () => {
             {viewMode === 'cards' ? (
               <Gallery
                 className="pf-v6-u-m-md pf-v6-u-mt-lg"
-                minWidths={{ md: '450px' }}
+                minWidths={{ md: '370px' }}
                 hasGutter
               >
                 {nodes}
@@ -900,9 +926,9 @@ const App = () => {
             position: 'sticky',
             bottom: 0,
             zIndex: 100,
-            backgroundColor: 'var(--pf-v6-global--BackgroundColor--100)',
-            boxShadow: 'var(--pf-v6-global--BoxShadow--sm)',
-            padding: 'var(--pf-v6-global--spacer--sm) var(--pf-v6-global--spacer--md)',
+            backgroundColor: '#ffffff',
+            boxShadow: '0 0.0625rem 0.125rem 0 rgba(3, 3, 3, 0.12), 0 0 0.125rem 0 rgba(3, 3, 3, 0.06)',
+            padding: '0.5rem 1rem',
           }}
         >
           <Pagination
