@@ -31,8 +31,8 @@
     "@patternfly/patternfly": "^6.2.3",
     "@patternfly/react-core": "^6.2.2",
     "ncp": "^2.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "insights": {
     "appname": "frontend-assets"
@@ -44,8 +44,8 @@
     "@redhat-cloud-services/eslint-config-redhat-cloud-services": "^3.0.0",
     "@redhat-cloud-services/frontend-components-config": "^6.6.2",
     "@redhat-cloud-services/tsc-transform-imports": "^1.0.24",
-    "@types/react": "^18.3.23",
-    "@types/react-dom": "^18.3.7",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "@typescript-eslint/parser": "^8.35.0",
     "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^7.1.2",
