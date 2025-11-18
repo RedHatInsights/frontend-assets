@@ -4,8 +4,8 @@
   "description": "frontend assets for cloud.redhat.com",
   "main": "index.js",
   "engines": {
-    "node": ">=16.0.0",
-    "npm": ">=7.0.0"
+    "node": ">=16.20.2",
+    "npm": ">=7.24.2"
   },
   "scripts": {
     "build": "node generate-modules.js && fec build",
@@ -46,7 +46,7 @@
     "@redhat-cloud-services/tsc-transform-imports": "^1.0.26",
     "@types/react": "^18.3.27",
     "@types/react-dom": "^18.3.7",
-    "@typescript-eslint/parser": "^8.35.0",
+    "@typescript-eslint/parser": "^8.47.0",
     "copy-webpack-plugin": "^13.0.1",
     "css-loader": "^7.1.2",
     "eslint": "^9.39.1",
