@@ -53,7 +53,7 @@
     "glob": "^12.0.0",
     "html-webpack-plugin": "^5.6.5",
     "local-web-server": "^5.4.0",
-    "sass": "^1.94.1",
+    "sass": "^1.94.2",
     "style-loader": "^4.0.0",
     "ts-patch": "^3.3.0",
     "typescript": "^5.9.3",
