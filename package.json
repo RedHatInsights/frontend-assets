@@ -46,17 +46,17 @@
     "@redhat-cloud-services/tsc-transform-imports": "^1.0.26",
     "@types/react": "^18.3.27",
     "@types/react-dom": "^18.3.7",
-    "@typescript-eslint/parser": "^8.49.0",
+    "@typescript-eslint/parser": "^8.50.1",
     "copy-webpack-plugin": "^13.0.1",
     "css-loader": "^7.1.2",
-    "eslint": "^9.39.1",
+    "eslint": "^9.39.2",
     "glob": "^12.0.0",
     "html-webpack-plugin": "^5.6.5",
     "local-web-server": "^5.4.0",
-    "sass": "^1.96.0",
+    "sass": "^1.97.1",
     "style-loader": "^4.0.0",
     "ts-patch": "^3.3.0",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.49.0"
+    "typescript-eslint": "^8.50.0"
   }
 }
