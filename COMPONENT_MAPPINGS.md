@@ -242,6 +242,7 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/technology-icons/rhel.svg" alt="rhel" width="24" height="24" /> | `RhelIcon` | `rhel.svg` | `/technology-icons/rhel.svg` | `/technology-icons/rhel.tsx` |
 | <img src="src/technology-icons/rhel-linux-for-workstations.svg" alt="rhel-linux-for-workstations" width="24" height="24" /> | `RhelLinuxForWorkstationsIcon` | `rhel-linux-for-workstations.svg` | `/technology-icons/rhel-linux-for-workstations.svg` | `/technology-icons/rhel-linux-for-workstations.tsx` |
 | <img src="src/technology-icons/rhtap.svg" alt="rhtap" width="24" height="24" /> | `RhtapIcon` | `rhtap.svg` | `/technology-icons/rhtap.svg` | `/technology-icons/rhtap.tsx` |
+| <img src="src/technology-icons/rh-ui-icon-ai-experience-fill.svg" alt="rh-ui-icon-ai-experience-fill" width="24" height="24" /> | `RhUiIconAiExperienceFillIcon` | `rh-ui-icon-ai-experience-fill.svg` | `/technology-icons/rh-ui-icon-ai-experience-fill.svg` | `/technology-icons/rh-ui-icon-ai-experience-fill.tsx` |
 | <img src="src/patternfly-icons/rocket.svg" alt="rocket" width="24" height="24" /> | `RocketIcon` | `rocket.svg` | `/patternfly-icons/rocket.svg` | `/patternfly-icons/rocket.tsx` |
 | <img src="src/partners-icons/rubrik.svg" alt="rubrik" width="24" height="24" /> | `RubrikIcon` | `rubrik.svg` | `/partners-icons/rubrik.svg` | `/partners-icons/rubrik.tsx` |
 | <img src="src/partners-icons/rubrik-logomark.svg" alt="rubrik-logomark" width="24" height="24" /> | `RubrikLogomarkIcon` | `rubrik-logomark.svg` | `/partners-icons/rubrik-logomark.svg` | `/partners-icons/rubrik-logomark.tsx` |
@@ -288,4 +289,4 @@ These components are exposed through module federation with the scope `frontendA
 
 ## Generated Components
 
-Total components generated: 233
+Total components generated: 234
