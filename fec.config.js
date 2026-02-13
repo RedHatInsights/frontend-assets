@@ -210,6 +210,7 @@ module.exports = {
       "./QuayIoIcon": path.resolve(__dirname, 'src', 'technology-icons/quay-io.tsx'),
       "./RbacLandingMinispotIcon": path.resolve(__dirname, 'src', 'background-images/rbac-landing-minispot.tsx'),
       "./RedHatBadgeIcon": path.resolve(__dirname, 'src', 'technology-icons/red-hat-badge.tsx'),
+      "./RhUiIconAiExperienceFillIcon": path.resolve(__dirname, 'src', 'technology-icons/rh-ui-icon-ai-experience-fill.tsx'),
       "./RhelIcon": path.resolve(__dirname, 'src', 'technology-icons/rhel.tsx'),
       "./RhelLinuxForWorkstationsIcon": path.resolve(__dirname, 'src', 'technology-icons/rhel-linux-for-workstations.tsx'),
       "./RhtapIcon": path.resolve(__dirname, 'src', 'technology-icons/rhtap.tsx'),
