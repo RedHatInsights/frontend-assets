@@ -1,28 +1,34 @@
 ### Description
-<!-- Summary of proposed changes: what and why. -->
-<!-- Which downstream repos/teams are affected? -->
+<!-- Must include 2-3 sentence summary of proposed changes: what and why. -->
+<!-- Must include links to impacted UI(s) or steps to reproduce if applicable. -->
 
 [RHCLOUD-XXXXX](https://issues.redhat.com/browse/RHCLOUD-XXXXX)
 
 ---
 
-### Blast radius
-<!-- Who/what consumes this? List affected repos, services, or pipelines. -->
-<!-- How was this tested against consumers? -->
+### Screenshots
+<!-- Required for visible UI changes. Before/after or Storybook link. -->
+<!-- Delete this section for non-visual changes (pure logic, config, deps). -->
+
+#### Before:
+
+
+#### After:
+
 
 ---
 
-### Rollback plan
-<!-- If this breaks production, how do we revert? -->
-<!-- Is git revert sufficient, or are there additional steps? -->
+### Anything reviewers should know?
+<!-- Trade-offs, limitations, things that look wrong but are right. -->
 
 ---
 
 ### Checklist
-- [ ] Tested against at least one consuming repo/service
-- [ ] No breaking changes to existing consumers (or migration path documented)
-- [ ] No hardcoded secrets, tokens, or passwords
-- [ ] Container images pinned to specific tags, not `latest`
+- [ ] Accessibility: color contrast, keyboard nav, screen reader tested (or N/A)
+- [ ] All PR checks pass locally (build, lint, test)
+- [ ] No unrelated changes included
+- [ ] _(Optional) QE: OUIA changed, test impact, no coverage_
+- [ ] _(Optional) UX: end-user UX modified, designs need sign-off_
 
 ### AI disclosure
 <!-- If AI tools contributed, note them. E.g.: Assisted by: Claude Code -->
