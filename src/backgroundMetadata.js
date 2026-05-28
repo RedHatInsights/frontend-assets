@@ -19,6 +19,7 @@ export const backgroundMetadata = {
   './technology-icons/rhtap': null,
   './technology-icons/rhel': null,
   './technology-icons/rhel-linux-for-workstations': null,
+  './technology-icons/rh-ui-icon-ai-experience': null,
   './technology-icons/rh-ui-icon-ai-experience-fill': null,
   './technology-icons/rh-ui-icon-ai-chatbot': null,
   './technology-icons/red-hat-badge': null,

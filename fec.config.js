@@ -212,6 +212,7 @@ module.exports = {
       "./RedHatBadgeIcon": path.resolve(__dirname, 'src', 'technology-icons/red-hat-badge.tsx'),
       "./RhUiIconAiChatbotIcon": path.resolve(__dirname, 'src', 'technology-icons/rh-ui-icon-ai-chatbot.tsx'),
       "./RhUiIconAiExperienceFillIcon": path.resolve(__dirname, 'src', 'technology-icons/rh-ui-icon-ai-experience-fill.tsx'),
+      "./RhUiIconAiExperienceIcon": path.resolve(__dirname, 'src', 'technology-icons/rh-ui-icon-ai-experience.tsx'),
       "./RhelIcon": path.resolve(__dirname, 'src', 'technology-icons/rhel.tsx'),
       "./RhelLinuxForWorkstationsIcon": path.resolve(__dirname, 'src', 'technology-icons/rhel-linux-for-workstations.tsx'),
       "./RhtapIcon": path.resolve(__dirname, 'src', 'technology-icons/rhtap.tsx'),
