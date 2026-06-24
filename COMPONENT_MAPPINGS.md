@@ -242,7 +242,9 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/technology-icons/rhel.svg" alt="rhel" width="24" height="24" /> | `RhelIcon` | `rhel.svg` | `/technology-icons/rhel.svg` | `/technology-icons/rhel.tsx` |
 | <img src="src/technology-icons/rhel-linux-for-workstations.svg" alt="rhel-linux-for-workstations" width="24" height="24" /> | `RhelLinuxForWorkstationsIcon` | `rhel-linux-for-workstations.svg` | `/technology-icons/rhel-linux-for-workstations.svg` | `/technology-icons/rhel-linux-for-workstations.tsx` |
 | <img src="src/technology-icons/rhtap.svg" alt="rhtap" width="24" height="24" /> | `RhtapIcon` | `rhtap.svg` | `/technology-icons/rhtap.svg` | `/technology-icons/rhtap.tsx` |
+| <img src="src/technology-icons/rh-ui-icon-ai-chatbot-dark.svg" alt="rh-ui-icon-ai-chatbot-dark" width="24" height="24" /> | `RhUiIconAiChatbotDarkIcon` | `rh-ui-icon-ai-chatbot-dark.svg` | `/technology-icons/rh-ui-icon-ai-chatbot-dark.svg` | `/technology-icons/rh-ui-icon-ai-chatbot-dark.tsx` |
 | <img src="src/technology-icons/rh-ui-icon-ai-chatbot.svg" alt="rh-ui-icon-ai-chatbot" width="24" height="24" /> | `RhUiIconAiChatbotIcon` | `rh-ui-icon-ai-chatbot.svg` | `/technology-icons/rh-ui-icon-ai-chatbot.svg` | `/technology-icons/rh-ui-icon-ai-chatbot.tsx` |
+| <img src="src/technology-icons/rh-ui-icon-ai-experience-dark.svg" alt="rh-ui-icon-ai-experience-dark" width="24" height="24" /> | `RhUiIconAiExperienceDarkIcon` | `rh-ui-icon-ai-experience-dark.svg` | `/technology-icons/rh-ui-icon-ai-experience-dark.svg` | `/technology-icons/rh-ui-icon-ai-experience-dark.tsx` |
 | <img src="src/technology-icons/rh-ui-icon-ai-experience-fill.svg" alt="rh-ui-icon-ai-experience-fill" width="24" height="24" /> | `RhUiIconAiExperienceFillIcon` | `rh-ui-icon-ai-experience-fill.svg` | `/technology-icons/rh-ui-icon-ai-experience-fill.svg` | `/technology-icons/rh-ui-icon-ai-experience-fill.tsx` |
 | <img src="src/technology-icons/rh-ui-icon-ai-experience.svg" alt="rh-ui-icon-ai-experience" width="24" height="24" /> | `RhUiIconAiExperienceIcon` | `rh-ui-icon-ai-experience.svg` | `/technology-icons/rh-ui-icon-ai-experience.svg` | `/technology-icons/rh-ui-icon-ai-experience.tsx` |
 | <img src="src/patternfly-icons/rocket.svg" alt="rocket" width="24" height="24" /> | `RocketIcon` | `rocket.svg` | `/patternfly-icons/rocket.svg` | `/patternfly-icons/rocket.tsx` |
@@ -291,4 +293,4 @@ These components are exposed through module federation with the scope `frontendA
 
 ## Generated Components
 
-Total components generated: 236
+Total components generated: 238
