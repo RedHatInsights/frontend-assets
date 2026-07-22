@@ -88,8 +88,6 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/technology-icons/build-of-open-telemetry.svg" alt="build-of-open-telemetry" width="24" height="24" /> | `BuildOfOpenTelemetryIcon` | `build-of-open-telemetry.svg` | `/technology-icons/build-of-open-telemetry.svg` | `/technology-icons/build-of-open-telemetry.tsx` |
 | <img src="src/technology-icons/build-of-quarkus.svg" alt="build-of-quarkus" width="24" height="24" /> | `BuildOfQuarkusIcon` | `build-of-quarkus.svg` | `/technology-icons/build-of-quarkus.svg` | `/technology-icons/build-of-quarkus.tsx` |
 | <img src="src/technology-icons/builds-for-openshift.svg" alt="builds-for-openshift" width="24" height="24" /> | `BuildsForOpenshiftIcon` | `builds-for-openshift.svg` | `/technology-icons/builds-for-openshift.svg` | `/technology-icons/builds-for-openshift.tsx` |
-| <img src="src/partners-icons/check-point-technologies.svg" alt="check-point-technologies" width="24" height="24" /> | `CheckPointTechnologiesIcon` | `check-point-technologies.svg` | `/partners-icons/check-point-technologies.svg` | `/partners-icons/check-point-technologies.tsx` |
-| <img src="src/partners-icons/chocolatey.svg" alt="chocolatey" width="24" height="24" /> | `ChocolateyIcon` | `chocolatey.svg` | `/partners-icons/chocolatey.svg` | `/partners-icons/chocolatey.tsx` |
 | <img src="src/partners-icons/citrix.svg" alt="citrix" width="24" height="24" /> | `CitrixIcon` | `citrix.svg` | `/partners-icons/citrix.svg` | `/partners-icons/citrix.tsx` |
 | <img src="src/partners-icons/cohesity.svg" alt="cohesity" width="24" height="24" /> | `CohesityIcon` | `cohesity.svg` | `/partners-icons/cohesity.svg` | `/partners-icons/cohesity.tsx` |
 | <img src="src/background-images/collage-ai-inference-time-purple.svg" alt="collage-ai-inference-time-purple" width="24" height="24" /> | `CollageAiInferenceTimePurpleIcon` | `collage-ai-inference-time-purple.svg` | `/background-images/collage-ai-inference-time-purple.svg` | `/background-images/collage-ai-inference-time-purple.tsx` |
@@ -128,14 +126,16 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/partners-icons/fortinet.svg" alt="fortinet" width="24" height="24" /> | `FortinetIcon` | `fortinet.svg` | `/partners-icons/fortinet.svg` | `/partners-icons/fortinet.tsx` |
 | <img src="src/partners-icons/fortinet-logomark.svg" alt="fortinet-logomark" width="24" height="24" /> | `FortinetLogomarkIcon` | `fortinet-logomark.svg` | `/partners-icons/fortinet-logomark.svg` | `/partners-icons/fortinet-logomark.tsx` |
 | <img src="src/partners-icons/frrouting.svg" alt="frrouting" width="24" height="24" /> | `FrroutingIcon` | `frrouting.svg` | `/partners-icons/frrouting.svg` | `/partners-icons/frrouting.tsx` |
-| <img src="src/partners-icons/google-chat.svg" alt="google-chat" width="24" height="24" /> | `GoogleChatIcon` | `google-chat.svg` | `/partners-icons/google-chat.svg` | `/partners-icons/google-chat.tsx` |
 | <img src="src/partners-icons/google-cloud.svg" alt="google-cloud" width="24" height="24" /> | `GoogleCloudIcon` | `google-cloud.svg` | `/partners-icons/google-cloud.svg` | `/partners-icons/google-cloud.tsx` |
 | <img src="src/partners-icons/google-cloud-logomark.svg" alt="google-cloud-logomark" width="24" height="24" /> | `GoogleCloudLogomarkIcon` | `google-cloud-logomark.svg` | `/partners-icons/google-cloud-logomark.svg` | `/partners-icons/google-cloud-logomark.tsx` |
 | <img src="src/partners-icons/google-cloud-short.svg" alt="google-cloud-short" width="24" height="24" /> | `GoogleCloudShortIcon` | `google-cloud-short.svg` | `/partners-icons/google-cloud-short.svg` | `/partners-icons/google-cloud-short.tsx` |
+| <img src="src/partners-icons/google-chat.svg" alt="google-chat" width="24" height="24" /> | `GoogleChatIcon` | `google-chat.svg` | `/partners-icons/google-chat.svg` | `/partners-icons/google-chat.tsx` |
 | <img src="src/partners-icons/h3c-1.svg" alt="h3c-1" width="24" height="24" /> | `H3c1Icon` | `h3c-1.svg` | `/partners-icons/h3c-1.svg` | `/partners-icons/h3c-1.tsx` |
 | <img src="src/partners-icons/h3c-2.svg" alt="h3c-2" width="24" height="24" /> | `H3c2Icon` | `h3c-2.svg` | `/partners-icons/h3c-2.svg` | `/partners-icons/h3c-2.tsx` |
 | <img src="src/partners-icons/hp-enterprise-2.svg" alt="hp-enterprise-2" width="24" height="24" /> | `HpEnterprise2Icon` | `hp-enterprise-2.svg` | `/partners-icons/hp-enterprise-2.svg` | `/partners-icons/hp-enterprise-2.tsx` |
 | <img src="src/partners-icons/hp-enterprise.svg" alt="hp-enterprise" width="24" height="24" /> | `HpEnterpriseIcon` | `hp-enterprise.svg` | `/partners-icons/hp-enterprise.svg` | `/partners-icons/hp-enterprise.tsx` |
+| <img src="src/partners-icons/check-point-technologies.svg" alt="check-point-technologies" width="24" height="24" /> | `CheckPointTechnologiesIcon` | `check-point-technologies.svg` | `/partners-icons/check-point-technologies.svg` | `/partners-icons/check-point-technologies.tsx` |
+| <img src="src/partners-icons/chocolatey.svg" alt="chocolatey" width="24" height="24" /> | `ChocolateyIcon` | `chocolatey.svg` | `/partners-icons/chocolatey.svg` | `/partners-icons/chocolatey.tsx` |
 | <img src="src/technology-icons/iam.svg" alt="iam" width="24" height="24" /> | `IamIcon` | `iam.svg` | `/technology-icons/iam.svg` | `/technology-icons/iam.tsx` |
 | <img src="src/partners-icons/ibm-cloud.svg" alt="ibm-cloud" width="24" height="24" /> | `IbmCloudIcon` | `ibm-cloud.svg` | `/partners-icons/ibm-cloud.svg` | `/partners-icons/ibm-cloud.tsx` |
 | <img src="src/partners-icons/ibm.svg" alt="ibm" width="24" height="24" /> | `IbmIcon` | `ibm.svg` | `/partners-icons/ibm.svg` | `/partners-icons/ibm.tsx` |
@@ -155,6 +155,7 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/partners-icons/kong-short.svg" alt="kong-short" width="24" height="24" /> | `KongShortIcon` | `kong-short.svg` | `/partners-icons/kong-short.svg` | `/partners-icons/kong-short.tsx` |
 | <img src="src/technology-icons/learning-resources.svg" alt="learning-resources" width="24" height="24" /> | `LearningResourcesIcon` | `learning-resources.svg` | `/technology-icons/learning-resources.svg` | `/technology-icons/learning-resources.tsx` |
 | <img src="src/technology-icons/lightspeed.svg" alt="lightspeed" width="24" height="24" /> | `LightspeedIcon` | `lightspeed.svg` | `/technology-icons/lightspeed.svg` | `/technology-icons/lightspeed.tsx` |
+| <img src="src/partners-icons/lightwell.svg" alt="lightwell" width="24" height="24" /> | `LightwellIcon` | `lightwell.svg` | `/partners-icons/lightwell.svg` | `/partners-icons/lightwell.tsx` |
 | <img src="src/red-hat-logos/logo_hat-only.svg" alt="logo_hat-only" width="24" height="24" /> | `LogoHatOnlyIcon` | `logo_hat-only.svg` | `/red-hat-logos/logo_hat-only.svg` | `/red-hat-logos/logo_hat-only.tsx` |
 | <img src="src/red-hat-logos/logo.svg" alt="logo" width="24" height="24" /> | `LogoIcon` | `logo.svg` | `/red-hat-logos/logo.svg` | `/red-hat-logos/logo.tsx` |
 | <img src="src/console-logos/Logo-Red_Hat-A-Standard-RGB.svg" alt="Logo-Red_Hat-A-Standard-RGB" width="24" height="24" /> | `LogoRedHatAStandardRGBIcon` | `Logo-Red_Hat-A-Standard-RGB.svg` | `/console-logos/Logo-Red_Hat-A-Standard-RGB.svg` | `/console-logos/Logo-Red_Hat-A-Standard-RGB.tsx` |
@@ -242,11 +243,11 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/technology-icons/rhel.svg" alt="rhel" width="24" height="24" /> | `RhelIcon` | `rhel.svg` | `/technology-icons/rhel.svg` | `/technology-icons/rhel.tsx` |
 | <img src="src/technology-icons/rhel-linux-for-workstations.svg" alt="rhel-linux-for-workstations" width="24" height="24" /> | `RhelLinuxForWorkstationsIcon` | `rhel-linux-for-workstations.svg` | `/technology-icons/rhel-linux-for-workstations.svg` | `/technology-icons/rhel-linux-for-workstations.tsx` |
 | <img src="src/technology-icons/rhtap.svg" alt="rhtap" width="24" height="24" /> | `RhtapIcon` | `rhtap.svg` | `/technology-icons/rhtap.svg` | `/technology-icons/rhtap.tsx` |
-| <img src="src/technology-icons/rh-ui-icon-ai-chatbot-dark.svg" alt="rh-ui-icon-ai-chatbot-dark" width="24" height="24" /> | `RhUiIconAiChatbotDarkIcon` | `rh-ui-icon-ai-chatbot-dark.svg` | `/technology-icons/rh-ui-icon-ai-chatbot-dark.svg` | `/technology-icons/rh-ui-icon-ai-chatbot-dark.tsx` |
-| <img src="src/technology-icons/rh-ui-icon-ai-chatbot.svg" alt="rh-ui-icon-ai-chatbot" width="24" height="24" /> | `RhUiIconAiChatbotIcon` | `rh-ui-icon-ai-chatbot.svg` | `/technology-icons/rh-ui-icon-ai-chatbot.svg` | `/technology-icons/rh-ui-icon-ai-chatbot.tsx` |
 | <img src="src/technology-icons/rh-ui-icon-ai-experience-dark.svg" alt="rh-ui-icon-ai-experience-dark" width="24" height="24" /> | `RhUiIconAiExperienceDarkIcon` | `rh-ui-icon-ai-experience-dark.svg` | `/technology-icons/rh-ui-icon-ai-experience-dark.svg` | `/technology-icons/rh-ui-icon-ai-experience-dark.tsx` |
 | <img src="src/technology-icons/rh-ui-icon-ai-experience-fill.svg" alt="rh-ui-icon-ai-experience-fill" width="24" height="24" /> | `RhUiIconAiExperienceFillIcon` | `rh-ui-icon-ai-experience-fill.svg` | `/technology-icons/rh-ui-icon-ai-experience-fill.svg` | `/technology-icons/rh-ui-icon-ai-experience-fill.tsx` |
 | <img src="src/technology-icons/rh-ui-icon-ai-experience.svg" alt="rh-ui-icon-ai-experience" width="24" height="24" /> | `RhUiIconAiExperienceIcon` | `rh-ui-icon-ai-experience.svg` | `/technology-icons/rh-ui-icon-ai-experience.svg` | `/technology-icons/rh-ui-icon-ai-experience.tsx` |
+| <img src="src/technology-icons/rh-ui-icon-ai-chatbot-dark.svg" alt="rh-ui-icon-ai-chatbot-dark" width="24" height="24" /> | `RhUiIconAiChatbotDarkIcon` | `rh-ui-icon-ai-chatbot-dark.svg` | `/technology-icons/rh-ui-icon-ai-chatbot-dark.svg` | `/technology-icons/rh-ui-icon-ai-chatbot-dark.tsx` |
+| <img src="src/technology-icons/rh-ui-icon-ai-chatbot.svg" alt="rh-ui-icon-ai-chatbot" width="24" height="24" /> | `RhUiIconAiChatbotIcon` | `rh-ui-icon-ai-chatbot.svg` | `/technology-icons/rh-ui-icon-ai-chatbot.svg` | `/technology-icons/rh-ui-icon-ai-chatbot.tsx` |
 | <img src="src/patternfly-icons/rocket.svg" alt="rocket" width="24" height="24" /> | `RocketIcon` | `rocket.svg` | `/patternfly-icons/rocket.svg` | `/patternfly-icons/rocket.tsx` |
 | <img src="src/partners-icons/rubrik.svg" alt="rubrik" width="24" height="24" /> | `RubrikIcon` | `rubrik.svg` | `/partners-icons/rubrik.svg` | `/partners-icons/rubrik.tsx` |
 | <img src="src/partners-icons/rubrik-logomark.svg" alt="rubrik-logomark" width="24" height="24" /> | `RubrikLogomarkIcon` | `rubrik-logomark.svg` | `/partners-icons/rubrik-logomark.svg` | `/partners-icons/rubrik-logomark.tsx` |
@@ -293,4 +294,4 @@ These components are exposed through module federation with the scope `frontendA
 
 ## Generated Components
 
-Total components generated: 238
+Total components generated: 239

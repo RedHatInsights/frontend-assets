@@ -157,6 +157,7 @@ export const backgroundMetadata = {
   './partners-icons/microsoft-azure': null,
   './partners-icons/microsoft-azure-short': null,
   './partners-icons/microsoft-azure-logomark': null,
+  './partners-icons/lightwell': 'dark',
   './partners-icons/kong-short': null,
   './partners-icons/kentik': null,
   './partners-icons/kentik-logomark': null,
