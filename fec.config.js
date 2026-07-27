@@ -132,6 +132,7 @@ module.exports = {
       "./LearningResourcesIcon": path.resolve(__dirname, 'src', 'technology-icons/learning-resources.tsx'),
       "./LightspeedIcon": path.resolve(__dirname, 'src', 'technology-icons/lightspeed.tsx'),
       "./LightwellIcon": path.resolve(__dirname, 'src', 'partners-icons/lightwell.tsx'),
+      "./LightwellLogomarkIcon": path.resolve(__dirname, 'src', 'partners-icons/lightwell-logomark.tsx'),
       "./LogoHatOnlyIcon": path.resolve(__dirname, 'src', 'red-hat-logos/logo_hat-only.tsx'),
       "./LogoIcon": path.resolve(__dirname, 'src', 'red-hat-logos/logo.tsx'),
       "./LogoRedHatAStandardRGBIcon": path.resolve(__dirname, 'src', 'console-logos/Logo-Red_Hat-A-Standard-RGB.tsx'),
