@@ -7,6 +7,7 @@ const util = require('util');
 // Import our modular functions
 const { dashToCamelCase, upperCaseFirstLetter } = require('./scripts/utils');
 const { parseSvgContent } = require('./scripts/svg-parser');
+const { sanitizeJsxDelimiters } = require('./scripts/sanitize');
 const { generateSvgMetadata } = require('./scripts/metadata-generator');
 const {
   generateMarkdownDocumentation,
@@ -141,6 +142,9 @@ export default ${componentName};
       ? `\n${componentName}.backgroundMetadata = '${backgroundMetadata}';\n` 
       : '';
 
+    // Sanitize the raw SVG to prevent JSX expression injection in the
+    // fallback path — the content is interpolated directly into JSX.
+    const safeSvgContent = sanitizeJsxDelimiters(svgContent);
     const tsxContent = `import React from 'react';
 import { Icon, IconComponentProps } from '@patternfly/react-core';
 
@@ -151,7 +155,7 @@ export type ${componentName}Props = {
 };
 
 export const ${componentName} = (props: ${componentName}Props) => {
-  const svgElement = ${svgContent
+  const svgElement = ${safeSvgContent
     .replace('<svg', '<svg {...props.svgProps}')
     .replace(/xmlns="[^"]*"/g, '')};
 
