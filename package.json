@@ -12,8 +12,9 @@
     "generate-modules": "node generate-modules.js",
     "dev": "node generate-modules.js && webpack serve --config webpack.demo.config.js --open --hot",
     "lint": "eslint src",
-    "verify": "npm run validate-config && npm run build",
+    "verify": "npm run validate-config && npm run validate-svg-safety && npm run build",
     "validate-config": "node scripts/validate-config.js",
+    "validate-svg-safety": "node scripts/validate-svg-safety.js",
     "postinstall": "ts-patch install",
     "static": "node generate-modules.js && fec build && node_modules/local-web-server/bin/cli.js --port 8003 --directory ./dist --rewrite '/apps/frontend-assets/(.*) -> /$1'"
   },

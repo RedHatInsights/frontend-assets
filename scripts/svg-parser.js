@@ -1,6 +1,10 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 const { dashToCamelCase } = require('./utils');
 const { parseStyleString, parseCssRules } = require('./css-parser');
+const {
+  sanitizeJsxDelimiters,
+  sanitizeForTemplateLiteral,
+} = require('./sanitize');
 
 /**
  * Parses SVG content and extracts attributes from the root SVG element
@@ -165,45 +169,16 @@ function cleanSvgInnerContent(innerContent) {
     '',
   );
 
-  // Handle inline style tags - convert them to use dangerouslySetInnerHTML
-  innerContent = innerContent.replace(
-    /<style\s+type=["']text\/css["']>\s*([\s\S]*?)\s*<\/style>/gi,
-    (match, cssContent) => {
-      // Clean up the CSS content and escape it properly
-      const cleanCss = cssContent.trim();
-      return `<style dangerouslySetInnerHTML={{__html: \`${cleanCss}\`}} />`;
-    },
-  );
-
-  // Also handle style tags without type attribute
-  innerContent = innerContent.replace(
-    /<style>\s*([\s\S]*?)\s*<\/style>/gi,
-    (match, cssContent) => {
-      const cleanCss = cssContent.trim();
-      return `<style dangerouslySetInnerHTML={{__html: \`${cleanCss}\`}} />`;
-    },
-  );
-
-  // Extract CSS fills and convert to inline attributes for better compatibility
+  // Extract CSS from ALL <style> tags in a single pass, parse for inline
+  // conversion, and remove the tags.  This avoids the previous approach of
+  // creating an intermediate dangerouslySetInnerHTML template-literal form
+  // which was vulnerable to template-expression injection via crafted CSS.
   const cssClassesToInline = new Map();
 
-  // Also check for style tags in the original content (not just dangerouslySetInnerHTML)
   innerContent = innerContent.replace(
     /<style[^>]*>\s*([\s\S]*?)\s*<\/style>/gi,
     (match, cssContent) => {
-      // Parse CSS rules to extract class definitions
-      parseCssRules(cssContent, cssClassesToInline);
-      // Return empty string to remove the style tag since we're converting to inline
-      return '';
-    },
-  );
-
-  innerContent = innerContent.replace(
-    /<style[^>]*dangerouslySetInnerHTML=\{\{__html: `([^`]*)`\}\}[^>]*>/g,
-    (match, cssContent) => {
-      // Parse CSS rules to extract class definitions
-      parseCssRules(cssContent, cssClassesToInline);
-      // Return empty string to remove the style tag since we're converting to inline
+      parseCssRules(cssContent.trim(), cssClassesToInline);
       return '';
     },
   );
@@ -226,6 +201,14 @@ function cleanSvgInnerContent(innerContent) {
       innerContent = innerContent.replace(classNameRegex, inlineAttrString);
     }
   });
+
+  // Sanitize: escape any { and } in SVG text content that could be
+  // interpreted as JSX expressions in the generated TSX.  This MUST run
+  // BEFORE convertHtmlToJsxAttributes (which introduces its own valid
+  // JSX braces like style={...}).  At this point all <style> tags have
+  // been removed so curly braces can only come from original SVG text —
+  // there is no legitimate reason for them to appear here.
+  innerContent = sanitizeJsxDelimiters(innerContent);
 
   // Convert HTML attributes to JSX attributes
   innerContent = convertHtmlToJsxAttributes(innerContent);
