@@ -158,7 +158,9 @@ These components are exposed through module federation with the scope `frontendA
 | <img src="src/partners-icons/lightwell-dark.svg" alt="lightwell-dark" width="24" height="24" /> | `LightwellDarkIcon` | `lightwell-dark.svg` | `/partners-icons/lightwell-dark.svg` | `/partners-icons/lightwell-dark.tsx` |
 | <img src="src/partners-icons/lightwell.svg" alt="lightwell" width="24" height="24" /> | `LightwellIcon` | `lightwell.svg` | `/partners-icons/lightwell.svg` | `/partners-icons/lightwell.tsx` |
 | <img src="src/partners-icons/lightwell-light.svg" alt="lightwell-light" width="24" height="24" /> | `LightwellLightIcon` | `lightwell-light.svg` | `/partners-icons/lightwell-light.svg` | `/partners-icons/lightwell-light.tsx` |
+| <img src="src/partners-icons/lightwell-logomark-dark.svg" alt="lightwell-logomark-dark" width="24" height="24" /> | `LightwellLogomarkDarkIcon` | `lightwell-logomark-dark.svg` | `/partners-icons/lightwell-logomark-dark.svg` | `/partners-icons/lightwell-logomark-dark.tsx` |
 | <img src="src/partners-icons/lightwell-logomark.svg" alt="lightwell-logomark" width="24" height="24" /> | `LightwellLogomarkIcon` | `lightwell-logomark.svg` | `/partners-icons/lightwell-logomark.svg` | `/partners-icons/lightwell-logomark.tsx` |
+| <img src="src/partners-icons/lightwell-logomark-light.svg" alt="lightwell-logomark-light" width="24" height="24" /> | `LightwellLogomarkLightIcon` | `lightwell-logomark-light.svg` | `/partners-icons/lightwell-logomark-light.svg` | `/partners-icons/lightwell-logomark-light.tsx` |
 | <img src="src/red-hat-logos/logo_hat-only.svg" alt="logo_hat-only" width="24" height="24" /> | `LogoHatOnlyIcon` | `logo_hat-only.svg` | `/red-hat-logos/logo_hat-only.svg` | `/red-hat-logos/logo_hat-only.tsx` |
 | <img src="src/red-hat-logos/logo.svg" alt="logo" width="24" height="24" /> | `LogoIcon` | `logo.svg` | `/red-hat-logos/logo.svg` | `/red-hat-logos/logo.tsx` |
 | <img src="src/console-logos/Logo-Red_Hat-A-Standard-RGB.svg" alt="Logo-Red_Hat-A-Standard-RGB" width="24" height="24" /> | `LogoRedHatAStandardRGBIcon` | `Logo-Red_Hat-A-Standard-RGB.svg` | `/console-logos/Logo-Red_Hat-A-Standard-RGB.svg` | `/console-logos/Logo-Red_Hat-A-Standard-RGB.tsx` |
@@ -297,4 +299,4 @@ These components are exposed through module federation with the scope `frontendA
 
 ## Generated Components
 
-Total components generated: 242
+Total components generated: 244
