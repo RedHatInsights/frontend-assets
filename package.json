@@ -16,7 +16,11 @@
     "validate-config": "node scripts/validate-config.js",
     "validate-svg-safety": "node scripts/validate-svg-safety.js",
     "postinstall": "ts-patch install",
-    "static": "node generate-modules.js && fec build && node_modules/local-web-server/bin/cli.js --port 8003 --directory ./dist --rewrite '/apps/frontend-assets/(.*) -> /$1'"
+    "static": "node generate-modules.js && fec build && node_modules/local-web-server/bin/cli.js --port 8003 --directory ./dist --rewrite '/apps/frontend-assets/(.*) -> /$1'",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "test-storybook": "test-storybook --ci --testTimeout=60000",
+    "test": "echo \"No unit tests — use npm run test-storybook for component tests\""
   },
   "repository": {
     "type": "git",
@@ -44,6 +48,7 @@
   "devDependencies": {
     "@redhat-cloud-services/eslint-config-redhat-cloud-services": "^3.0.29",
     "@redhat-cloud-services/frontend-components-config": "^6.7.52",
+    "@redhat-cloud-services/hcc-storybook-hub": "^0.2.0",
     "@redhat-cloud-services/tsc-transform-imports": "^1.0.54",
     "@types/react": "^18.3.28",
     "@types/react-dom": "^18.3.7",
@@ -59,5 +64,10 @@
     "ts-patch": "^3.3.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.56.1"
+  },
+  "msw": {
+    "workerDirectory": [
+      "static"
+    ]
   }
 }
