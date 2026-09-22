@@ -67,6 +67,7 @@ export const backgroundMetadata = {
   './technology-icons/developer-hub': null,
   './technology-icons/dependency-analytics': null,
   './technology-icons/data-science': null,
+  './technology-icons/data-integrations-redesign': null,
   './technology-icons/custom-metrics-autoscaler': null,
   './technology-icons/compliance-operator': null,
   './technology-icons/builds-for-openshift': null,

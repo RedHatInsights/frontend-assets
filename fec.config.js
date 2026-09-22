@@ -80,6 +80,7 @@ module.exports = {
       "./CustomMetricsAutoscalerIcon": path.resolve(__dirname, 'src', 'technology-icons/custom-metrics-autoscaler.tsx'),
       "./CyberarkIcon": path.resolve(__dirname, 'src', 'partners-icons/cyberark.tsx'),
       "./CyberarkLogomarkIcon": path.resolve(__dirname, 'src', 'partners-icons/cyberark-logomark.tsx'),
+      "./DataIntegrationsRedesignIcon": path.resolve(__dirname, 'src', 'technology-icons/data-integrations-redesign.tsx'),
       "./DataScienceIcon": path.resolve(__dirname, 'src', 'technology-icons/data-science.tsx'),
       "./DatadogIcon": path.resolve(__dirname, 'src', 'partners-icons/datadog.tsx'),
       "./DatadogLogomarkIcon": path.resolve(__dirname, 'src', 'partners-icons/datadog-logomark.tsx'),
