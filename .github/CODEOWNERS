@@ -1,6 +1,17 @@
-# This is a comment.
-# Each line is a file pattern followed by one or more owners.
+# Default — team reviews all feature code
+*                               @RedHatInsights/experience-ui-committers
 
-# These owners will be the default owners for everything in
-# the repo. Unless a later match takes precedence.
-*       @RedHatInsights/experience-ui-committers
+# Structural / architectural gatekeeping — broad blast radius
+/.github/                       @apinkert @InsaneZein
+/.husky/                        @apinkert @InsaneZein
+/.tekton/                       @apinkert @InsaneZein
+/.gitignore                     @apinkert @InsaneZein
+/config/                        @apinkert @InsaneZein
+/eslint.config.js               @apinkert @InsaneZein
+/fec.config.js                  @apinkert @InsaneZein
+/generate-modules.js            @apinkert @InsaneZein
+/package.json                   @apinkert @InsaneZein
+/package-lock.json              @apinkert @InsaneZein
+/tsconfig.json                  @apinkert @InsaneZein
+/renovate.json                  @apinkert @InsaneZein
+/scripts/                       @apinkert @InsaneZein
